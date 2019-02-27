@@ -30,3 +30,10 @@
 
 # Debug files
 *.dSYM/
+
+# Ignored folders
+/Assets/
+/bin/
+/Fonts/
+/obj/
+/SDL/
