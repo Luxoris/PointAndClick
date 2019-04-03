@@ -11,13 +11,13 @@
 //
 // DESCRIPTION Fonction qui initialise une liste d'image.
 //
-// ENTREE /La référence de la première image de la liste.
+// ENTREE /La référence de la première image de la liste, le nom de la première image de la liste.
 //
 // SORTIE / La référence de la liste d'image
 //
 // NOTE -
 //*****************************************************************************************************//
-extern tListeImage *initialisationListeImage(tImage stImage){
+tListeImage *initialisationListeImage(const tImage stImage,const char sNom[]){
 
     tListeImage *pListe = malloc(sizeof(tListeImage));
     tElementImage *pElement = malloc(sizeof(tElementImage));
@@ -30,6 +30,7 @@ extern tListeImage *initialisationListeImage(tImage stImage){
 
     pElement->stImage = stImage;
     pElement->pSuivant = NULL;
+    strcpy(pElement->sNom,sNom);//ajout du nom de l'élément
     pListe->pPremier = pElement;
 
     return pListe;
@@ -41,13 +42,13 @@ extern tListeImage *initialisationListeImage(tImage stImage){
 //
 // DESCRIPTION Procedure qui insert un élément dans la liste, après la référence de l'élément. Prend NULL si insertion au début.
 //
-// ENTREE /La référence de la la liste, la ref de l'élément image, la référence de l'élement d'insertion
+// ENTREE /La référence de la la liste, la ref de l'élément image, la référence de l'élement d'insertion, le nom de l'image.
 //
 // SORTIE / L'allocation du nouvelle élément, les réferences modifiés.
 //
 // NOTE -
 //*****************************************************************************************************//
-void insertionImageListe(tListeImage *pListe, tImage stImage, tElementImage *pElementInsetion){
+void insertionImageListe(tListeImage *pListe, tElementImage *pElementInsetion,const tImage stImage,const char sNom[]){
     tElementImage *pElement = malloc(sizeof(tElementImage));
     if (pListe == NULL || pElement == NULL) //vérifie que l'allocation a fonctionné
     {
@@ -55,6 +56,7 @@ void insertionImageListe(tListeImage *pListe, tImage stImage, tElementImage *pEl
         exit(EXIT_FAILURE);
     }
     pElement->stImage = stImage;    //l'élément reçoit la référence de l'image
+    strcpy(pElement->sNom,sNom);//ajout du nom de l'élément
 
     if(pListe->pPremier==NULL){ //si la liste est vide
         pElement->pSuivant = NULL;
@@ -193,13 +195,77 @@ void affichageListeImage(SDL_Renderer *pRenderer,tListeImage *pListe){
     }
 
     tElementImage *pElement = pListe->pPremier;
-    while(pElement->pSuivant!=NULL){
+    do{
         afficheImage(pRenderer, &pElement->stImage);
         pElement = pElement->pSuivant;
-    }
+    }while(pElement->pSuivant!=NULL);
+    afficheImage(pRenderer, &pElement->stImage);    //affiche la dernière image
 
 }
 
+//###########################################
+//FONCTION recupElementNom
+//*****************************************************************************************************//
+//
+// DESCRIPTION Fonction qui récupère la ref de l'élément qui porte le nom.
+//
+// ENTREE / La référence de la la liste, la chaine correspondant au nom.
+//
+// SORTIE / La reférence de l'éméent correspondant ou null
+//
+// NOTE -
+//*****************************************************************************************************//
+tElementImage* recupElementNom(tListeImage *pListe,const char sNom[]){
+
+    //VERIFIE SI LA LISTE EXISTE, ET QU'ELLE N'EST PAS VIDE
+    if (pListe == NULL || pListe->pPremier == NULL){
+        printf("Erreur, la liste n'existe pas ou est vide.");
+        exit(EXIT_FAILURE);
+    }
+
+    tElementImage *pElement = pListe->pPremier;
+
+    //si le première élément correspond au nom
+    if(strcmp(sNom,pElement->sNom)==0){
+        return pElement;
+    }
+
+    //POUR LES ELEMENTS SUIVANTS
+    //passe ne revu tous les éléments et vérifie si les noms correspondent
+    do{
+        pElement = pElement->pSuivant;  //on récupère l'élément suivant
+        //si l'élément n'est pas le dernier que le nom correspond
+        if((pElement->pSuivant!=NULL)||(strcmp(sNom,pElement->sNom)==0)){
+            return pElement;
+        }
+    }while(pElement->pSuivant!=NULL);   //tant qu'il existe un élément suivant
+
+    printf("Le nom ne correspond a aucun élément");
+    return NULL;
+
+}
+
+
+//###########################################
+//FONCTION recupElementNom
+//*****************************************************************************************************//
+//
+// DESCRIPTION Fonction qui récupère la ref de l'image qui porte le nom.
+//
+// ENTREE / La référence de la la liste, la chaine correspondant au nom.
+//
+// SORTIE / La référence de l'image correspondant ou null.
+//
+// NOTE -
+//*****************************************************************************************************//
+tImage* recupImageNom(tListeImage *pListe,const char sNom[]){
+    tElementImage *pElement = recupElementNom(pListe,sNom);
+    if(pElement==NULL){
+        return NULL;
+    }else{
+        return &(pElement->stImage);
+    }
+}
 
 ///AUTRES METHODES///
 //###########################################

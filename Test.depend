@@ -3659,7 +3659,7 @@
 	"define.h"
 	"collision.h"
 
-1554216141 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\define.h
+1554286955 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\define.h
 
 1553355845 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\joueur.h
 	<SDL.h>
@@ -3797,12 +3797,12 @@
 	"define.h"
 	<stdio.h>
 
-1554285706 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\image.c
+1554290256 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\image.c
 	"image.h"
 	<stdlib.h>
 	<stdio.h>
 
-1554285618 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\image.h
+1554289424 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\image.h
 	<SDL.h>
 	<SDL_image.h>
 	"tObjet.h"
@@ -3814,7 +3814,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1554285719 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\main.c
+1554290102 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\main.c
 	<stdio.h>
 	<stdlib.h>
 	<SDL.h>

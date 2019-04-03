@@ -42,6 +42,10 @@ int main( int argc, char* args[]/*, char * env[]*/ )
     ///CREATION, ALLOCATION, INITIALISATION DES BOUTONS///
 
 
+
+
+
+
     ///INITIALISATION DE LA SDL, DE LA FENETRE, DU RENDERER, DU TTF///
     initSDL();
     initFenetre(&pFenetre,NOM_DU_JEU);
@@ -54,6 +58,18 @@ int main( int argc, char* args[]/*, char * env[]*/ )
     Mix_Music *pMusique = Mix_LoadMUS("./assets/son/Never.wav");
     Mix_PlayMusic(pMusique, 1);
 
+
+    ///TEST DES IMAGES///
+        tObjet *pObjet = NULL;
+        initObjet(&pObjet, creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0));
+
+        tObjet *pObjet2 = NULL;
+        initObjet(&pObjet2, creeRectangle(creePoint(WINDOW_LARGEUR*0.5-200,WINDOW_HAUTEUR*0.5-200),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0));
+
+        tListeImage *pListeImage = NULL;
+        pListeImage = initialisationListeImage(creeImage(pObjet,ABRICOT_JPG),"a1");
+
+        insertionImageListe(pListeImage,NULL,creeImage(pObjet2,ABRICOT_PNG),"a2");
 
     ///BOUCLE DE JEU///
     while(stEtatPartie!=quitter){
@@ -69,6 +85,11 @@ int main( int argc, char* args[]/*, char * env[]*/ )
         SDL_RenderClear(pRenderer);
 
         gestionEvenements(&stEtatPartie,pstPointeur);
+
+        //afficheImage(pRenderer,recupImageNom(pListeImage,"a2"));
+        //afficheImage(pRenderer,recupImageNom(pListeImage,"a1"));
+
+        affichageListeImage(pRenderer,pListeImage);
 
        /* switch(stLevel){
             case level1 :

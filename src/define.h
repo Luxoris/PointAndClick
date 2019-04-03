@@ -4,8 +4,8 @@
 
 #define NOM_DU_JEU "Pong"
 
-#define WINDOW_LARGEUR 1920
-#define WINDOW_HAUTEUR 1080
+#define WINDOW_LARGEUR 1280
+#define WINDOW_HAUTEUR 720
 
 #define ABRICOT_PNG "./assets/abricot.png"
 #define ABRICOT_JPG "./assets/abricot.jpg"
