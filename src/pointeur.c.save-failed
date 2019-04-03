@@ -1,0 +1,49 @@
+#include "pointeur.h"
+
+//###########################################
+//PROCEDURE initPointeur
+//*****************************************************************************************************//
+//
+// DESCRIPTION PROCEDURE qui initialise et alloue un pointeur.
+//
+// ENTREE /La reférence du pointeur de pointeur de tPointeur, la position (tPoint), l'état des clique droit, gauche et molette (tBool).
+//
+// SORTIE /La référence du pointeur de tPointeur modifiée, les valeurs du tPointeur modifiées.
+//
+// NOTE -
+//*****************************************************************************************************//
+void initPointeur(tPointeur **ppPointeur, const tPoint stPosition,const tBool stCliqueDroit, const tBool stCliqueGauche, const tBool stCliqueMolette){
+    if((*ppPointeur = malloc(sizeof(tPointeur)))==NULL){
+        printf("Erreur d'allocation du pointeur !");
+    }else{
+        setPointeur(*pPointeur,stPosition,stCliqueDroit,stCliqueGauche,stCliqueMolette);
+
+    }
+}
+
+//###########################################
+//PROCEDURE freePointeur
+//*****************************************************************************************************//
+//
+// DESCRIPTION PROCEDURE qui libère le tPointeur,
+//
+// ENTREE /La reférence du pointeur de pointeur de tPointeur.
+//
+// SORTIE / -
+//
+// NOTE -
+//*****************************************************************************************************//
+void freePointeur(tPointeur *pstPointeur){
+
+}
+
+extern void setPointeur(tPointeur *pstPointeur, const tPoint stPosition,const tBool stCliqueDroit, const tBool stCliqueGauche, const tBool stCliqueMolette);
+extern void setPointeurPosition(tPointeur *pstPointeur, const tPoint stPosition);
+extern void setPointeurCliqueDroit(tPointeur *pstPointeur, const tBool stCliqueDroit);
+extern void setPointeurCliqueGauche(tPointeur *pstPointeur, const tBool stCliqueGauche);
+extern void setPointeurCliqueMolette(tPointeur *pstPointeur, const tBool stCliqueMolette);
+
+extern tPoint* getPointeurPosition(tPointeur *pstPointeur);
+extern tBool getPointeurCliqueDroit(tPointeur *pstPointeur);
+extern tBool getPointeurCliqueGauche(tPointeur *pstPointeur);
+extern tBool getPointeurCliqueMolette(tPointeur *pstPointeur);

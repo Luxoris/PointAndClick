@@ -1118,3 +1118,2152 @@
 	"begin_code.h"
 	"close_code.h"
 
+1552295110 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\vue_sdl2.c
+	"vue_SDL2.h"
+	<stdlib.h>
+	<stdio.h>
+
+1551698357 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\vue_sdl2.h
+
+1551698604 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\window.c
+	"src/window.h"
+
+1551699041 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\window.h
+	<SDL.h>
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_assert.h"
+	"SDL_atomic.h"
+	"SDL_audio.h"
+	"SDL_clipboard.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_filesystem.h"
+	"SDL_gamecontroller.h"
+	"SDL_haptic.h"
+	"SDL_hints.h"
+	"SDL_joystick.h"
+	"SDL_loadso.h"
+	"SDL_log.h"
+	"SDL_messagebox.h"
+	"SDL_mutex.h"
+	"SDL_power.h"
+	"SDL_render.h"
+	"SDL_rwops.h"
+	"SDL_sensor.h"
+	"SDL_shape.h"
+	"SDL_system.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_version.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<wchar.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	<sal.h>
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_config.h
+	"SDL_platform.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_platform.h
+	"AvailabilityMacros.h"
+	"TargetConditionals.h"
+	<winapifamily.h>
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\begin_code.h
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\close_code.h
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_assert.h
+	"SDL_config.h"
+	"begin_code.h"
+	<signal.h>
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_atomic.h
+	"SDL_stdinc.h"
+	"SDL_platform.h"
+	"begin_code.h"
+	<mbarrier.h>
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_atomic.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	<process.h>
+	<stdlib.h>
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	<intrin.h>
+	<intrin.h>
+	<altivec.h>
+	<arm_neon.h>
+	<mm3dnow.h>
+	<immintrin.h>
+	<mmintrin.h>
+	<xmmintrin.h>
+	<emmintrin.h>
+	<pmmintrin.h>
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_quit.h"
+	"SDL_gesture.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_pixels.h
+	"SDL_stdinc.h"
+	"SDL_endian.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_rect.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_pixels.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_surface.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_blendmode.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keycode.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_keycode.h
+	"SDL_stdinc.h"
+	"SDL_scancode.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_scancode.h
+	"SDL_stdinc.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_gesture.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_touch.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_haptic.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_hints.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_log.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_power.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_render.h
+	"SDL_stdinc.h"
+	"SDL_rect.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_sensor.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_shape.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_system.h
+	"SDL_stdinc.h"
+	"SDL_keyboard.h"
+	"SDL_render.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1552315622 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\renderer.c
+	"renderer.h"
+
+1552315487 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\renderer.h
+	<SDL.h>
+	<stdio.h>
+	"tBool.h"
+	"SDLPoint.h"
+	"rectangle.h"
+	"raquette.h"
+	"balle.h"
+
+1551978168 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\main.c
+	<stdio.h>
+	<stdlib.h>
+	<SDL.h>
+	"src/window.h"
+	"src/renderer.h"
+	"src/VUE_SDL2.h"
+	"src/tBool.h"
+	"src/joueur.h"
+	"src/SDLPoint.h"
+	"src/etatPartie.h"
+	"src/raquette.h"
+	"src/evenement.h"
+
+1553163751 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\tbool.h
+
+1553327159 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\point.h
+	<SDL.h>
+	"vecteur.h"
+
+1553327145 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\point.c
+	"point.h"
+	"math.h"
+
+1553328125 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\joueur.c
+	"joueur.h"
+
+1553328633 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\joueur.h
+	<SDL.h>
+	<stdio.h>
+	<stdlib.h>
+	"objet.h"
+
+1551969336 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\vecteur.c
+	"vecteur.h"
+
+1551972724 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\vecteur.h
+	<SDL.h>
+
+1552298036 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\evenement.c
+	"evenement.h"
+	<string.h>
+
+1552297584 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\evenement.h
+	<SDL.h>
+	"etatPartie.h"
+	"define.h"
+	"raquette.h"
+	"tBool.h"
+
+1551955573 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\etatpartie.h
+
+1553180116 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\define.h
+
+1553327621 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\raquette.h
+	<SDL.h>
+	"vecteur.h"
+	"rectangle.h"
+	"define.h"
+	"collision.h"
+
+1553326368 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\rectangle.h
+	<SDL.h>
+	"vecteur.h"
+	"point.h"
+
+1553328109 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\balle.c
+	"balle.h"
+
+1553328094 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\balle.h
+	<SDL.h>
+	"cercle.h"
+	"vecteur.h"
+	"rectangle.h"
+	"collision.h"
+	"objet.h"
+	"tBool.h"
+	"joueur.h"
+
+1553327259 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\cercle.h
+	<SDL.h>
+	"vecteur.h"
+	"point.h"
+
+1553327320 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\cercle.c
+	"cercle.h"
+
+1553327036 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\raquette.c
+	"raquette.h"
+
+1553327203 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\rectangle.c
+	"rectangle.h"
+
+1551972342 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\sdlpoint.h
+	<SDL.h>
+
+1551972843 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\sdlpoint.c
+	"SDLPoint.h"
+	"point.h"
+	"math.h"
+
+1553180480 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	<SDL.h>
+	"window.h"
+	"renderer.h"
+	"VUE_SDL2.h"
+	"tBool.h"
+	"joueur.h"
+	"SDLPoint.h"
+	"etatPartie.h"
+	"raquette.h"
+	"evenement.h"
+	"FPS.h"
+	"collision.h"
+	"SDL2_texte.h"
+
+1551979431 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\window.c
+	"window.h"
+
+1552303122 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\fps.c
+	"FPS.h"
+
+1552303094 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\fps.h
+	<SDL.h>
+
+1553327328 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\collision.c
+	"collision.h"
+
+1552310590 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\collision.h
+	"tBool.h"
+	"rectangle.h"
+	"cercle.h"
+
+1553181738 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\sdl2_texte.c
+	"SDL2_texte.h"
+
+1553326146 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\sdl2_texte.h
+	<SDL.h>
+	<stdio.h>
+	<SDL_ttf.h>
+	<string.h>
+
+1547322281 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\sdl\sdl2_ttf-2.0.15\i686-w64-mingw32\include\sdl2\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1553328458 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\objet.h
+	<SDL.h>
+	"vecteur.h"
+	"rectangle.h"
+	"define.h"
+	"collision.h"
+
+1553328606 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pong\src\objet.c
+	"objet.h"
+
+1553328109 source:c:\users\fache\onedrive\bureau\pong2\src\balle.c
+	"balle.h"
+
+1553329343 c:\users\fache\onedrive\bureau\pong2\src\balle.h
+	<SDL.h>
+	"cercle.h"
+	"vecteur.h"
+	"rectangle.h"
+	"collision.h"
+	"tObjet.h"
+	"tBool.h"
+	"joueur.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_assert.h"
+	"SDL_atomic.h"
+	"SDL_audio.h"
+	"SDL_clipboard.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_filesystem.h"
+	"SDL_gamecontroller.h"
+	"SDL_haptic.h"
+	"SDL_hints.h"
+	"SDL_joystick.h"
+	"SDL_loadso.h"
+	"SDL_log.h"
+	"SDL_messagebox.h"
+	"SDL_mutex.h"
+	"SDL_power.h"
+	"SDL_render.h"
+	"SDL_rwops.h"
+	"SDL_sensor.h"
+	"SDL_shape.h"
+	"SDL_system.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_version.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<wchar.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	<sal.h>
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_config.h
+	"SDL_platform.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_platform.h
+	"AvailabilityMacros.h"
+	"TargetConditionals.h"
+	<winapifamily.h>
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\begin_code.h
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\close_code.h
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_assert.h
+	"SDL_config.h"
+	"begin_code.h"
+	<signal.h>
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_atomic.h
+	"SDL_stdinc.h"
+	"SDL_platform.h"
+	"begin_code.h"
+	<mbarrier.h>
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_atomic.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	<process.h>
+	<stdlib.h>
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	<intrin.h>
+	<intrin.h>
+	<altivec.h>
+	<arm_neon.h>
+	<mm3dnow.h>
+	<immintrin.h>
+	<mmintrin.h>
+	<xmmintrin.h>
+	<emmintrin.h>
+	<pmmintrin.h>
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_quit.h"
+	"SDL_gesture.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_pixels.h
+	"SDL_stdinc.h"
+	"SDL_endian.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_rect.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_pixels.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_surface.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_blendmode.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keycode.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_keycode.h
+	"SDL_stdinc.h"
+	"SDL_scancode.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_scancode.h
+	"SDL_stdinc.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_gesture.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_touch.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_haptic.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_hints.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_log.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_power.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_render.h
+	"SDL_stdinc.h"
+	"SDL_rect.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_sensor.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_shape.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_system.h
+	"SDL_stdinc.h"
+	"SDL_keyboard.h"
+	"SDL_render.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550424110 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1553327259 c:\users\fache\onedrive\bureau\pong2\src\cercle.h
+	<SDL.h>
+	"vecteur.h"
+	"point.h"
+
+1551972724 c:\users\fache\onedrive\bureau\pong2\src\vecteur.h
+	<SDL.h>
+
+1553327159 c:\users\fache\onedrive\bureau\pong2\src\point.h
+	<SDL.h>
+	"vecteur.h"
+
+1553347503 c:\users\fache\onedrive\bureau\pong2\src\rectangle.h
+	<SDL.h>
+	"vecteur.h"
+	"point.h"
+	"SDLPoint.h"
+
+1552310590 c:\users\fache\onedrive\bureau\pong2\src\collision.h
+	"tBool.h"
+	"rectangle.h"
+	"cercle.h"
+
+1553163751 c:\users\fache\onedrive\bureau\pong2\src\tbool.h
+
+1553352245 c:\users\fache\onedrive\bureau\pong2\src\joueur.h
+	<SDL.h>
+	<stdio.h>
+	<stdlib.h>
+	"tObjet.h"
+
+1553327320 source:c:\users\fache\onedrive\bureau\pong2\src\cercle.c
+	"cercle.h"
+
+1553327328 source:c:\users\fache\onedrive\bureau\pong2\src\collision.c
+	"collision.h"
+
+1553362293 source:c:\users\fache\onedrive\bureau\pong2\src\evenement.c
+	"evenement.h"
+	<string.h>
+
+1553358269 c:\users\fache\onedrive\bureau\pong2\src\evenement.h
+	<SDL.h>
+	"etatPartie.h"
+	"define.h"
+	"tObjet.h"
+	"tBool.h"
+	"balle.h"
+	"pointeur.h"
+
+1551955573 c:\users\fache\onedrive\bureau\pong2\src\etatpartie.h
+
+1553683032 c:\users\fache\onedrive\bureau\pong2\src\define.h
+
+1553327621 c:\users\fache\onedrive\bureau\pong2\src\raquette.h
+	<SDL.h>
+	"vecteur.h"
+	"rectangle.h"
+	"define.h"
+	"collision.h"
+
+1552303122 source:c:\users\fache\onedrive\bureau\pong2\src\fps.c
+	"FPS.h"
+
+1552303094 c:\users\fache\onedrive\bureau\pong2\src\fps.h
+	<SDL.h>
+
+1553327145 source:c:\users\fache\onedrive\bureau\pong2\src\point.c
+	"point.h"
+	"math.h"
+
+1553356353 c:\users\fache\onedrive\bureau\pong2\src\tobjet.h
+	<stdlib.h>
+	<stdio.h>
+	<SDL.h>
+	"vecteur.h"
+	"rectangle.h"
+	"define.h"
+	"collision.h"
+
+1553347452 source:c:\users\fache\onedrive\bureau\pong2\src\rectangle.c
+	"rectangle.h"
+
+1553612065 source:c:\users\fache\onedrive\bureau\pong2\src\sdl2_texte.c
+	"SDL2_texte.h"
+
+1553606620 c:\users\fache\onedrive\bureau\pong2\src\sdl2_texte.h
+	<SDL.h>
+	<stdio.h>
+	<SDL_ttf.h>
+	<string.h>
+	"tObjet.h"
+
+1547322281 c:\users\fache\onedrive\bureau\pong2\sdl\sdl2_ttf-2.0.15\i686-w64-mingw32\include\sdl2\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1551972843 source:c:\users\fache\onedrive\bureau\pong2\src\sdlpoint.c
+	"SDLPoint.h"
+	"point.h"
+	"math.h"
+
+1551972342 c:\users\fache\onedrive\bureau\pong2\src\sdlpoint.h
+	<SDL.h>
+
+1553356342 source:c:\users\fache\onedrive\bureau\pong2\src\tobjet.c
+	"tObjet.h"
+
+1551969336 source:c:\users\fache\onedrive\bureau\pong2\src\vecteur.c
+	"vecteur.h"
+
+1552295110 source:c:\users\fache\onedrive\bureau\pong2\src\vue_sdl2.c
+	"vue_SDL2.h"
+	<stdlib.h>
+	<stdio.h>
+
+1551698357 c:\users\fache\onedrive\bureau\pong2\src\vue_sdl2.h
+
+1551979431 source:c:\users\fache\onedrive\bureau\pong2\src\window.c
+	"window.h"
+
+1553605448 c:\users\fache\onedrive\bureau\pong2\src\window.h
+	<SDL.h>
+	"define.h"
+	<stdio.h>
+
+1553352265 source:c:\users\fache\onedrive\bureau\pong2\src\joueur.c
+	"joueur.h"
+
+1553611734 source:c:\users\fache\onedrive\bureau\pong2\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	<SDL.h>
+	"window.h"
+	"renderer.h"
+	"VUE_SDL2.h"
+	"joueur.h"
+	"etatPartie.h"
+	"evenement.h"
+	"FPS.h"
+	"SDL2_texte.h"
+	"pointeur.h"
+
+1553599370 c:\users\fache\onedrive\bureau\pong2\src\renderer.h
+	<SDL.h>
+	<stdio.h>
+	"tBool.h"
+	"SDLPoint.h"
+	"rectangle.h"
+	"tObjet.h"
+	"balle.h"
+	"bouton.h"
+	"SDL2_texte.h"
+
+1553607084 source:c:\users\fache\onedrive\bureau\pong2\src\renderer.c
+	"renderer.h"
+
+1553359469 c:\users\fache\onedrive\bureau\pong2\src\pointeur.h
+	<stdlib.h>
+	<stdio.h>
+	"tBool.h"
+	"point.h"
+
+1553360765 source:c:\users\fache\onedrive\bureau\pong2\src\pointeur.c
+	"pointeur.h"
+
+1553600539 source:c:\users\fache\onedrive\bureau\pong2\src\bouton.c
+	"bouton.h"
+
+1553599321 c:\users\fache\onedrive\bureau\pong2\src\bouton.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tBool.h"
+	"tObjet.h"
+	"pointeur.h"
+
+1554102362 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\balle.c
+	"balle.h"
+
+1553332943 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\balle.h
+	<SDL.h>
+	"cercle.h"
+	"vecteur.h"
+	"rectangle.h"
+	"collision.h"
+	"tObjet.h"
+	"tBool.h"
+	"joueur.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_assert.h"
+	"SDL_atomic.h"
+	"SDL_audio.h"
+	"SDL_clipboard.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_filesystem.h"
+	"SDL_gamecontroller.h"
+	"SDL_haptic.h"
+	"SDL_hints.h"
+	"SDL_joystick.h"
+	"SDL_loadso.h"
+	"SDL_log.h"
+	"SDL_messagebox.h"
+	"SDL_mutex.h"
+	"SDL_power.h"
+	"SDL_render.h"
+	"SDL_rwops.h"
+	"SDL_sensor.h"
+	"SDL_shape.h"
+	"SDL_system.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_version.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<wchar.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	<sal.h>
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_config.h
+	"SDL_platform.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_platform.h
+	"AvailabilityMacros.h"
+	"TargetConditionals.h"
+	<winapifamily.h>
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\begin_code.h
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\close_code.h
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_assert.h
+	"SDL_config.h"
+	"begin_code.h"
+	<signal.h>
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_atomic.h
+	"SDL_stdinc.h"
+	"SDL_platform.h"
+	"begin_code.h"
+	<mbarrier.h>
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_atomic.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	<process.h>
+	<stdlib.h>
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	<intrin.h>
+	<intrin.h>
+	<altivec.h>
+	<arm_neon.h>
+	<mm3dnow.h>
+	<immintrin.h>
+	<mmintrin.h>
+	<xmmintrin.h>
+	<emmintrin.h>
+	<pmmintrin.h>
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_quit.h"
+	"SDL_gesture.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_pixels.h
+	"SDL_stdinc.h"
+	"SDL_endian.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_rect.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_pixels.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_surface.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_blendmode.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keycode.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_keycode.h
+	"SDL_stdinc.h"
+	"SDL_scancode.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_scancode.h
+	"SDL_stdinc.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_gesture.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_touch.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_haptic.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_hints.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_log.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_power.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_render.h
+	"SDL_stdinc.h"
+	"SDL_rect.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_sensor.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_shape.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_system.h
+	"SDL_stdinc.h"
+	"SDL_keyboard.h"
+	"SDL_render.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1553330859 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\cercle.h
+	<SDL.h>
+	"vecteur.h"
+	"point.h"
+
+1551976324 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\vecteur.h
+	<SDL.h>
+
+1553330759 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\point.h
+	<SDL.h>
+	"vecteur.h"
+
+1553351103 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\rectangle.h
+	<SDL.h>
+	"vecteur.h"
+	"point.h"
+	"SDLPoint.h"
+
+1551975942 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\sdlpoint.h
+	<SDL.h>
+
+1552314190 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\collision.h
+	"tBool.h"
+	"rectangle.h"
+	"cercle.h"
+
+1553167351 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\tbool.h
+
+1553359953 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\tobjet.h
+	<stdlib.h>
+	<stdio.h>
+	<SDL.h>
+	"vecteur.h"
+	"rectangle.h"
+	"define.h"
+	"collision.h"
+
+1554054623 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\define.h
+
+1553355845 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\joueur.h
+	<SDL.h>
+	<stdio.h>
+	<stdlib.h>
+	"tObjet.h"
+
+1553604139 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\bouton.c
+	"bouton.h"
+
+1553602921 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\bouton.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tBool.h"
+	"tObjet.h"
+	"pointeur.h"
+
+1553363069 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\pointeur.h
+	<stdlib.h>
+	<stdio.h>
+	"tBool.h"
+	"point.h"
+
+1553688562 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\cercle.c
+	"cercle.h"
+
+1553330928 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\collision.c
+	"collision.h"
+
+1554053128 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\evenement.c
+	"evenement.h"
+	<string.h>
+
+1553361869 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\evenement.h
+	<SDL.h>
+	"etatPartie.h"
+	"define.h"
+	"tObjet.h"
+	"tBool.h"
+	"balle.h"
+	"pointeur.h"
+
+1551959173 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\etatpartie.h
+
+1552306722 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\fps.c
+	"FPS.h"
+
+1552306694 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\fps.h
+	<SDL.h>
+
+1553355865 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\joueur.c
+	"joueur.h"
+
+1554102493 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	<SDL.h>
+	"window.h"
+	"renderer.h"
+	"VUE_SDL2.h"
+	"joueur.h"
+	"etatPartie.h"
+	"evenement.h"
+	"FPS.h"
+	"SDL2_texte.h"
+	"pointeur.h"
+
+1553609048 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\window.h
+	<SDL.h>
+	"define.h"
+	<stdio.h>
+
+1553602970 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\renderer.h
+	<SDL.h>
+	<stdio.h>
+	"tBool.h"
+	"SDLPoint.h"
+	"rectangle.h"
+	"tObjet.h"
+	"balle.h"
+	"bouton.h"
+	"SDL2_texte.h"
+
+1553610220 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\sdl2_texte.h
+	<SDL.h>
+	<stdio.h>
+	<SDL_ttf.h>
+	<string.h>
+	"tObjet.h"
+
+1547325881 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\sdl\sdl2_ttf-2.0.15\i686-w64-mingw32\include\sdl2\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1553688650 d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\vue_sdl2.h
+	<SDL.h>
+
+1553330745 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\point.c
+	"point.h"
+	"math.h"
+
+1553364365 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\pointeur.c
+	"pointeur.h"
+
+1553351052 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\rectangle.c
+	"rectangle.h"
+
+1553610684 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\renderer.c
+	"renderer.h"
+
+1553615665 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\sdl2_texte.c
+	"SDL2_texte.h"
+
+1551976443 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\sdlpoint.c
+	"SDLPoint.h"
+	"point.h"
+	"math.h"
+
+1554102199 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\tobjet.c
+	"tObjet.h"
+
+1551972936 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\vecteur.c
+	"vecteur.h"
+
+1552298710 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\vue_sdl2.c
+	"vue_SDL2.h"
+	<stdlib.h>
+	<stdio.h>
+
+1551983031 source:d:\documents\onedrive\documents\cours\ludus f2\programmation\exo_c\exo_mars\pongv4\src\window.c
+	"window.h"
+
+1554102362 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\balle.c
+	"balle.h"
+
+1553332943 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\balle.h
+	<SDL.h>
+	"cercle.h"
+	"vecteur.h"
+	"rectangle.h"
+	"collision.h"
+	"tObjet.h"
+	"tBool.h"
+	"joueur.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_assert.h"
+	"SDL_atomic.h"
+	"SDL_audio.h"
+	"SDL_clipboard.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_filesystem.h"
+	"SDL_gamecontroller.h"
+	"SDL_haptic.h"
+	"SDL_hints.h"
+	"SDL_joystick.h"
+	"SDL_loadso.h"
+	"SDL_log.h"
+	"SDL_messagebox.h"
+	"SDL_mutex.h"
+	"SDL_power.h"
+	"SDL_render.h"
+	"SDL_rwops.h"
+	"SDL_sensor.h"
+	"SDL_shape.h"
+	"SDL_system.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_version.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<wchar.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	<sal.h>
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_config.h
+	"SDL_platform.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_platform.h
+	"AvailabilityMacros.h"
+	"TargetConditionals.h"
+	<winapifamily.h>
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\begin_code.h
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\close_code.h
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_assert.h
+	"SDL_config.h"
+	"begin_code.h"
+	<signal.h>
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_atomic.h
+	"SDL_stdinc.h"
+	"SDL_platform.h"
+	"begin_code.h"
+	<mbarrier.h>
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_atomic.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	<process.h>
+	<stdlib.h>
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	<intrin.h>
+	<intrin.h>
+	<altivec.h>
+	<arm_neon.h>
+	<mm3dnow.h>
+	<immintrin.h>
+	<mmintrin.h>
+	<xmmintrin.h>
+	<emmintrin.h>
+	<pmmintrin.h>
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_quit.h"
+	"SDL_gesture.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_pixels.h
+	"SDL_stdinc.h"
+	"SDL_endian.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_rect.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_pixels.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_surface.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_blendmode.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keycode.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_keycode.h
+	"SDL_stdinc.h"
+	"SDL_scancode.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_scancode.h
+	"SDL_stdinc.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_gesture.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_touch.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_haptic.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_hints.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_log.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_power.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_render.h
+	"SDL_stdinc.h"
+	"SDL_rect.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_sensor.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_shape.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_system.h
+	"SDL_stdinc.h"
+	"SDL_keyboard.h"
+	"SDL_render.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1550427710 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2-2.0.9\i686-w64-mingw32\include\sdl2\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1553330859 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\cercle.h
+	<SDL.h>
+	"vecteur.h"
+	"point.h"
+
+1551976324 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\vecteur.h
+	<SDL.h>
+
+1553330759 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\point.h
+	<SDL.h>
+	"vecteur.h"
+
+1553351103 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\rectangle.h
+	<SDL.h>
+	"vecteur.h"
+	"point.h"
+	"SDLPoint.h"
+
+1551975942 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\sdlpoint.h
+	<SDL.h>
+
+1552314190 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\collision.h
+	"tBool.h"
+	"rectangle.h"
+	"cercle.h"
+
+1553167351 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\tbool.h
+
+1553359953 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\tobjet.h
+	<stdlib.h>
+	<stdio.h>
+	<SDL.h>
+	"vecteur.h"
+	"rectangle.h"
+	"define.h"
+	"collision.h"
+
+1554216141 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\define.h
+
+1553355845 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\joueur.h
+	<SDL.h>
+	<stdio.h>
+	<stdlib.h>
+	"tObjet.h"
+
+1553604139 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\bouton.c
+	"bouton.h"
+
+1553602921 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\bouton.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tBool.h"
+	"tObjet.h"
+	"pointeur.h"
+
+1553363069 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\pointeur.h
+	<stdlib.h>
+	<stdio.h>
+	"tBool.h"
+	"point.h"
+
+1553688562 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\cercle.c
+	"cercle.h"
+
+1553330928 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\collision.c
+	"collision.h"
+
+1554216311 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\evenement.c
+	"evenement.h"
+	<string.h>
+
+1554216302 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\evenement.h
+	<SDL.h>
+	"etatPartie.h"
+	"define.h"
+	"tObjet.h"
+	"tBool.h"
+	"balle.h"
+	"pointeur.h"
+
+1551959173 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\etatpartie.h
+
+1552306722 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\fps.c
+	"FPS.h"
+
+1552306694 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\fps.h
+	<SDL.h>
+
+1553355865 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\joueur.c
+	"joueur.h"
+
+1554216466 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	<SDL.h>
+	"window.h"
+	"renderer.h"
+	"VUE_SDL2.h"
+	"joueur.h"
+	"etatPartie.h"
+	"evenement.h"
+	"FPS.h"
+	"SDL2_texte.h"
+	"pointeur.h"
+	"image.h"
+	"mixer.h"
+
+1553609048 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\window.h
+	<SDL.h>
+	"define.h"
+	<stdio.h>
+
+1553602970 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\renderer.h
+	<SDL.h>
+	<stdio.h>
+	"tBool.h"
+	"SDLPoint.h"
+	"rectangle.h"
+	"tObjet.h"
+	"balle.h"
+	"bouton.h"
+	"SDL2_texte.h"
+
+1553610220 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\sdl2_texte.h
+	<SDL.h>
+	<stdio.h>
+	<SDL_ttf.h>
+	<string.h>
+	"tObjet.h"
+
+1547325881 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2_ttf-2.0.15\i686-w64-mingw32\include\sdl2\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1553688650 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\vue_sdl2.h
+	<SDL.h>
+
+1553330745 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\point.c
+	"point.h"
+	"math.h"
+
+1553364365 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\pointeur.c
+	"pointeur.h"
+
+1553351052 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\rectangle.c
+	"rectangle.h"
+
+1553610684 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\renderer.c
+	"renderer.h"
+
+1554215779 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\sdl2_texte.c
+	"SDL2_texte.h"
+
+1551976443 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\sdlpoint.c
+	"SDLPoint.h"
+	"point.h"
+	"math.h"
+
+1554102199 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\tobjet.c
+	"tObjet.h"
+
+1551972936 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\vecteur.c
+	"vecteur.h"
+
+1552298710 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\vue_sdl2.c
+	"vue_SDL2.h"
+	<stdlib.h>
+	<stdio.h>
+
+1551983031 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\window.c
+	"window.h"
+
+1554117804 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\image.c
+	"image.h"
+	<stdlib.h>
+	<stdio.h>
+
+1554111291 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\image.h
+	<SDL.h>
+	<SDL_image.h>
+	"tObjet.h"
+	"string.h"
+
+1541001582 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2_image-2.0.4\i686-w64-mingw32\include\sdl2\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1554119598 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\mixer.c
+	"mixer.h"
+
+1554118917 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\src\mixer.h
+	<SDL_mixer.h>
+	<stdio.h>
+	<stdlib.h>
+
+1541001592 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick2\sdl\sdl2_mixer-2.0.4\i686-w64-mingw32\include\sdl2\sdl_mixer.h
+	"SDL_stdinc.h"
+	"SDL_rwops.h"
+	"SDL_audio.h"
+	"SDL_endian.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+

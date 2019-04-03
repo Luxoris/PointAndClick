@@ -31,25 +31,105 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add directory="SDL/SDL2-2.0.9/i686-w64-mingw32/include/SDL2" />
-			<Add directory="SDL/SDL2_image-2.0.0/i686-w64-mingw32/include/SDL2" />
-			<Add directory="SDL/SDL2_ttf-2.0.12/i686-w64-mingw32/include/SDL2" />
-			<Add directory="SDL/SDL2_mixer-2.0.0/i686-w64-mingw32/include/SDL2" />
+			<Add directory="SDL/SDL2_ttf-2.0.15/i686-w64-mingw32/include/SDL2" />
+			<Add directory="SDL/SDL2_image-2.0.4/i686-w64-mingw32/include/SDL2" />
+			<Add directory="SDL/SDL2_mixer-2.0.4/i686-w64-mingw32/include/SDL2" />
 		</Compiler>
 		<Linker>
 			<Add option="-lmingw32" />
 			<Add library="SDL/SDL2-2.0.9/i686-w64-mingw32/lib/libSDL2main.a" />
 			<Add library="SDL/SDL2-2.0.9/i686-w64-mingw32/lib/libSDL2.dll.a" />
-			<Add library="SDL/SDL2_image-2.0.0/i686-w64-mingw32/lib/libSDL2_image.dll.a" />
-			<Add library="SDL/SDL2_ttf-2.0.12/i686-w64-mingw32/lib/libSDL2_ttf.dll.a" />
-			<Add library="SDL/SDL2_mixer-2.0.0/i686-w64-mingw32/lib/libSDL2_mixer.dll.a" />
+			<Add library="SDL/SDL2_ttf-2.0.15/i686-w64-mingw32/lib/libSDL2_ttf.dll.a" />
+			<Add library="SDL/SDL2_image-2.0.4/i686-w64-mingw32/lib/libSDL2_image.dll.a" />
+			<Add library="SDL/SDL2_mixer-2.0.4/i686-w64-mingw32/lib/libSDL2_mixer.dll.a" />
 			<Add directory="SDL/SDL2-2.0.9/i686-w64-mingw32/lib" />
-			<Add directory="SDL/SDL2_image-2.0.0/i686-w64-mingw32/lib" />
-			<Add directory="SDL/SDL2_ttf-2.0.12/i686-w64-mingw32/lib" />
-			<Add directory="SDL/SDL2_mixer-2.0.0/i686-w64-mingw32/lib" />
+			<Add directory="SDL/SDL2_ttf-2.0.15/i686-w64-mingw32/lib" />
+			<Add directory="SDL/SDL2_image-2.0.4/i686-w64-mingw32/lib" />
+			<Add directory="SDL/SDL2_mixer-2.0.4/i686-w64-mingw32/lib" />
 		</Linker>
-		<Unit filename="main.c">
+		<Unit filename="src/FPS.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/FPS.h" />
+		<Unit filename="src/SDL2_texte.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/SDL2_texte.h" />
+		<Unit filename="src/SDLPoint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/SDLPoint.h" />
+		<Unit filename="src/VUE_SDL2.h" />
+		<Unit filename="src/balle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/balle.h" />
+		<Unit filename="src/bouton.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/bouton.h" />
+		<Unit filename="src/cercle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/cercle.h" />
+		<Unit filename="src/collision.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/collision.h" />
+		<Unit filename="src/define.h" />
+		<Unit filename="src/etatPartie.h" />
+		<Unit filename="src/evenement.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/evenement.h" />
+		<Unit filename="src/image.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/image.h" />
+		<Unit filename="src/joueur.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/joueur.h" />
+		<Unit filename="src/level.h" />
+		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/mixer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/mixer.h" />
+		<Unit filename="src/point.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/point.h" />
+		<Unit filename="src/pointeur.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pointeur.h" />
+		<Unit filename="src/rectangle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/rectangle.h" />
+		<Unit filename="src/renderer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/renderer.h" />
+		<Unit filename="src/tBool.h" />
+		<Unit filename="src/tObjet.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/tObjet.h" />
+		<Unit filename="src/vecteur.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/vecteur.h" />
+		<Unit filename="src/vue_SDL2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/window.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/window.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
