@@ -2,6 +2,206 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+
+///METHODES DE LA LISTE D'IMAGE///
+
+//###########################################
+//FONCTION initialisationListeImage
+//*****************************************************************************************************//
+//
+// DESCRIPTION Fonction qui initialise une liste d'image.
+//
+// ENTREE /La référence de la première image de la liste.
+//
+// SORTIE / La référence de la liste d'image
+//
+// NOTE -
+//*****************************************************************************************************//
+extern tListeImage *initialisationListeImage(tImage stImage){
+
+    tListeImage *pListe = malloc(sizeof(tListeImage));
+    tElementImage *pElement = malloc(sizeof(tElementImage));
+
+    if (pListe == NULL || pElement == NULL)
+    {
+        printf("Erreur lors de l'initialisation de la liste d'image.");
+        exit(EXIT_FAILURE);
+    }
+
+    pElement->stImage = stImage;
+    pElement->pSuivant = NULL;
+    pListe->pPremier = pElement;
+
+    return pListe;
+}
+
+//###########################################
+//PROCEDURE insertionImageListe
+//*****************************************************************************************************//
+//
+// DESCRIPTION Procedure qui insert un élément dans la liste, après la référence de l'élément. Prend NULL si insertion au début.
+//
+// ENTREE /La référence de la la liste, la ref de l'élément image, la référence de l'élement d'insertion
+//
+// SORTIE / L'allocation du nouvelle élément, les réferences modifiés.
+//
+// NOTE -
+//*****************************************************************************************************//
+void insertionImageListe(tListeImage *pListe, tImage stImage, tElementImage *pElementInsetion){
+    tElementImage *pElement = malloc(sizeof(tElementImage));
+    if (pListe == NULL || pElement == NULL) //vérifie que l'allocation a fonctionné
+    {
+        printf("Erreur lors de l'allocation d'un element de la liste d'image.");
+        exit(EXIT_FAILURE);
+    }
+    pElement->stImage = stImage;    //l'élément reçoit la référence de l'image
+
+    if(pListe->pPremier==NULL){ //si la liste est vide
+        pElement->pSuivant = NULL;
+        pListe->pPremier = pElement;
+    }else{ //SI pElementInsertion = NULL, insert l'élément au début de la liste
+        if((pElementInsetion == NULL)){
+            pElement->pSuivant = pListe->pPremier;
+            pListe->pPremier = pElement;
+        }else{
+            //SINON INSERTION D'UN ELEMENT APRES LA REFERENCE//
+            pElement->pSuivant = pElementInsetion ->pSuivant;   //l'élément récupère la référence de l'élément suivant.
+            pElementInsetion->pSuivant = pElement;  //l'élément d'isnertion récupère la référence du nouvelle élément.
+        }
+
+    }
+
+    pListe->nbElements++;   //incrémentation du nombre d'élément de la liste
+
+
+}
+
+//###########################################
+//PROCEDURE suppressionImageListe
+//*****************************************************************************************************//
+//
+// DESCRIPTION Procedure qui supprime un élément dans la liste, après la référence de l'élément.
+//
+// ENTREE /La référence de la la liste, la ref de l'element a supprimer.
+//
+// SORTIE / Les référence de la liste modifiés, la mémoire libéré.
+//
+// NOTE -  La référence de l'élément accepte NULL si l'élément a supprimer est le premier.
+//*****************************************************************************************************//
+void suppressionImageListe(tListeImage *pListe, tElementImage *pElementSupprimer){
+
+    //VERIFIE SI LA LISTE EXISTE, ET QUE L'ELEMENT A SUPPRIMER NE VAUT PAS NULL
+    if (pListe == NULL){
+        printf("Erreur lors de la suppression d'un element de la liste d'image, la liste n'existe pas.");
+        exit(EXIT_FAILURE);
+    }
+
+    //si la liste n'est pas vide
+    if (pListe->pPremier != NULL){
+
+        //Si l'élément a suprimer n'est pas le premier de la liste.
+        if((pElementSupprimer == pListe->pPremier) || (pElementSupprimer == NULL)){  //l'élément a supprimer est le premier de la liste
+            pListe->pPremier = NULL; // le premier element de la liste recoit NULL
+        }else{
+
+        // SINON parcourt les éléments de la liste pour trouver l'élément précédent a supprimer.
+
+            tElementImage *pElement = pListe->pPremier;
+
+            while ((pElement != NULL) && (pElement->pSuivant != pElementSupprimer)){
+                pElement = pElement->pSuivant;
+            }
+
+            //raccorche l'lément précédent avec le suivant
+            pElement->pSuivant = pElementSupprimer->pSuivant;
+        }
+
+        free(pElementSupprimer);    //libère l'élément a supprimer.
+        pListe->nbElements--;       //décrémente le nombre d'éléments de la liste
+    }else{
+        printf("Erreur lors de la suppression d'un element de la liste d'image, la liste est vide.");
+    }
+}
+
+//###########################################
+//PROCEDURE vidageListeImage
+//*****************************************************************************************************//
+//
+// DESCRIPTION Procedure qui supprime tous les éléments de la liste.
+//
+// ENTREE /La référence de la la liste.
+//
+// SORTIE / La mémoire libéré.
+//
+// NOTE -
+//*****************************************************************************************************//
+void vidageListeImage(tListeImage *pListe){
+    //VERIFIE SI LA LISTE EXISTE, ET QUE L'ELEMENT A SUPPRIMER NE VAUT PAS NULL
+    if (pListe == NULL || pListe->pPremier == NULL){
+        printf("Erreur la liste n'existe pas ou est vide.");
+        exit(EXIT_FAILURE);
+    }
+
+    while(pListe->pPremier!=NULL){
+        suppressionImageListe(pListe,NULL);
+    }
+}
+//###########################################
+//PROCEDURE destructionListeImage
+//*****************************************************************************************************//
+//
+// DESCRIPTION Procedure qui supprime tous les éléments de la liste et libère la liste.
+//
+// ENTREE /La référence de la la liste.
+//
+// SORTIE / La mémoire libéré.
+//
+// NOTE -
+//*****************************************************************************************************//
+void destructionListeImage(tListeImage *pListe){
+    //VERIFIE SI LA LISTE EXISTE
+    if (pListe == NULL){
+        printf("Erreur la liste n'existe pas.");
+        exit(EXIT_FAILURE);
+    }else{
+
+        if(pListe->pPremier != NULL){   //si la liste n'est pas vide, la vide.
+            vidageListeImage(pListe);
+        }
+        free(pListe);   //libère la liste
+    }
+
+}
+
+//###########################################
+//PROCEDURE affichageImageListe
+//*****************************************************************************************************//
+//
+// DESCRIPTION Procedure qui affiche toutes les images de la liste.
+//
+// ENTREE / La ref du renderer, la référence de la la liste.
+//
+// SORTIE / L'affichage des images.
+//
+// NOTE -
+//*****************************************************************************************************//
+void affichageListeImage(SDL_Renderer *pRenderer,tListeImage *pListe){
+    //VERIFIE SI LA LISTE EXISTE, ET QUE L'ELEMENT A SUPPRIMER NE VAUT PAS NULL
+    if (pListe == NULL || pListe->pPremier == NULL){
+        printf("Erreur d'affichage, la liste n'existe pas ou est vide.");
+        exit(EXIT_FAILURE);
+    }
+
+    tElementImage *pElement = pListe->pPremier;
+    while(pElement->pSuivant!=NULL){
+        afficheImage(pRenderer, &pElement->stImage);
+        pElement = pElement->pSuivant;
+    }
+
+}
+
+
+///AUTRES METHODES///
 //###########################################
 //PROCEDURE initSDLImage
 //*****************************************************************************************************//

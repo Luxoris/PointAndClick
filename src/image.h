@@ -18,6 +18,30 @@ typedef struct tImage{
     char sEmplImage[IMAGE_TAILLE_CHAINE];
 }tImage;
 
+//DEFINITION DE L'ELEMENT IMAGE
+typedef struct tElementImage tElementImage;
+struct tElementImage{
+    tImage stImage;
+    tElementImage *pSuivant;
+};
+
+//DEFINTITION DE LA PILE D'IMAGE
+typedef struct tListeImage{
+    tElementImage *pPremier;
+    int nbElements;
+}tListeImage;
+
+
+//PROTOTYPE DES METHODES DE LA PILE
+extern tListeImage *initialisationListeImage(tImage stImage);
+extern void insertionImageListe(tListeImage *pListe, tImage stImage, tElementImage *pElementInsetion);
+extern void suppressionImageListe(tListeImage *pListe, tElementImage *pElementSupprimer);
+extern void vidageListeImage(tListeImage *pListe);
+extern void destructionListeImage(tListeImage *pListe);
+extern void affichageListeImage(SDL_Renderer *pRenderer,tListeImage *pListe);
+
+
+
 
 //PROTOTYPE DES METHODES
 

@@ -70,12 +70,12 @@ int main( int argc, char* args[]/*, char * env[]*/ )
 
         gestionEvenements(&stEtatPartie,pstPointeur);
 
-        switch(stLevel){
+       /* switch(stLevel){
             case level1 :
                 break;
             case level2 :
                 break;
-        }
+        }*/
 
 
 
