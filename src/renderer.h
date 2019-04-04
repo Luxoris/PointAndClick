@@ -8,10 +8,9 @@
 #include "tBool.h"
 #include "SDLPoint.h"
 #include "rectangle.h"
-#include "tObjet.h"
-#include "balle.h"
-#include "bouton.h"
-#include "SDL2_texte.h"
+
+
+
 
 //PROTOTYPE
 extern void initMoteurRendu(SDL_Window** pFenetre, SDL_Renderer** pRenderer);
@@ -23,8 +22,8 @@ extern void dessineCercle(SDL_Renderer* pRenderer,SDL_Point tPointCentre,const i
 extern void dessineCerclePlein(SDL_Renderer* pRenderer,SDL_Point tPointCentre,const int nRayon);
 
 extern void dessineRectangle(SDL_Renderer *pRenderer,tRectangle *pstRectangle,tBool bRectanglePlein);
-extern void dessineObjet(SDL_Renderer *pRenderer,tObjet *pstObjet,tBool bRectanglePlein);
-extern void dessineBalle(SDL_Renderer *pRenderer,tBalle *pstBalle, tBool bBallePleine);
-extern void dessineBouton(SDL_Renderer *pRenderer,tBouton *pstBouton, tPropTexte *pstPropTexte);
+
+
+
 
 #endif // RENDERER_H_INCLUDED

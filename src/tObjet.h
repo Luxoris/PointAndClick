@@ -5,13 +5,16 @@
 //appel des bibliothèques
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include <SDL.h>
 #include "vecteur.h"
 #include "rectangle.h"
 #include "define.h"
 #include "collision.h"
+#include "renderer.h"
 
 
+#define OBJET_TAILLE_CHAINE 256
 
 //définition du type structuré
 typedef struct tObjet{
@@ -19,6 +22,31 @@ typedef struct tObjet{
     tVecteur stVecteurVitesse;
     tVecteur stVecteurAcceleration;
 }tObjet;
+
+//DEFINITION DE L'ELEMENT OBJET
+typedef struct tElementObjet tElementObjet;
+struct tElementObjet{
+    tObjet stObjet;
+    char sNom[OBJET_TAILLE_CHAINE];
+    tElementObjet *pSuivant;
+};
+
+//DEFINTITION DE LA LISTE D'OBJET
+typedef struct tListeObjet{
+    tElementObjet *pPremier;
+    int nbElements;
+}tListeObjet;
+
+
+//PROTOTYPE DES METHODES DE LA LISTE
+extern tListeObjet *initialisationListeObjet(const tObjet stObjet,const char sNom[]);
+extern void insertionObjetListe(tListeObjet *pListe, tElementObjet *pElementInsetion,const tObjet stObjet,const char sNom[]);
+extern void suppressionObjetListe(tListeObjet *pListe, tElementObjet *pElementSupprimer);
+extern void vidageListeObjet(tListeObjet *pListe);
+extern void destructionListeObjet(tListeObjet *pListe);
+extern void affichageListeObjet(SDL_Renderer *pRenderer,tListeObjet *pListe);
+extern tElementObjet* recupElementObjetParNom(tListeObjet *pListe,const char sNom[]);
+extern tObjet* recupObjetParNom(tListeObjet *pListe,const char sNom[]);
 
 
 
@@ -41,6 +69,8 @@ extern void modificationVitesseObjet(tObjet *pstObjet);
 extern void modificationAccelerationObjet(tObjet *pstObjet, tVecteur stFrottement);
 extern void mouvementObjet(tObjet *pstObjet, const float fFPS);
 extern void gestionCollisionObjetBords(tObjet *pstObjet, const float fCoorYBordBas, const float fCoorYBordHaut);
+
+extern void dessineObjet(SDL_Renderer *pRenderer,tObjet *pstObjet,tBool bRectanglePlein);
 
 
 #endif // TOBJET_H_INCLUDED

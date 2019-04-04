@@ -188,23 +188,28 @@ void destructionListeImage(tListeImage *pListe){
 // NOTE -
 //*****************************************************************************************************//
 void affichageListeImage(SDL_Renderer *pRenderer,tListeImage *pListe){
-    //VERIFIE SI LA LISTE EXISTE, ET QUE L'ELEMENT A SUPPRIMER NE VAUT PAS NULL
-    if (pListe == NULL || pListe->pPremier == NULL){
-        printf("Erreur d'affichage, la liste n'existe pas ou est vide.");
+    //VERIFIE SI LA LISTE EXISTE
+    if (pListe == NULL){
+        printf("Erreur d'affichage, la liste n'existe pas.");
         exit(EXIT_FAILURE);
     }
 
-    tElementImage *pElement = pListe->pPremier;
-    do{
-        afficheImage(pRenderer, &pElement->stImage);
-        pElement = pElement->pSuivant;
-    }while(pElement->pSuivant!=NULL);
-    afficheImage(pRenderer, &pElement->stImage);    //affiche la dernière image
+    //SI LA LISTE N'EST PAS VIDE
+    if(pListe->pPremier != NULL){
+        tElementImage *pElement = pListe->pPremier;
+        do{
+            afficheImage(pRenderer, &pElement->stImage);
+            pElement = pElement->pSuivant;
+        }while(pElement->pSuivant!=NULL);
+        afficheImage(pRenderer, &pElement->stImage);    //affiche la dernière image
+
+    }
+
 
 }
 
 //###########################################
-//FONCTION recupElementNom
+//FONCTION recupElementImageParNom
 //*****************************************************************************************************//
 //
 // DESCRIPTION Fonction qui récupère la ref de l'élément qui porte le nom.
@@ -215,7 +220,7 @@ void affichageListeImage(SDL_Renderer *pRenderer,tListeImage *pListe){
 //
 // NOTE -
 //*****************************************************************************************************//
-tElementImage* recupElementNom(tListeImage *pListe,const char sNom[]){
+tElementImage* recupElementImageParNom(tListeImage *pListe,const char sNom[]){
 
     //VERIFIE SI LA LISTE EXISTE, ET QU'ELLE N'EST PAS VIDE
     if (pListe == NULL || pListe->pPremier == NULL){
@@ -234,8 +239,8 @@ tElementImage* recupElementNom(tListeImage *pListe,const char sNom[]){
     //passe ne revu tous les éléments et vérifie si les noms correspondent
     do{
         pElement = pElement->pSuivant;  //on récupère l'élément suivant
-        //si l'élément n'est pas le dernier que le nom correspond
-        if((pElement->pSuivant!=NULL)||(strcmp(sNom,pElement->sNom)==0)){
+        //si le nom correspond
+        if(strcmp(sNom,pElement->sNom)==0){
             return pElement;
         }
     }while(pElement->pSuivant!=NULL);   //tant qu'il existe un élément suivant
@@ -247,7 +252,7 @@ tElementImage* recupElementNom(tListeImage *pListe,const char sNom[]){
 
 
 //###########################################
-//FONCTION recupElementNom
+//FONCTION recupImageParNom
 //*****************************************************************************************************//
 //
 // DESCRIPTION Fonction qui récupère la ref de l'image qui porte le nom.
@@ -258,8 +263,8 @@ tElementImage* recupElementNom(tListeImage *pListe,const char sNom[]){
 //
 // NOTE -
 //*****************************************************************************************************//
-tImage* recupImageNom(tListeImage *pListe,const char sNom[]){
-    tElementImage *pElement = recupElementNom(pListe,sNom);
+tImage* recupImageParNom(tListeImage *pListe,const char sNom[]){
+    tElementImage *pElement = recupElementImageParNom(pListe,sNom);
     if(pElement==NULL){
         return NULL;
     }else{

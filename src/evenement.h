@@ -8,7 +8,6 @@
 #include "define.h"
 #include "tObjet.h"
 #include "tBool.h"
-#include "balle.h"
 #include "pointeur.h"
 
 //prototype des fonctions

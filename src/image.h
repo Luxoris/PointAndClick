@@ -26,22 +26,22 @@ struct tElementImage{
     tElementImage *pSuivant;
 };
 
-//DEFINTITION DE LA PILE D'IMAGE
+//DEFINTITION DE LA LISTE D'IMAGE
 typedef struct tListeImage{
     tElementImage *pPremier;
     int nbElements;
 }tListeImage;
 
 
-//PROTOTYPE DES METHODES DE LA PILE
+//PROTOTYPE DES METHODES DE LA LISTE
 extern tListeImage *initialisationListeImage(const tImage stImage,const char sNom[]);
 extern void insertionImageListe(tListeImage *pListe, tElementImage *pElementInsetion,const tImage stImage,const char sNom[]);
 extern void suppressionImageListe(tListeImage *pListe, tElementImage *pElementSupprimer);
 extern void vidageListeImage(tListeImage *pListe);
 extern void destructionListeImage(tListeImage *pListe);
 extern void affichageListeImage(SDL_Renderer *pRenderer,tListeImage *pListe);
-extern tElementImage* recupElementNom(tListeImage *pListe,const char sNom[]);
-extern tImage* recupImageNom(tListeImage *pListe,const char sNom[]);
+extern tElementImage* recupElementImageParNom(tListeImage *pListe,const char sNom[]);
+extern tImage* recupImageParNom(tListeImage *pListe,const char sNom[]);
 
 
 

@@ -13,12 +13,12 @@
 #include "pointeur.h"
 #include "image.h"
 #include "mixer.h"
+#include "manager.h"
 
 
 
 int main( int argc, char* args[]/*, char * env[]*/ )
 {
-
 
     ///DECLARATION ET INITIALISATION DES VARIABLES///
     SDL_Window *pFenetre;
@@ -27,24 +27,11 @@ int main( int argc, char* args[]/*, char * env[]*/ )
     Uint32 nTempsDebutBoucle=0;
     Uint32 nTempsFinBoucle=0;
     tEtatPartie stEtatPartie=enCours;
-
+    tManaComposant *pManaComposant = NULL;
 
     ///INITIALISATION ET DECLARATION DU POINTEUR DE LA SOURIS///
      tPointeur *pstPointeur=NULL;
      initPointeur(&pstPointeur,creePoint(0,0),false,false,false);
-
-    ///INITIALISATION ET DECLARATION DU TEXTE///
-    //initilisation des propriétés du texte:
-    tPropTexte stPropTexte, stPropTexteBouton;
-    setPropTexte(&stPropTexte,TAILLE_POLICE_SCORE,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_BLEU,"",TTF_Charset_Latin1,TTF_Mode_Solid);
-    setPropTexte(&stPropTexteBouton,TAILLE_POLICE_BOUTON,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_NOIR,"",TTF_Charset_Latin1,TTF_Mode_Solid);
-
-    ///CREATION, ALLOCATION, INITIALISATION DES BOUTONS///
-
-
-
-
-
 
     ///INITIALISATION DE LA SDL, DE LA FENETRE, DU RENDERER, DU TTF///
     initSDL();
@@ -53,23 +40,39 @@ int main( int argc, char* args[]/*, char * env[]*/ )
     initSDLImage();
     initTTF();
     initMixer();
+    initManaComposant(&pManaComposant,NULL,NULL,NULL,NULL,NULL);
 
     ///DECLARATION ET INITIALISATION DE LA MUSIQUE --- LECTURE///
     Mix_Music *pMusique = Mix_LoadMUS("./assets/son/Never.wav");
     Mix_PlayMusic(pMusique, 1);
 
 
-    ///TEST DES IMAGES///
-        tObjet *pObjet = NULL;
-        initObjet(&pObjet, creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0));
+    ///INITIALISATION ET DECLARATION DE LA LISTE DES PROPRIETES DES TEXTES:
+    pManaComposant->pListePropTexte = initialisationListePropTexte(creePropTexte(TAILLE_POLICE_BOUTON,TTF_FONT_VERDANA,SDL_CL_ROUGE,SDL_CL_BLEU,"",TTF_Charset_Latin1,TTF_Mode_Solid),"boutonMenu");
+    insertionPropTexteListe(pManaComposant->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_SCORE,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_ROUGE,"",TTF_Charset_Latin1,TTF_Mode_Solid),"titreJeu");
+    insertionPropTexteListe(pManaComposant->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_SCORE,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_NOIR,"",TTF_Charset_Latin1,TTF_Mode_Solid),"dialogue");
 
-        tObjet *pObjet2 = NULL;
-        initObjet(&pObjet2, creeRectangle(creePoint(WINDOW_LARGEUR*0.5-200,WINDOW_HAUTEUR*0.5-200),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0));
+    ///INITIALISATION ET DECLARATION DE LA LISTE D'OBJET
+    pManaComposant->pListeObjet = initialisationListeObjet(creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR/(NB_BOUTON_MENU_PRINCIPAL+1)),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"mPpEmp1");
+    insertionObjetListe(pManaComposant->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,(WINDOW_HAUTEUR/(NB_BOUTON_MENU_PRINCIPAL+1))*2),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"mPpEmp2");
+    insertionObjetListe(pManaComposant->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,(WINDOW_HAUTEUR/(NB_BOUTON_MENU_PRINCIPAL+1))*3),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"mPpEmp3");
+    insertionObjetListe(pManaComposant->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,(WINDOW_HAUTEUR/(NB_BOUTON_MENU_PRINCIPAL+1))*4),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"mPpEmp4");
+    insertionObjetListe(pManaComposant->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR-100,WINDOW_HAUTEUR-50),creeVecteur(0,0),creeVecteur(0,0)),"titreJeu");
+    insertionObjetListe(pManaComposant->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"centre");
 
-        tListeImage *pListeImage = NULL;
-        pListeImage = initialisationListeImage(creeImage(pObjet,ABRICOT_JPG),"a1");
+    ///INITIALISATION ET DECLARATION DE LA LISTE DE BOUTONS
+    pManaComposant->pListeBouton = initialisationListeBouton(creeBouton(recupObjetParNom(pManaComposant->pListeObjet,"mPpEmp1"),"Nouvelle Partie",recupPropTexteParNom(pManaComposant->pListePropTexte,"boutonMenu"),false,false,nouvelle_partie),"nouvellePartie");
+    insertionBoutonListe(pManaComposant->pListeBouton,NULL,creeBouton(recupObjetParNom(pManaComposant->pListeObjet,"mPpEmp2"),"Charger",recupPropTexteParNom(pManaComposant->pListePropTexte,"boutonMenu"),false,false,charger),"charger");
+    insertionBoutonListe(pManaComposant->pListeBouton,NULL,creeBouton(recupObjetParNom(pManaComposant->pListeObjet,"mPpEmp3"),"Options",recupPropTexteParNom(pManaComposant->pListePropTexte,"boutonMenu"),false,false,options),"options");
+    insertionBoutonListe(pManaComposant->pListeBouton,NULL,creeBouton(recupObjetParNom(pManaComposant->pListeObjet,"mPpEmp4"),"Quitter",recupPropTexteParNom(pManaComposant->pListePropTexte,"boutonMenu"),false,false,fermerJeu),"fermerJeu");
 
-        insertionImageListe(pListeImage,NULL,creeImage(pObjet2,ABRICOT_PNG),"a2");
+
+    ///INITIALISATION ET DECLARATION DES IMAGES
+    pManaComposant->pListeImage=initialisationListeImage(creeImage(recupObjetParNom(pManaComposant->pListeObjet,"centre"),ABRICOT_JPG),"fondEcranMenuPrincipale");
+
+    ///INITIALISATION ET DECLARATION DES TEXTES
+    pManaComposant->pListeTexte=initialisationListeTexte(creeTexte(NOM_DU_JEU,recupObjetParNom(pManaComposant->pListeObjet,"titreJeu"),recupPropTexteParNom(pManaComposant->pListePropTexte,"titreJeu")),"titreJeu");
+
 
     ///BOUCLE DE JEU///
     while(stEtatPartie!=quitter){
@@ -85,11 +88,16 @@ int main( int argc, char* args[]/*, char * env[]*/ )
         SDL_RenderClear(pRenderer);
 
         gestionEvenements(&stEtatPartie,pstPointeur);
+        gestionListeBoutonPointeur(pManaComposant->pListeBouton,pstPointeur);
 
-        //afficheImage(pRenderer,recupImageNom(pListeImage,"a2"));
-        //afficheImage(pRenderer,recupImageNom(pListeImage,"a1"));
 
-        affichageListeImage(pRenderer,pListeImage);
+
+        SDL_SetRenderDrawColor(pRenderer,255,255,255,255);
+        //affichageListeImage(pRenderer,pManaComposant->pListeImage);
+        //affichageListeTexte(pRenderer,pManaComposant->pListeTexte);
+        //affichageListeObjet(pRenderer,pManaComposant->pListeObjet);
+        affichageListeBouton(pRenderer,pManaComposant->pListeBouton);
+
 
        /* switch(stLevel){
             case level1 :
@@ -118,7 +126,7 @@ int main( int argc, char* args[]/*, char * env[]*/ )
 
 
     ///LIBERATION DES OBJETS///
-
+    freeManaComposant(pManaComposant);
 
 
     ///ARRET TTF, RENDERER, FENETRE, SDL///

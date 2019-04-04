@@ -17,7 +17,7 @@ void initMixer(){
 
     int flags=MIX_INIT_OGG|MIX_INIT_MOD|MIX_INIT_MP3;
     int initted=Mix_Init(flags);
-    if(initted&flags != flags) {
+    if((initted&flags) != flags) {
         printf("Mix_Init: Failed to init : %s\n", Mix_GetError());
         // handle error
     }else{

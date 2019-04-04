@@ -2,7 +2,7 @@
 #define DEFINE_H_INCLUDED
 #pragma once
 
-#define NOM_DU_JEU "Pong"
+#define NOM_DU_JEU "PointAndClick"
 
 #define WINDOW_LARGEUR 1280
 #define WINDOW_HAUTEUR 720
@@ -11,7 +11,7 @@
 #define ABRICOT_JPG "./assets/abricot.jpg"
 
 
-//déclaration des définions de la partie
+//déclaration des définitions de la partie
 
 #define MARGE_BORD 5
 #define SCORE_DEPART 0
@@ -24,9 +24,13 @@
 
 #define DELAI_REPRISE_PARTIE 500
 
+
+///BOUTONS
 #define TAILLE_POLICE_BOUTON (16)
 #define HAUTEUR_BOUTON (TAILLE_POLICE_BOUTON*2)
 #define LARGEUR_BOUTON (WINDOW_LARGEUR*0.12)
+#define NB_BOUTON_MENU_PRINCIPAL 4
+
 
 
 #define TAILLE_POLICE_SCORE (32)
