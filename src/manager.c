@@ -1,22 +1,52 @@
 #include "manager.h"
 
+
+extern void initManaComposant(tManaComposant **ppManaComposant);
+extern void initManaComposantEtComposant(tManaComposant **ppManaComposant);
+
+
 //###########################################
-//PROCEDURE initBouton
+//PROCEDURE initManaComposant
 //*****************************************************************************************************//
 //
 // DESCRIPTION PROCEDURE qui initialise et alloue un manager de composants.
 //
-// ENTREE /La reférence du pointeur de pointeur du manager de composants, la ref des attributs du manager.
+// ENTREE /La reférence du pointeur de pointeur du manager de composants.
 //
-// SORTIE /La référence du pointeur de composants modifiée, les valeurs du manager de composants modifiées.
+// SORTIE /La référence du pointeur de composants modifiée, les valeurs du manager de composants à NULL.
 //
 // NOTE -
 //*****************************************************************************************************//
-void initManaComposant(tManaComposant **ppManaComposant,tListeBouton *pListeBouton, tListeImage *pListeImage, tListeObjet *pListeObjet, tListeTexte *pListeTexte, tListePropTexte *pListePropTexte){
+void initManaComposant(tManaComposant **ppManaComposant){
     if((*ppManaComposant = malloc(sizeof(tManaComposant)))==NULL){
         printf("Erreur d'allocation du manager de composants !");
     }else{
-        setManaComposant(*ppManaComposant,pListeBouton,pListeImage,pListeObjet,pListeTexte,pListePropTexte);
+        setManaComposant(*ppManaComposant,NULL,NULL,NULL,NULL,NULL);
+    }
+
+}
+
+//###########################################
+//PROCEDURE initManaComposantEtComposant
+//*****************************************************************************************************//
+//
+// DESCRIPTION PROCEDURE qui initialise et alloue un manager de composants ainsi que ses composants.
+//
+// ENTREE /La reférence du pointeur de pointeur du manager de composants..
+//
+// SORTIE /La référence du pointeur de composants modifiée, les valeurs du manager de composants initialisés.
+//
+// NOTE -
+//*****************************************************************************************************//
+void initManaComposantEtComposant(tManaComposant **ppManaComposant){
+    if((*ppManaComposant = malloc(sizeof(tManaComposant)))==NULL){
+        printf("Erreur d'allocation du manager de composants !");
+    }else{
+        (*ppManaComposant)->pListeBouton = initialisationListeBouton();
+        (*ppManaComposant)->pListeImage = initialisationListeImage();
+        (*ppManaComposant)->pListeTexte = initialisationListeTexte();
+        (*ppManaComposant)->pListePropTexte = initialisationListePropTexte();
+        (*ppManaComposant)->pListeObjet = initialisationListeObjet();
     }
 
 }

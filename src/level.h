@@ -3,31 +3,18 @@
 #pragma once
 
 //APPEL DES BIBLIOTHEQUES
-
+#include "manager.h"
 
 //DEFINITION DES TYPES STRUCTURES
-typedef enum{level1, level2, level3, level4, level5}tLevel;
+typedef enum tLevel{level1, level2, level3, level4, level5}tLevel;
 
+typedef struct tEtatJeu{
+    tLevel stLevel;
+    int nAvancementLevel;
+}tEtatJeu;
 
 //PROTOTYPE DES METHODES
+extern void gestionLevel1(tManaComposant *pMana, tEtatJeu *pEtatJeu);
 
-void afficheMenu(tLevel * pLevel, tPileBouton * PileBouton);
-
-void gestionCollisionsBoutons();
-void gestionActionsBoutons(tPileBoutons *pBoutons);
-void affichageTextes(tPileTexte *pTexte);
-void afficheImages(tPileImage *pImage);
-
-/*
-image : estInvisble
-image : estSurvole
-image : estCliqué
-image : nom
-
-bouton : nom
-
-texte : nom
-
-*/
 
 #endif // LEVEL_H_INCLUDED

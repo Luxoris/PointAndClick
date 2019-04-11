@@ -17,22 +17,18 @@
 //
 // NOTE -
 //*****************************************************************************************************//
-tListeImage *initialisationListeImage(const tImage stImage,const char sNom[]){
+tListeImage *initialisationListeImage(){
 
     tListeImage *pListe = malloc(sizeof(tListeImage));
-    tElementImage *pElement = malloc(sizeof(tElementImage));
 
-    if (pListe == NULL || pElement == NULL)
+    if (pListe == NULL)
     {
-        printf("Erreur lors de l'initialisation de la liste d'image.");
+        printf("\nErreur lors de l'initialisation de la liste d'image.");
         exit(EXIT_FAILURE);
+    }else{
+        pListe->nbElements = 0;
+        pListe->pPremier = NULL;
     }
-
-    pElement->stImage = stImage;
-    pElement->pSuivant = NULL;
-    strcpy(pElement->sNom,sNom);//ajout du nom de l'élément
-    pListe->pPremier = pElement;
-
     return pListe;
 }
 
@@ -52,7 +48,7 @@ void insertionImageListe(tListeImage *pListe, tElementImage *pElementInsetion,co
     tElementImage *pElement = malloc(sizeof(tElementImage));
     if (pListe == NULL || pElement == NULL) //vérifie que l'allocation a fonctionné
     {
-        printf("Erreur lors de l'allocation d'un element de la liste d'image.");
+        printf("\nErreur lors de l'allocation d'un element de la liste d'image.");
         exit(EXIT_FAILURE);
     }
     pElement->stImage = stImage;    //l'élément reçoit la référence de l'image
@@ -94,35 +90,51 @@ void suppressionImageListe(tListeImage *pListe, tElementImage *pElementSupprimer
 
     //VERIFIE SI LA LISTE EXISTE, ET QUE L'ELEMENT A SUPPRIMER NE VAUT PAS NULL
     if (pListe == NULL){
-        printf("Erreur lors de la suppression d'un element de la liste d'image, la liste n'existe pas.");
+        printf("\nErreur lors de la suppression d'un element de la liste d'image, la liste n'existe pas.");
         exit(EXIT_FAILURE);
     }
 
-    //si la liste n'est pas vide
-    if (pListe->pPremier != NULL){
+    if(pElementSupprimer == NULL){
+        printf("\nErreur lors de la supression de l'élément, l'élément vaut NULL");
+    }else{
+        //si la liste n'est pas vide
+        if (pListe->pPremier != NULL){
+            tElementImage *pElement = NULL;
 
-        //Si l'élément a suprimer n'est pas le premier de la liste.
-        if((pElementSupprimer == pListe->pPremier) || (pElementSupprimer == NULL)){  //l'élément a supprimer est le premier de la liste
-            pListe->pPremier = NULL; // le premier element de la liste recoit NULL
-        }else{
+            //Si l'élément a suprimer est le premier de la liste.
+            if(pElementSupprimer == pListe->pPremier){
 
-        // SINON parcourt les éléments de la liste pour trouver l'élément précédent a supprimer.
+                //pElement récupère la référence du premier élément de la liste
+                pElement = pListe->pPremier;
 
-            tElementImage *pElement = pListe->pPremier;
+                //la liste récupère le second élément, et le définit comme premier élément
+                pListe->pPremier = pListe->pPremier->pSuivant; //la liste récupère la référence de l'élément suivant
 
-            while ((pElement != NULL) && (pElement->pSuivant != pElementSupprimer)){
-                pElement = pElement->pSuivant;
+                //libère l'élément a supprimer.
+                free(pElement);
+            }else{
+
+            // SINON parcourt les éléments de la liste pour trouver l'élément précédent a supprimer.
+
+                pElement = pListe->pPremier;
+
+                while ((pElement != NULL) && (pElement->pSuivant != pElementSupprimer)){
+                    pElement = pElement->pSuivant;
+                }
+
+                //raccorche l'lément précédent avec le suivant
+                pElement->pSuivant = pElementSupprimer->pSuivant;
+
+                free(pElementSupprimer);    //libère l'élément a supprimer.
             }
 
-            //raccorche l'lément précédent avec le suivant
-            pElement->pSuivant = pElementSupprimer->pSuivant;
+            pListe->nbElements--;       //décrémente le nombre d'éléments de la liste
+        }else{
+            printf("\nErreur lors de la suppression d'un element de la liste d'image, la liste est vide.");
         }
-
-        free(pElementSupprimer);    //libère l'élément a supprimer.
-        pListe->nbElements--;       //décrémente le nombre d'éléments de la liste
-    }else{
-        printf("Erreur lors de la suppression d'un element de la liste d'image, la liste est vide.");
     }
+
+
 }
 
 //###########################################
@@ -140,12 +152,12 @@ void suppressionImageListe(tListeImage *pListe, tElementImage *pElementSupprimer
 void vidageListeImage(tListeImage *pListe){
     //VERIFIE SI LA LISTE EXISTE, ET QUE L'ELEMENT A SUPPRIMER NE VAUT PAS NULL
     if (pListe == NULL || pListe->pPremier == NULL){
-        printf("Erreur la liste n'existe pas ou est vide.");
+        printf("\nErreur la liste n'existe pas ou est vide.");
         exit(EXIT_FAILURE);
     }
 
     while(pListe->pPremier!=NULL){
-        suppressionImageListe(pListe,NULL);
+        suppressionImageListe(pListe,pListe->pPremier);
     }
 }
 //###########################################
@@ -163,7 +175,7 @@ void vidageListeImage(tListeImage *pListe){
 void destructionListeImage(tListeImage *pListe){
     //VERIFIE SI LA LISTE EXISTE
     if (pListe == NULL){
-        printf("Erreur la liste n'existe pas.");
+        printf("\nErreur la liste n'existe pas.");
         exit(EXIT_FAILURE);
     }else{
 
@@ -190,21 +202,20 @@ void destructionListeImage(tListeImage *pListe){
 void affichageListeImage(SDL_Renderer *pRenderer,tListeImage *pListe){
     //VERIFIE SI LA LISTE EXISTE
     if (pListe == NULL){
-        printf("Erreur d'affichage, la liste n'existe pas.");
+        printf("\nErreur d'affichage, la liste n'existe pas.");
         exit(EXIT_FAILURE);
     }
 
     //SI LA LISTE N'EST PAS VIDE
     if(pListe->pPremier != NULL){
         tElementImage *pElement = pListe->pPremier;
-        do{
+        while(pElement->pSuivant!=NULL){
             afficheImage(pRenderer, &pElement->stImage);
             pElement = pElement->pSuivant;
-        }while(pElement->pSuivant!=NULL);
+        }
         afficheImage(pRenderer, &pElement->stImage);    //affiche la dernière image
 
     }
-
 
 }
 
@@ -224,8 +235,8 @@ tElementImage* recupElementImageParNom(tListeImage *pListe,const char sNom[]){
 
     //VERIFIE SI LA LISTE EXISTE, ET QU'ELLE N'EST PAS VIDE
     if (pListe == NULL || pListe->pPremier == NULL){
-        printf("Erreur, la liste n'existe pas ou est vide.");
-        exit(EXIT_FAILURE);
+        printf("\nErreur, la liste n'existe pas ou est vide.");
+        return NULL;
     }
 
     tElementImage *pElement = pListe->pPremier;
@@ -245,7 +256,7 @@ tElementImage* recupElementImageParNom(tListeImage *pListe,const char sNom[]){
         }
     }while(pElement->pSuivant!=NULL);   //tant qu'il existe un élément suivant
 
-    printf("Le nom ne correspond a aucun élément");
+    printf("\nLe nom ne correspond a aucun élément");
     return NULL;
 
 }
@@ -290,7 +301,7 @@ void initSDLImage(){
     int initted = IMG_Init(flags);  //initialise SDL_Image pour les PNG et les JPG
 
     if((initted&flags) != flags){ // Initialisation de la SDL
-            printf("Erreur d'initialisation de la SDL Image JPG et PNG : %s",IMG_GetError());
+            printf("\nErreur d'initialisation de la SDL Image JPG et PNG : %s",IMG_GetError());
     }
 }
 
@@ -309,7 +320,7 @@ void initSDLImage(){
 //*****************************************************************************************************//
 void initImage(tImage **ppstImage,tObjet *pstObjet, char sEmplImage[]){
     if((*ppstImage = malloc(sizeof(tImage)))==NULL){
-        printf("Erreur d'allocation de l'image %s !",sEmplImage);
+        printf("\nErreur d'allocation de l'image %s !",sEmplImage);
     }else{
        setImage(*ppstImage,pstObjet, sEmplImage);
     }
@@ -445,11 +456,11 @@ void afficheImage(SDL_Renderer *pRenderer,tImage *pstImage){
 
     //si la surface a été créer
     if(pstSurfaceImage==NULL){
-        printf("Impossible de creer la surface de l'image. - %s\n", IMG_GetError());
+        printf("\nImpossible de creer la surface de l'image. - %s\n", IMG_GetError());
     }else{
         //vérifie si la texture a bien été crée
         if((pstTexture=SDL_CreateTextureFromSurface(pRenderer,pstSurfaceImage))==NULL){
-            printf("Erreur lors de la création de la texture. - %s\n", SDL_GetError());
+            printf("\nErreur lors de la création de la texture. - %s\n", SDL_GetError());
         }else{
             SDL_FreeSurface(pstSurfaceImage);   //libère la surface
 

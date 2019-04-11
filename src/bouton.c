@@ -8,28 +8,23 @@
 //
 // DESCRIPTION Fonction qui initialise une liste de bouton.
 //
-// ENTREE /La référence de la première bouton de la liste, le nom de la première bouton de la liste.
+// ENTREE /
 //
 // SORTIE / La référence de la liste de bouton
 //
 // NOTE -
 //*****************************************************************************************************//
-tListeBouton *initialisationListeBouton(const tBouton stBouton,const char sNom[]){
+tListeBouton *initialisationListeBouton(){
 
     tListeBouton *pListe = malloc(sizeof(tListeBouton));
-    tElementBouton *pElement = malloc(sizeof(tElementBouton));
 
-    if (pListe == NULL || pElement == NULL)
-    {
-        printf("Erreur lors de l'initialisation de la liste de bouton.");
+    if (pListe == NULL){
+        printf("\nErreur lors de l'initialisation de la liste de bouton.");
         exit(EXIT_FAILURE);
+    }else{
+        pListe->nbElements = 0;
+        pListe->pPremier = NULL;
     }
-
-    pElement->stBouton = stBouton;
-    pElement->pSuivant = NULL;
-    strcpy(pElement->sNom,sNom);//ajout du nom de l'élément
-    pListe->pPremier = pElement;
-
     return pListe;
 }
 
@@ -49,7 +44,7 @@ void insertionBoutonListe(tListeBouton *pListe, tElementBouton *pElementInsetion
     tElementBouton *pElement = malloc(sizeof(tElementBouton));
     if (pListe == NULL || pElement == NULL) //vérifie que l'allocation a fonctionné
     {
-        printf("Erreur lors de l'allocation d'un element de la liste de bouton.");
+        printf("\nErreur lors de l'allocation d'un element de la liste de bouton.");
         exit(EXIT_FAILURE);
     }
     pElement->stBouton = stBouton;    //l'élément reçoit la référence de le bouton
@@ -91,35 +86,49 @@ void suppressionBoutonListe(tListeBouton *pListe, tElementBouton *pElementSuppri
 
     //VERIFIE SI LA LISTE EXISTE, ET QUE L'ELEMENT A SUPPRIMER NE VAUT PAS NULL
     if (pListe == NULL){
-        printf("Erreur lors de la suppression d'un element de la liste de bouton, la liste n'existe pas.");
+        printf("\nErreur lors de la suppression d'un element de la liste de bouton, la liste n'existe pas.");
         exit(EXIT_FAILURE);
     }
 
-    //si la liste n'est pas vide
-    if (pListe->pPremier != NULL){
+    if(pElementSupprimer == NULL){
+        printf("\nErreur lors de la supression de l'élément, l'élément vaut NULL");
+    }else{
+        //si la liste n'est pas vide
+        if (pListe->pPremier != NULL){
+            tElementBouton *pElement = NULL;
 
-        //Si l'élément a suprimer n'est pas le premier de la liste.
-        if((pElementSupprimer == pListe->pPremier) || (pElementSupprimer == NULL)){  //l'élément a supprimer est le premier de la liste
-            pListe->pPremier = NULL; // le premier element de la liste recoit NULL
-        }else{
+            //Si l'élément a suprimer est le premier de la liste.
+            if(pElementSupprimer == pListe->pPremier){
+                //pElement récupère la référence du premier élément de la liste
+                pElement = pListe->pPremier;
 
-        // SINON parcourt les éléments de la liste pour trouver l'élément précédent a supprimer.
+                //la liste récupère le second élément, et le définit comme premier élément
+                pListe->pPremier = pListe->pPremier->pSuivant; //la liste récupère la référence de l'élément suivant
 
-            tElementBouton *pElement = pListe->pPremier;
+                //libère l'élément a supprimer.
+                free(pElement);
+            }else{
 
-            while ((pElement != NULL) && (pElement->pSuivant != pElementSupprimer)){
-                pElement = pElement->pSuivant;
+            // SINON parcourt les éléments de la liste pour trouver l'élément précédent a supprimer.
+
+                pElement = pListe->pPremier;
+
+                while ((pElement != NULL) && (pElement->pSuivant != pElementSupprimer)){
+                    pElement = pElement->pSuivant;
+                }
+
+                //raccorche l'lément précédent avec le suivant
+                pElement->pSuivant = pElementSupprimer->pSuivant;
+
+                free(pElementSupprimer);    //libère l'élément a supprimer.
             }
 
-            //raccorche l'lément précédent avec le suivant
-            pElement->pSuivant = pElementSupprimer->pSuivant;
+            pListe->nbElements--;       //décrémente le nombre d'éléments de la liste
+        }else{
+            printf("\nErreur lors de la suppression d'un element de la liste de bouton, la liste est vide.");
         }
-
-        free(pElementSupprimer);    //libère l'élément a supprimer.
-        pListe->nbElements--;       //décrémente le nombre d'éléments de la liste
-    }else{
-        printf("Erreur lors de la suppression d'un element de la liste de bouton, la liste est vide.");
     }
+
 }
 
 //###########################################
@@ -137,12 +146,12 @@ void suppressionBoutonListe(tListeBouton *pListe, tElementBouton *pElementSuppri
 void vidageListeBouton(tListeBouton *pListe){
     //VERIFIE SI LA LISTE EXISTE, ET QUE L'ELEMENT A SUPPRIMER NE VAUT PAS NULL
     if (pListe == NULL || pListe->pPremier == NULL){
-        printf("Erreur la liste n'existe pas ou est vide.");
+        printf("\nErreur la liste n'existe pas ou est vide.");
         exit(EXIT_FAILURE);
     }
 
     while(pListe->pPremier!=NULL){
-        suppressionBoutonListe(pListe,NULL);
+        suppressionBoutonListe(pListe,pListe->pPremier);
     }
 }
 //###########################################
@@ -160,7 +169,7 @@ void vidageListeBouton(tListeBouton *pListe){
 void destructionListeBouton(tListeBouton *pListe){
     //VERIFIE SI LA LISTE EXISTE
     if (pListe == NULL){
-        printf("Erreur la liste n'existe pas.");
+        printf("\nErreur la liste n'existe pas.");
         exit(EXIT_FAILURE);
     }else{
 
@@ -187,17 +196,17 @@ void destructionListeBouton(tListeBouton *pListe){
 void affichageListeBouton(SDL_Renderer *pRenderer,tListeBouton *pListe){
     //VERIFIE SI LA LISTE EXISTE
     if (pListe == NULL){
-        printf("Erreur d'affichage, la liste n'existe pas.");
+        printf("\nErreur d'affichage, la liste n'existe pas.");
         exit(EXIT_FAILURE);
     }
 
     //SI LA LISTE N'EST PAS VIDE
     if(pListe->pPremier != NULL){
        tElementBouton *pElement = pListe->pPremier;
-        do{
+        while(pElement->pSuivant!=NULL){
             dessineBouton(pRenderer, &pElement->stBouton);
             pElement = pElement->pSuivant;
-        }while(pElement->pSuivant!=NULL);
+        }
         dessineBouton(pRenderer, &pElement->stBouton);    //affiche le dernier bouton
     }
 
@@ -219,8 +228,8 @@ tElementBouton* recupElementBoutonParNom(tListeBouton *pListe,const char sNom[])
 
     //VERIFIE SI LA LISTE EXISTE, ET QU'ELLE N'EST PAS VIDE
     if (pListe == NULL || pListe->pPremier == NULL){
-        printf("Erreur, la liste n'existe pas ou est vide.");
-        exit(EXIT_FAILURE);
+        printf("\nErreur, la liste n'existe pas ou est vide.");
+        return NULL;
     }
 
     tElementBouton *pElement = pListe->pPremier;
@@ -240,7 +249,7 @@ tElementBouton* recupElementBoutonParNom(tListeBouton *pListe,const char sNom[])
         }
     }while(pElement->pSuivant!=NULL);   //tant qu'il existe un élément suivant
 
-    printf("Le nom ne correspond a aucun élément");
+    printf("\nLe nom ne correspond a aucun élément");
     return NULL;
 
 }
@@ -284,7 +293,7 @@ void gestionListeBoutonPointeur(tListeBouton *pListe, tPointeur *pstPointeur){
 
     //VERIFIE SI LA LISTE EXISTE, ET QU'ELLE N'EST PAS VIDE
     if (pListe == NULL){
-        printf("Erreur lors de la gestion de la liste de bouton, la liste n'existe pas.");
+        printf("\nErreur lors de la gestion de la liste de bouton, la liste n'existe pas.");
     }
 
     if(pListe->pPremier != NULL){
@@ -316,7 +325,7 @@ void gestionListeBoutonPointeur(tListeBouton *pListe, tPointeur *pstPointeur){
 //*****************************************************************************************************//
 void initBouton(tBouton **ppBouton,tObjet *pstObjet, const char sTexte[],tPropTexte *pstPropTexte,const tBool stSurvole, const tBool stClique, const int nCodeAction){
     if((*ppBouton = malloc(sizeof(tBouton)))==NULL){
-        printf("Erreur d'allocation du bouton !");
+        printf("\nErreur d'allocation du bouton !");
     }else{
         setBouton(*ppBouton,pstObjet,sTexte,pstPropTexte,stSurvole,stClique,nCodeAction);
 

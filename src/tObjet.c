@@ -9,28 +9,23 @@
 //
 // DESCRIPTION Fonction qui initialise une liste d'objet.
 //
-// ENTREE /La référence de la première objet de la liste, le nom de la première objet de la liste.
+// ENTREE /
 //
 // SORTIE / La référence de la liste d'objet
 //
 // NOTE -
 //*****************************************************************************************************//
-tListeObjet *initialisationListeObjet(const tObjet stObjet,const char sNom[]){
+tListeObjet *initialisationListeObjet(){
 
     tListeObjet *pListe = malloc(sizeof(tListeObjet));
-    tElementObjet *pElement = malloc(sizeof(tElementObjet));
 
-    if (pListe == NULL || pElement == NULL)
-    {
-        printf("Erreur lors de l'initialisation de la liste d'objet.");
+    if (pListe == NULL){
+        printf("\nErreur lors de l'initialisation de la liste d'objet.");
         exit(EXIT_FAILURE);
+    }else{
+        pListe->nbElements = 0;
+        pListe->pPremier = NULL;
     }
-
-    pElement->stObjet = stObjet;
-    pElement->pSuivant = NULL;
-    strcpy(pElement->sNom,sNom);//ajout du nom de l'élément
-    pListe->pPremier = pElement;
-
     return pListe;
 }
 
@@ -50,7 +45,7 @@ void insertionObjetListe(tListeObjet *pListe, tElementObjet *pElementInsetion,co
     tElementObjet *pElement = malloc(sizeof(tElementObjet));
     if (pListe == NULL || pElement == NULL) //vérifie que l'allocation a fonctionné
     {
-        printf("Erreur lors de l'allocation d'un element de la liste d'objet.");
+        printf("\nErreur lors de l'allocation d'un element de la liste d'objet.");
         exit(EXIT_FAILURE);
     }
     pElement->stObjet = stObjet;    //l'élément reçoit la référence de l'objet
@@ -92,35 +87,53 @@ void suppressionObjetListe(tListeObjet *pListe, tElementObjet *pElementSupprimer
 
     //VERIFIE SI LA LISTE EXISTE, ET QUE L'ELEMENT A SUPPRIMER NE VAUT PAS NULL
     if (pListe == NULL){
-        printf("Erreur lors de la suppression d'un element de la liste d'objet, la liste n'existe pas.");
+        printf("\nErreur lors de la suppression d'un element de la liste d'objet, la liste n'existe pas.");
         exit(EXIT_FAILURE);
     }
 
-    //si la liste n'est pas vide
-    if (pListe->pPremier != NULL){
+    if(pElementSupprimer == NULL){
+        printf("\nErreur lors de la supression de l'élément, l'élément vaut NULL");
+    }else{
+        //si la liste n'est pas vide
+        if (pListe->pPremier != NULL){
+            tElementObjet *pElement = NULL;
+            //Si l'élément a suprimer est le premier de la liste.
+            if(pElementSupprimer == pListe->pPremier){
 
-        //Si l'élément a suprimer n'est pas le premier de la liste.
-        if((pElementSupprimer == pListe->pPremier) || (pElementSupprimer == NULL)){  //l'élément a supprimer est le premier de la liste
-            pListe->pPremier = NULL; // le premier element de la liste recoit NULL
-        }else{
+                //pElement récupère la référence du premier élément de la liste
+                pElement = pListe->pPremier;
 
-        // SINON parcourt les éléments de la liste pour trouver l'élément précédent a supprimer.
+                //la liste récupère le second élément, et le définit comme premier élément
+                pListe->pPremier = pListe->pPremier->pSuivant; //la liste récupère la référence de l'élément suivant
 
-            tElementObjet *pElement = pListe->pPremier;
+                //libère l'élément a supprimer.
+                free(pElement);
 
-            while ((pElement != NULL) && (pElement->pSuivant != pElementSupprimer)){
-                pElement = pElement->pSuivant;
+            }else{
+
+            // SINON parcourt les éléments de la liste pour trouver l'élément précédent a supprimer.
+
+                pElement = pListe->pPremier;
+
+                while ((pElement != NULL) && (pElement->pSuivant != pElementSupprimer)){
+                    pElement = pElement->pSuivant;
+                }
+
+                //raccorche l'élément précédent avec le suivant
+                pElement->pSuivant = pElementSupprimer->pSuivant;
+
+                free(pElementSupprimer);    //libère l'élément a supprimer.
             }
 
-            //raccorche l'lément précédent avec le suivant
-            pElement->pSuivant = pElementSupprimer->pSuivant;
+            pListe->nbElements--;       //décrémente le nombre d'éléments de la liste
+        }else{
+            printf("\nErreur lors de la suppression d'un element de la liste d'objet, la liste est vide.");
         }
-
-        free(pElementSupprimer);    //libère l'élément a supprimer.
-        pListe->nbElements--;       //décrémente le nombre d'éléments de la liste
-    }else{
-        printf("Erreur lors de la suppression d'un element de la liste d'objet, la liste est vide.");
     }
+
+
+
+
 }
 
 //###########################################
@@ -138,12 +151,12 @@ void suppressionObjetListe(tListeObjet *pListe, tElementObjet *pElementSupprimer
 void vidageListeObjet(tListeObjet *pListe){
     //VERIFIE SI LA LISTE EXISTE, ET QUE L'ELEMENT A SUPPRIMER NE VAUT PAS NULL
     if (pListe == NULL || pListe->pPremier == NULL){
-        printf("Erreur la liste n'existe pas ou est vide.");
+        printf("\nErreur la liste n'existe pas ou est vide.");
         exit(EXIT_FAILURE);
     }
 
     while(pListe->pPremier!=NULL){
-        suppressionObjetListe(pListe,NULL);
+        suppressionObjetListe(pListe,pListe->pPremier);
     }
 }
 //###########################################
@@ -161,7 +174,7 @@ void vidageListeObjet(tListeObjet *pListe){
 void destructionListeObjet(tListeObjet *pListe){
     //VERIFIE SI LA LISTE EXISTE
     if (pListe == NULL){
-        printf("Erreur la liste n'existe pas.");
+        printf("\nErreur la liste n'existe pas.");
         exit(EXIT_FAILURE);
     }else{
 
@@ -188,17 +201,17 @@ void destructionListeObjet(tListeObjet *pListe){
 void affichageListeObjet(SDL_Renderer *pRenderer,tListeObjet *pListe){
     //VERIFIE SI LA LISTE EXISTE
     if (pListe == NULL){
-        printf("Erreur d'affichage, la liste n'existe pas.");
+        printf("\nErreur d'affichage, la liste n'existe pas.");
         exit(EXIT_FAILURE);
     }
 
     //SI LA LISTE N'EST PAS VIDE AFFICHE LES OBJETS
     if(pListe->pPremier != NULL){
         tElementObjet *pElement = pListe->pPremier;
-        do{
+        while(pElement->pSuivant!=NULL){
             dessineObjet(pRenderer, &pElement->stObjet,false);
             pElement = pElement->pSuivant;
-        }while(pElement->pSuivant!=NULL);
+        }
         dessineObjet(pRenderer, &pElement->stObjet,false);    //affiche la dernière objet
     }
 }
@@ -219,10 +232,9 @@ tElementObjet* recupElementObjetParNom(tListeObjet *pListe,const char sNom[]){
 
     //VERIFIE SI LA LISTE EXISTE, ET QU'ELLE N'EST PAS VIDE
     if (pListe == NULL || pListe->pPremier == NULL){
-        printf("Erreur, la liste n'existe pas ou est vide.");
-        exit(EXIT_FAILURE);
+        printf("\nErreur, la liste n'existe pas ou est vide.");
+        return NULL;
     }
-
     tElementObjet *pElement = pListe->pPremier;
 
     //si le première élément correspond au nom
@@ -240,8 +252,11 @@ tElementObjet* recupElementObjetParNom(tListeObjet *pListe,const char sNom[]){
         }
     }while(pElement->pSuivant!=NULL);   //tant qu'il existe un élément suivant
 
-    printf("Le nom ne correspond a aucun élément");
+    printf("\nLe nom ne correspond a aucun élément");
     return NULL;
+
+
+
 
 }
 
@@ -284,7 +299,7 @@ tObjet* recupObjetParNom(tListeObjet *pListe,const char sNom[]){
 //*****************************************************************************************************//
 void initObjet(tObjet **ppObjet, const tRectangle stRectangle, const tVecteur stVecteurVitesse, const tVecteur stVecteurAcceleration){
     if((*ppObjet = malloc(sizeof(tObjet)))==NULL){
-        printf("Erreur d'allocation de l'objet !");
+        printf("\nErreur d'allocation de l'objet !");
     }else{
         setObjetRectangle(*ppObjet,stRectangle);
         setObjetVecteurVitesse(*ppObjet,stVecteurVitesse);

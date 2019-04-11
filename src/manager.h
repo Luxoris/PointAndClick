@@ -19,7 +19,8 @@ typedef struct tManaComposant{
 
 
 //PROTOTYPE DES METHODES
-extern void initManaComposant(tManaComposant **ppManaComposant,tListeBouton *pListeBouton, tListeImage *pListeImage, tListeObjet *pListeObjet, tListeTexte *pListeTexte, tListePropTexte *pListePropTexte);
+extern void initManaComposant(tManaComposant **ppManaComposant);
+extern void initManaComposantEtComposant(tManaComposant **ppManaComposant);
 extern void freeManaComposant(tManaComposant *pManaComposant);
 
 extern void setManaComposant(tManaComposant *pManaComposant,tListeBouton *pListeBouton, tListeImage *pListeImage, tListeObjet *pListeObjet, tListeTexte *pListeTexte, tListePropTexte *pListePropTexte);

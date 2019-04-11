@@ -34,7 +34,7 @@ typedef struct tListeImage{
 
 
 //PROTOTYPE DES METHODES DE LA LISTE
-extern tListeImage *initialisationListeImage(const tImage stImage,const char sNom[]);
+extern tListeImage *initialisationListeImage();
 extern void insertionImageListe(tListeImage *pListe, tElementImage *pElementInsetion,const tImage stImage,const char sNom[]);
 extern void suppressionImageListe(tListeImage *pListe, tElementImage *pElementSupprimer);
 extern void vidageListeImage(tListeImage *pListe);

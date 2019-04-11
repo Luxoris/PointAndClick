@@ -39,7 +39,7 @@ typedef struct tListeObjet{
 
 
 //PROTOTYPE DES METHODES DE LA LISTE
-extern tListeObjet *initialisationListeObjet(const tObjet stObjet,const char sNom[]);
+extern tListeObjet *initialisationListeObjet();
 extern void insertionObjetListe(tListeObjet *pListe, tElementObjet *pElementInsetion,const tObjet stObjet,const char sNom[]);
 extern void suppressionObjetListe(tListeObjet *pListe, tElementObjet *pElementSupprimer);
 extern void vidageListeObjet(tListeObjet *pListe);

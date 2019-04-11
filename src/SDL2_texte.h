@@ -84,7 +84,7 @@ typedef struct tListePropTexte{
 }tListePropTexte;
 
 //PROTOTYPE DES METHODES DE LA LISTE DE PROPTEXTE
-extern tListePropTexte *initialisationListePropTexte(const tPropTexte stPropTexte,const char sNom[]);
+extern tListePropTexte *initialisationListePropTexte();
 extern void insertionPropTexteListe(tListePropTexte *pListe, tElementPropTexte *pElementInsetion,const tPropTexte stPropTexte,const char sNom[]);
 extern void suppressionPropTexteListe(tListePropTexte *pListe, tElementPropTexte *pElementSupprimer);
 extern void vidageListePropTexte(tListePropTexte *pListe);
@@ -94,7 +94,7 @@ extern tPropTexte* recupPropTexteParNom(tListePropTexte *pListe,const char sNom[
 
 
 //PROTOTYPE DES METHODES DE LA LISTE DE TEXTE
-extern tListeTexte *initialisationListeTexte(const tTexte stTexte,const char sNom[]);
+extern tListeTexte *initialisationListeTexte();
 extern void insertionTexteListe(tListeTexte *pListe, tElementTexte *pElementInsetion,const tTexte stTexte,const char sNom[]);
 extern void suppressionTexteListe(tListeTexte *pListe, tElementTexte *pElementSupprimer);
 extern void vidageListeTexte(tListeTexte *pListe);

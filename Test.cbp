@@ -60,10 +60,6 @@
 		</Unit>
 		<Unit filename="src/SDLPoint.h" />
 		<Unit filename="src/VUE_SDL2.h" />
-		<Unit filename="src/balle.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/balle.h" />
 		<Unit filename="src/bouton.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -77,6 +73,9 @@
 		</Unit>
 		<Unit filename="src/collision.h" />
 		<Unit filename="src/define.h" />
+		<Unit filename="src/etatPartie.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/etatPartie.h" />
 		<Unit filename="src/evenement.c">
 			<Option compilerVar="CC" />
@@ -86,14 +85,25 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/image.h" />
+		<Unit filename="src/interface.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/interface.h" />
 		<Unit filename="src/joueur.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/joueur.h" />
+		<Unit filename="src/level.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/level.h" />
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/manager.h" />
 		<Unit filename="src/mixer.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -105,7 +115,12 @@
 		<Unit filename="src/pointeur.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/pointeur.c.save-failed" />
 		<Unit filename="src/pointeur.h" />
+		<Unit filename="src/raquette.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/raquette.h" />
 		<Unit filename="src/rectangle.c">
 			<Option compilerVar="CC" />
 		</Unit>

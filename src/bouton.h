@@ -17,8 +17,6 @@
 
 #define BOUTON_TAILLE_CHAINE 256
 
-//DEFINITON DU TYPE ACTION
-typedef enum{nouvelle_partie=1,charger,options,fermerJeu,retourMenuPrincipal,quitterPartie,sauvegarder,ouvrirMenuOptionJeu,reprendrePartie} tAction;
 
 
 //DEFINITION DU TYPE BOUTON
@@ -48,7 +46,7 @@ typedef struct tListeBouton{
 }tListeBouton;
 
 //PROTOTYPE DES METHODES DE LA LISTE
-extern tListeBouton *initialisationListeBouton(const tBouton stBouton,const char sNom[]);
+extern tListeBouton *initialisationListeBouton();
 extern void insertionBoutonListe(tListeBouton *pListe, tElementBouton *pElementInsetion,const tBouton stBouton,const char sNom[]);
 extern void suppressionBoutonListe(tListeBouton *pListe, tElementBouton *pElementSupprimer);
 extern void vidageListeBouton(tListeBouton *pListe);

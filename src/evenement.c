@@ -1,55 +1,6 @@
 #include "evenement.h"
 #include <string.h>
 
-//###########################################
-//PROCEDURE gestionControles
-//*****************************************************************************************************//
-//
-// DESCRIPTION Procedure qui en fonction des touches pressé, déclenche les évenements et modifie l'état des objets.
-//
-// ENTREE - La référence de tEtatPartie, la référence de l'objet du J1, la référence de l'objet du joueur 2.
-//
-// SORTIE - La modification de l'état des objets
-//
-// NOTE - Utilise SDL_PollEvent
-//*****************************************************************************************************//
-/*void gestionControles(tEtatPartie *pstEtatPartie, tObjet *pstObjetJ1, tObjet *pstObjetJ2){
-
-    SDL_Event tEvenement;
-
-    while(SDL_PollEvent(&tEvenement)==1){
-        switch(tEvenement.type){
-        case SDL_QUIT:
-              *pstEtatPartie=quitter;break;
-        case SDL_KEYDOWN:
-            switch (tEvenement.key.keysym.scancode)
-                {
-                case J1_HAUT:   setObjetVecteurVitesse(pstObjetJ1,creeVecteur(0,-VITESSE_DEPLACEMENT_RAQUETTE));
-                                setObjetVecteurAcceleration(pstObjetJ1,creeVecteur(0,VITESSE_DEPLACEMENT_RAQUETTE));
-                                break;
-                case J1_BAS:    setObjetVecteurVitesse(pstObjetJ1,creeVecteur(0,+VITESSE_DEPLACEMENT_RAQUETTE)) ;
-                                setObjetVecteurAcceleration(pstObjetJ1,creeVecteur(0,-VITESSE_DEPLACEMENT_RAQUETTE));
-                                break;
-                case J2_HAUT:   setObjetVecteurVitesse(pstObjetJ2,creeVecteur(0,-VITESSE_DEPLACEMENT_RAQUETTE));
-                                setObjetVecteurAcceleration(pstObjetJ2,creeVecteur(0,VITESSE_DEPLACEMENT_RAQUETTE));
-                                break;
-                case J2_BAS:    setObjetVecteurVitesse(pstObjetJ2,creeVecteur(0,+VITESSE_DEPLACEMENT_RAQUETTE)) ;
-                                setObjetVecteurAcceleration(pstObjetJ2,creeVecteur(0,-VITESSE_DEPLACEMENT_RAQUETTE));
-                                break;
-                case SDL_SCANCODE_ESCAPE:
-                    if((*pstEtatPartie)==pause){
-                        *pstEtatPartie=enCours;
-                    }else{
-                        *pstEtatPartie=pause;
-                    }
-                    break;
-                case SDL_SCANCODE_F4: *pstEtatPartie=quitter;break;
-            }
-        break;
-        }
-    }
-
-}*/
 
 //###########################################
 //FONCTION testToucheAppuyer
