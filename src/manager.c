@@ -21,7 +21,7 @@ void initManaComposant(tManaComposant **ppManaComposant){
     if((*ppManaComposant = malloc(sizeof(tManaComposant)))==NULL){
         printf("Erreur d'allocation du manager de composants !");
     }else{
-        setManaComposant(*ppManaComposant,NULL,NULL,NULL,NULL,NULL);
+        setManaComposant(*ppManaComposant,NULL,NULL,NULL,NULL,NULL,NULL);
     }
 
 }
@@ -47,17 +47,38 @@ void initManaComposantEtComposant(tManaComposant **ppManaComposant){
         (*ppManaComposant)->pListeTexte = initialisationListeTexte();
         (*ppManaComposant)->pListePropTexte = initialisationListePropTexte();
         (*ppManaComposant)->pListeObjet = initialisationListeObjet();
+        initPointeur(&(*ppManaComposant)->pPointeur,creePoint(0,0),false,false,false);
     }
 
+}
+
+//###########################################
+//PROCEDURE vidageComposantsProgramme
+//*****************************************************************************************************//
+//
+// DESCRIPTION PROCEDURE qui libères tous les éléments d'un manager de composants,
+//
+// ENTREE /La reférence du manager de composants.
+//
+// SORTIE /La mémoire libérée.
+//
+// NOTE -
+//*****************************************************************************************************//
+void vidageComposantsProgramme(tManaComposant *pManaComposant){
+    vidageListeBouton(pManaComposant->pListeBouton);
+    vidageListeImage(pManaComposant->pListeImage);
+    vidageListeTexte(pManaComposant->pListeTexte);
+    vidageListeObjet(pManaComposant->pListeObjet);
+    vidageListePropTexte(pManaComposant->pListePropTexte);
 }
 
 //###########################################
 //PROCEDURE freeManaComposant
 //*****************************************************************************************************//
 //
-// DESCRIPTION PROCEDURE qui libères tous les éléments d'un manager de composants,
+// DESCRIPTION PROCEDURE qui libères tous les éléments d'un manager de composants ainsi que le manager lui-même.
 //
-// ENTREE /La reférence du pointeur de pointeur du manager de composants.
+// ENTREE /La reférence du pointeur du manager de composants.
 //
 // SORTIE /La mémoire libérée.
 //
@@ -81,6 +102,9 @@ void freeManaComposant(tManaComposant *pManaComposant){
         if(getManaComposantListeObjet(pManaComposant)!=NULL){
             destructionListeObjet(getManaComposantListeObjet(pManaComposant));
         }
+        if(getManaComposantPointeur(pManaComposant)!=NULL){
+            freePointeur(getManaComposantPointeur(pManaComposant));
+        }
         //LIBERE LE COMPOSANT
         free(pManaComposant);
     }else{
@@ -101,12 +125,13 @@ void freeManaComposant(tManaComposant *pManaComposant){
 //
 // NOTE -
 //*****************************************************************************************************//
-void setManaComposant(tManaComposant *pManaComposant,tListeBouton *pListeBouton, tListeImage *pListeImage, tListeObjet *pListeObjet, tListeTexte *pListeTexte, tListePropTexte *pListePropTexte){
+void setManaComposant(tManaComposant *pManaComposant,tListeBouton *pListeBouton, tListeImage *pListeImage, tListeObjet *pListeObjet, tListeTexte *pListeTexte, tListePropTexte *pListePropTexte, tPointeur *pPointeur){
     setManaComposantListeImage(pManaComposant,pListeImage);
     setManaComposantListeBouton(pManaComposant,pListeBouton);
     setManaComposantListeObjet(pManaComposant,pListeObjet);
     setManaComposantListeTexte(pManaComposant,pListeTexte);
     setManaComposantListePropTexte(pManaComposant,pListePropTexte);
+    setManaComposantPointeur(pManaComposant,pPointeur);
 }
 
 //###########################################
@@ -189,6 +214,22 @@ void setManaComposantListePropTexte(tManaComposant *pManaComposant,tListePropTex
     pManaComposant->pListePropTexte=pListePropTexte;
 }
 
+//###########################################
+//PROCEDURE setManaComposantPointeur
+//*****************************************************************************************************//
+//
+// DESCRIPTION PROCEDURE qui modifie la référence du pointeur (de la souris).
+//
+// ENTREE /La reférence du manager de composants, la références du pointeur (de la souris).
+//
+// SORTIE /La références du pointeur (de la souris) du manager modifiée.
+//
+// NOTE -
+//*****************************************************************************************************//
+void setManaComposantPointeur(tManaComposant *pManaComposant, tPointeur *pPointeur){
+    pManaComposant->pPointeur=pPointeur;
+}
+
 
 //###########################################
 //FONCTION getManaComposantListeBouton
@@ -268,4 +309,21 @@ tListeTexte* getManaComposantListeTexte(tManaComposant *pManaComposant){
 //*****************************************************************************************************//
 tListePropTexte* getManaComposantListePropTexte(tManaComposant *pManaComposant){
     return pManaComposant->pListePropTexte;
+}
+
+
+//###########################################
+//FONCTION getManaComposantListePropTexte
+//*****************************************************************************************************//
+//
+// DESCRIPTION Fonction qui renvoie la référence du pointeur (de la souris) d'un manager de composants.
+//
+// ENTREE /La reférence du manager de composants.
+//
+// SORTIE /La références du pointeur (de la souris).
+//
+// NOTE -
+//*****************************************************************************************************//
+tPointeur *getManaComposantPointeur(tManaComposant *pManaComposant){
+    return pManaComposant->pPointeur;
 }

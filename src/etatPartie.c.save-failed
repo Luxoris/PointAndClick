@@ -44,12 +44,12 @@ void gestionAction(const tAction nAction, tManaComposant *pMana, tEtatPartie *pE
                 break;
             case nouvellePartieEmpl2:
                 vidageComposantsProgramme(pMana);
-                strcpy(pMana->pEtatJeu->cEmplFichierSauvegarde,EMPL_FICHIER_SAUVEGARDE_2);
+                strcpy(pMana->pEtatJeu->cEmplFichierSauvegarde,EMPL_FICHIER_SAUVEGARDE_1);
                 *pEtatPartie = initialisation;
                 break;
             case nouvellePartieEmpl3:
                 vidageComposantsProgramme(pMana);
-                strcpy(pMana->pEtatJeu->cEmplFichierSauvegarde,EMPL_FICHIER_SAUVEGARDE_3);
+                strcpy(pMana->pEtatJeu->cEmplFichierSauvegarde,EMPL_FICHIER_SAUVEGARDE_1);
                 *pEtatPartie = initialisation;
                 break;
             case retourMenuPrincipalDepuisNouvellePartie:
@@ -59,25 +59,19 @@ void gestionAction(const tAction nAction, tManaComposant *pMana, tEtatPartie *pE
                 break;
             //MENU CHARGER
             case chargerEmpl1:
-                if(chargementPartie(EMPL_FICHIER_SAUVEGARDE_1,pMana->pEtatJeu)){
-                    vidageComposantsProgramme(pMana);
-                    ajoutInterfaceJeu(pMana);
-                    *pEtatPartie = enCours;
-                }
+                vidageComposantsProgramme(pMana);
+                chargementPartie(EMPL_FICHIER_SAUVEGARDE_1,pMana->pEtatJeu);
+                *pEtatPartie = enCours;
                 break;
             case chargerEmpl2:
-                if(chargementPartie(EMPL_FICHIER_SAUVEGARDE_2,pMana->pEtatJeu)){
-                    ajoutInterfaceJeu(pMana);
-                    vidageComposantsProgramme(pMana);
-                    *pEtatPartie = enCours;
-                }
+                vidageComposantsProgramme(pMana);
+                chargementPartie(EMPL_FICHIER_SAUVEGARDE_2,pMana->pEtatJeu);
+                *pEtatPartie = enCours;
                 break;
             case chargerEmpl3:
-                if(chargementPartie(EMPL_FICHIER_SAUVEGARDE_3,pMana->pEtatJeu)){
-                    ajoutInterfaceJeu(pMana);
-                    vidageComposantsProgramme(pMana);
-                    *pEtatPartie = enCours;
-                }
+                vidageComposantsProgramme(pMana);
+                chargementPartie(EMPL_FICHIER_SAUVEGARDE_3,pMana->pEtatJeu);
+                *pEtatPartie = enCours;
                 break;
             case retourMenuPrincipalDepuisCharger:
                 vidageComposantsProgramme(pMana);
@@ -104,9 +98,6 @@ void gestionAction(const tAction nAction, tManaComposant *pMana, tEtatPartie *pE
                 *pEtatPartie = menu;
 
             case sauvegarder:
-                pMana->pEtatJeu->nAvancementLevelSauvegarde=pMana->pEtatJeu->nAvancementLevel;
-                pMana->pEtatJeu->nAvancementLevel = 0;
-                sauvegardePartie(pMana->pEtatJeu->cEmplFichierSauvegarde,*pMana->pEtatJeu);
                 break;
 
             //EN JEU

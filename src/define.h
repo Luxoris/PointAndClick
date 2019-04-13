@@ -10,7 +10,6 @@
 #define ABRICOT_PNG "./assets/abricot.png"
 #define ABRICOT_JPG "./assets/abricot.jpg"
 
-
 //déclaration des définitions de la partie
 
 

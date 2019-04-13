@@ -73,6 +73,10 @@
 		</Unit>
 		<Unit filename="src/collision.h" />
 		<Unit filename="src/define.h" />
+		<Unit filename="src/dialogue.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/dialogue.h" />
 		<Unit filename="src/etatPartie.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -129,6 +133,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/renderer.h" />
+		<Unit filename="src/sauvegarde.h" />
 		<Unit filename="src/tBool.h" />
 		<Unit filename="src/tObjet.c">
 			<Option compilerVar="CC" />

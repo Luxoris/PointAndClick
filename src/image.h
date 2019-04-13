@@ -7,6 +7,7 @@
 #include <SDL_image.h>
 #include "tObjet.h"
 #include "string.h"
+#include "pointeur.h"
 
 //DEFINITION DES MACCROS
 #define IMAGE_TAILLE_CHAINE 256
@@ -59,7 +60,7 @@ extern tObjet * getImageObjet(tImage *pstImage);
 extern char * getImageEmpl(tImage *pstImage);
 
 extern void afficheImage(SDL_Renderer *pRenderer,tImage *pstImage);
-
+extern void dragAndDropImage(tImage *pstImage, tPointeur *pstPointeur);
 
 
 

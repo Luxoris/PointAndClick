@@ -32,9 +32,7 @@ int main( int argc, char* args[]/*, char * env[]*/ )
     tManaComposant *pManaComposant = NULL;
     tEtatJeu stEtatJeu = {level1,0};
 
-    ///INITIALISATION ET DECLARATION DU POINTEUR DE LA SOURIS///
-     tPointeur *pstPointeur=NULL;
-     initPointeur(&pstPointeur,creePoint(0,0),false,false,false);
+
 
     ///INITIALISATION DE LA SDL, DE LA FENETRE, DU RENDERER, DU TTF///
     initSDL();
@@ -46,18 +44,11 @@ int main( int argc, char* args[]/*, char * env[]*/ )
 
     ///INITIALISATION DU MANAGER DE COMPOSANTS ET DES COMPOSANTS
     initManaComposantEtComposant(&pManaComposant);
+    pManaComposant->pEtatJeu=&stEtatJeu;    //sauvegarde de la ref de l'état du jeu dans le manager de composants.
 
     ///DECLARATION ET INITIALISATION DE LA MUSIQUE --- LECTURE///
     Mix_Music *pMusique = Mix_LoadMUS("./assets/son/Never.wav");
     Mix_PlayMusic(pMusique, 1);
-
-
-    ///DECLARATION DE LA LISTE DES PROPRIETES DES TEXTES DU JEU
-    insertionPropTexteListe(pManaComposant->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_BOUTON,TTF_FONT_VERDANA,SDL_CL_ROUGE,SDL_CL_BLEU,"",TTF_Charset_Latin1,TTF_Mode_Solid),"boutonMenu");
-    insertionPropTexteListe(pManaComposant->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_TITRE,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_NOIR,"",TTF_Charset_Latin1,TTF_Mode_Solid),"dialogue");
-
-    ///DECLARATION DE LA LISTE D'OBJET PAR DEFAUT
-    insertionObjetListe(pManaComposant->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"centre");
 
 
     ///AJOUT DES ELEMENTS DU MENU PRINCIPAL
@@ -86,20 +77,49 @@ int main( int argc, char* args[]/*, char * env[]*/ )
         //affectation de la valeur du timer pour connaitre le temps d'exécution d'exécution du programme au début de l'intérration
         nTempsDebutBoucle = SDL_GetTicks();
 
+
+
         switch(stEtatPartie){
+        case initialisation:
+            //Définit l'état du jeu comme celui d'un nouvelle partie.
+            stEtatJeu.nAvancementLevel=0;
+            stEtatJeu.nAvancementLevelSauvegarde=0;
+            stEtatJeu.nNumLevel=level1;
+            //Ecrase la sauvegarde précédente de l'empl 1
+            sauvegardePartie(pManaComposant->pEtatJeu->cEmplFichierSauvegarde,*pManaComposant->pEtatJeu);
+            //Ajoute l'interface du jeu
+            ajoutInterfaceJeu(pManaComposant);
+            //Démare la partie
+            stEtatPartie = enCours;
+            break;
         case enCours:
-            switch(stEtatJeu.stLevel){
-                case level1 : //gestionLevel1(pManaComposant,&stEtatJeu);
+            switch(stEtatJeu.nNumLevel){
+                case level1 : gestionLevel1(pManaComposant);
                     break;
                 /*case  level2 :
                     break;
                 */
+                case level2:
+                    break;
+                case level3:
+                    break;
+                case level4:
+                    break;
+                case level5:
+                    break;
             }
+            break;
+        case pause:
             break;
         case menu:
             break;
+        case fin:
+            break;
+        case quitter:
+            break;
         }
 
+        gestionEvenements(&stEtatPartie,getManaComposantPointeur(pManaComposant));
         gestionActionListeBouton(pManaComposant,&stEtatPartie);
 
         ///AFFICHAGE
@@ -107,8 +127,8 @@ int main( int argc, char* args[]/*, char * env[]*/ )
         SDL_SetRenderDrawColor(pRenderer,0,0,0,255);
         SDL_RenderClear(pRenderer);
 
-        gestionEvenements(&stEtatPartie,pstPointeur);
-        gestionListeBoutonPointeur(pManaComposant->pListeBouton,pstPointeur);
+
+        gestionListeBoutonPointeur(pManaComposant->pListeBouton,pManaComposant->pPointeur);
 
 
         //gestionEvenementsListeBoutons(pManaComposant->pListeBouton,&stEtatPartie);
