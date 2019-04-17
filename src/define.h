@@ -4,12 +4,12 @@
 
 #define NOM_DU_JEU "PointAndClick"
 
-#define WINDOW_LARGEUR 1280
-#define WINDOW_HAUTEUR 720
+#define WINDOW_LARGEUR 1920//1280
+#define WINDOW_HAUTEUR 1080//720
 
 #define ABRICOT_PNG "./assets/abricot.png"
 #define ABRICOT_JPG "./assets/abricot.jpg"
-
+#define CHAMBRE_JPG "./assets/chambre.jpg"
 //déclaration des définitions de la partie
 
 

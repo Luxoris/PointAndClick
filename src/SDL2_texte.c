@@ -4,12 +4,12 @@
 
 const SDL_Color SDL_CL_BLANC = {255,255,255,255};
 const SDL_Color SDL_CL_NOIR = {0,0,0,255};
-const SDL_Color SDL_CL_ROUGE = {0,0,255,255};
-const SDL_Color SDL_CL_BLEU = {255,0,0,255};
+const SDL_Color SDL_CL_ROUGE = {255,0,0,255};
+const SDL_Color SDL_CL_BLEU = {0,0,255,255};
 const SDL_Color SDL_CL_VERT = {0,255,0,255};
 const SDL_Color SDL_CL_MAGENTA = {255,0,255,255};
-const SDL_Color SDL_CL_JAUNE = {0,255,255,255};
-const SDL_Color SDL_CL_CYAN = {255,255,0,255};
+const SDL_Color SDL_CL_JAUNE = {255,255,0,255};
+const SDL_Color SDL_CL_CYAN = {0,255,255,255};
 
 ///METHODES DE LA LISTE DE PROPTEXTE///
 

@@ -85,6 +85,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/evenement.h" />
+		<Unit filename="src/horloge.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/horloge.h" />
 		<Unit filename="src/image.c">
 			<Option compilerVar="CC" />
 		</Unit>

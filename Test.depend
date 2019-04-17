@@ -3657,7 +3657,7 @@
 	"collision.h"
 	"renderer.h"
 
-1555176968 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\define.h
+1555512462 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\define.h
 
 1554392445 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\joueur.h
 	<SDL.h>
@@ -3764,7 +3764,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1555007724 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\sdl2_texte.c
+1555515035 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\sdl2_texte.c
 	"SDL2_texte.h"
 
 1551976443 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\sdlpoint.c
@@ -3812,7 +3812,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1555181661 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\main.c
+1555522893 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\main.c
 	<stdio.h>
 	<stdlib.h>
 	<SDL.h>
@@ -3831,26 +3831,28 @@
 	"interface.h"
 	"level.h"
 
-1555169463 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\manager.c
+1555519392 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\manager.c
 	"manager.h"
 
-1555180333 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\manager.h
+1555521790 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\manager.h
 	"bouton.h"
 	"image.h"
+	"horloge.h"
 
-1555181523 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\interface.c
+1555522999 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\interface.c
 	"interface.h"
 
-1555176523 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\interface.h
+1555517767 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\interface.h
 	"etatPartie.h"
 	"manager.h"
 
-1555182317 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\level.c
+1555524236 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\level.c
 	"level.h"
 
-1555181650 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\level.h
+1555521955 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\level.h
 	"manager.h"
 	"dialogue.h"
+	"interface.h"
 
 1553330636 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\raquette.c
 	"raquette.h"
@@ -3862,14 +3864,21 @@
 	"define.h"
 	"collision.h"
 
-1555180709 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\etatpartie.c
+1555521817 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\etatpartie.c
 	"etatPartie.h"
 
-1555182230 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\dialogue.c
+1555518382 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\dialogue.c
 	"dialogue.h"
 
-1555182086 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\dialogue.h
+1555522169 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\dialogue.h
 	<stdio.h>
 	"SDL2_texte.h"
 	"manager.h"
+
+1555518179 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\horloge.h
+	"SDL2_texte.h"
+	<string.h>
+
+1555519696 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\horloge.c
+	"horloge.h"
 

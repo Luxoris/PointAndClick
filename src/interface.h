@@ -18,9 +18,10 @@
 #define NB_BOUTON_MENU_CHARGER 4
 #define NB_BOUTON_MENU_NOUVELLE_PARTIE 4
 
-#define TAILLE_POLICE_BOUTON (16)
-#define TAILLE_POLICE_DIALOGUE (16)
-#define TAILLE_POLICE_TITRE (32)
+#define TAILLE_POLICE_HORLOGE (48)
+#define TAILLE_POLICE_BOUTON (30)
+#define TAILLE_POLICE_DIALOGUE (32)
+#define TAILLE_POLICE_TITRE (48)
 #define HAUTEUR_DIALOGUE (WINDOW_HAUTEUR*0.8)
 #define LARGEUR_DIALOGUE (WINDOW_LARGEUR)
 #define TTF_FONT_VERDANA "./fonts/verdana.ttf" //emplacement du fichier de police verdana
@@ -51,5 +52,11 @@ extern void ajoutInterfaceJeu(tManaComposant *pMana);
 extern void supprInterfaceJeu(tManaComposant *pMana);
 
 extern void initComposantsProgramme(tManaComposant *pManaComposant);
+
+extern void ajoutBoutonChoix(tManaComposant *pMana,char sChoix1[], char sChoix2[]);
+extern void supprBoutonChoix(tManaComposant *pMana);
+
+extern void manaMajAffichageHorloge(tManaComposant *pMana);
+
 
 #endif // INTERFACE_H_INCLUDED

@@ -400,14 +400,16 @@ void ajoutInterfaceJeu(tManaComposant *pMana){
     //DECLARATION DES PROPRIETES DES TEXTES
     insertionPropTexteListe(pMana->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_DIALOGUE,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_NOIR,"",TTF_Charset_Latin1,TTF_Mode_Solid),"dialogue");
     insertionPropTexteListe(pMana->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_BOUTON,TTF_FONT_VERDANA,SDL_CL_ROUGE,SDL_CL_BLEU,"",TTF_Charset_Latin1,TTF_Mode_Solid),"boutonMenu");
+    insertionPropTexteListe(pMana->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_HORLOGE,TTF_FONT_VERDANA,SDL_CL_ROUGE,SDL_CL_BLEU,"",TTF_Charset_Latin1,TTF_Mode_Solid),"horloge");
 
 
     //DECLARATION DES OBJETS
     insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"centre");
     insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR-(LARGEUR_BOUTON*0.5),HAUTEUR_BOUTON*0.5),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"boutonEmp1");
-    insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR-(LARGEUR_BOUTON*0.5),WINDOW_HAUTEUR-(HAUTEUR_BOUTON*0.5)),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"boutonEmp2");
+    insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR-(LARGEUR_BOUTON*0.5),WINDOW_HAUTEUR-(HAUTEUR_BOUTON*2)),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"boutonEmp2");
     insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,HAUTEUR_DIALOGUE),LARGEUR_DIALOGUE,HAUTEUR_DIALOGUE),creeVecteur(0,0),creeVecteur(0,0)),"dialogue");
     insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"centre");
+    insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(LARGEUR_BOUTON*0.5,HAUTEUR_BOUTON*0.5),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"horloge");
 
     //INSERTION DES BOUTONS
     insertionBoutonListe(pMana->pListeBouton,NULL,creeBouton(recupObjetParNom(pMana->pListeObjet,"boutonEmp1"),"Menu",recupPropTexteParNom(pMana->pListePropTexte,"boutonMenu"),false,false,ouvrirMenuJeu),"ouvrirMenuJeu");
@@ -417,7 +419,8 @@ void ajoutInterfaceJeu(tManaComposant *pMana){
     //insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"centre"),ABRICOT_JPG),"imgTest");
 
     //DECLARATION DES TEXTES
-    insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("Dialogue de Test un peu long pour voir comment ça rend parce que c'est compliqué a voir.",recupObjetParNom(pMana->pListeObjet,"dialogue"),recupPropTexteParNom(pMana->pListePropTexte,"dialogue")),"dialogue");
+    insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("Test de dialogue par défaut",recupObjetParNom(pMana->pListeObjet,"dialogue"),recupPropTexteParNom(pMana->pListePropTexte,"dialogue")),"dialogue");
+    insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("07:00",recupObjetParNom(pMana->pListeObjet,"horloge"),recupPropTexteParNom(pMana->pListePropTexte,"horloge")),"horloge");
 }
 
 //###########################################
@@ -471,6 +474,75 @@ void initComposantsProgramme(tManaComposant *pManaComposant){
     //DECLARATION DE LA LISTE DES PROPRIETES DES TEXTES DU JEU
     //insertionPropTexteListe(pManaComposant->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_BOUTON,TTF_FONT_VERDANA,SDL_CL_ROUGE,SDL_CL_BLEU,"",TTF_Charset_Latin1,TTF_Mode_Solid),"boutonMenu");
 }
+
+
+//###########################################
+//PROCEDURE ajoutBoutonChoix
+//*****************************************************************************************************//
+//
+// DESCRIPTION Procedure qui ajoutes les deux boutons de choix.
+//
+// ENTREE /La réference du manager de composants.
+//
+// SORTIE /Les listes de composants modifiés.
+//
+// NOTE -
+//*****************************************************************************************************//
+void ajoutBoutonChoix(tManaComposant *pMana,char sChoix1[], char sChoix2[]){
+//DECLARATION DES OBJETS
+    insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5+(HAUTEUR_BOUTON*2)),WINDOW_LARGEUR-MARGE_BORD,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"boutonChoixEmp2");
+    insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5-(HAUTEUR_BOUTON*2)),WINDOW_LARGEUR-MARGE_BORD,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"boutonChoixEmp1");
+
+//INSERTION DES BOUTONS
+    insertionBoutonListe(pMana->pListeBouton,NULL,creeBouton(recupObjetParNom(pMana->pListeObjet,"boutonChoixEmp1"),sChoix1,recupPropTexteParNom(pMana->pListePropTexte,"boutonMenu"),false,false,0),"choix1");
+    insertionBoutonListe(pMana->pListeBouton,NULL,creeBouton(recupObjetParNom(pMana->pListeObjet,"boutonChoixEmp2"),sChoix2,recupPropTexteParNom(pMana->pListePropTexte,"boutonMenu"),false,false,0),"choix2");
+
+
+}
+
+//###########################################
+//PROCEDURE supprBoutonChoix
+//*****************************************************************************************************//
+//
+// DESCRIPTION Procedure qui supprim les deux boutons de choix.
+//
+// ENTREE /La réference du manager de composants.
+//
+// SORTIE /Les listes de composants modifiés.
+//
+// NOTE -
+//*****************************************************************************************************//
+void supprBoutonChoix(tManaComposant *pMana){
+    //SUPPRESSION DES OBJETS
+    suppressionObjetListe(pMana->pListeObjet,recupElementObjetParNom(pMana->pListeObjet,"boutonChoixEmp2"));
+    suppressionObjetListe(pMana->pListeObjet,recupElementObjetParNom(pMana->pListeObjet,"boutonChoixEmp1"));
+
+    //SUPPRESSION DES BOUTONS
+    suppressionBoutonListe(pMana->pListeBouton,recupElementBoutonParNom(pMana->pListeBouton,"choix1"));
+    suppressionBoutonListe(pMana->pListeBouton,recupElementBoutonParNom(pMana->pListeBouton,"choix2"));
+
+}
+
+
+//###########################################
+//PROCEDURE manaMajAffichageHorloge
+//*****************************************************************************************************//
+//
+// DESCRIPTION Procedure qui met à jour l'affichage de l'heure.
+//
+// ENTREE /La référence du manager de composants.
+//
+// SORTIE /La texte de l'horloge modifié.
+//
+// NOTE -
+//*****************************************************************************************************//
+void manaMajAffichageHorloge(tManaComposant *pMana){
+    majAffichageHorloge(recupTexteParNom(pMana->pListeTexte,"horloge"),&pMana->pEtatJeu->stHorloge);
+
+}
+
+
+
 
 
 

@@ -1,8 +1,6 @@
 #include "manager.h"
 
 
-extern void initManaComposant(tManaComposant **ppManaComposant);
-extern void initManaComposantEtComposant(tManaComposant **ppManaComposant);
 
 
 //###########################################
@@ -48,6 +46,7 @@ void initManaComposantEtComposant(tManaComposant **ppManaComposant){
         (*ppManaComposant)->pListePropTexte = initialisationListePropTexte();
         (*ppManaComposant)->pListeObjet = initialisationListeObjet();
         initPointeur(&(*ppManaComposant)->pPointeur,creePoint(0,0),false,false,false);
+        (*ppManaComposant)->pFichierDialogue=NULL;
     }
 
 }
@@ -326,4 +325,21 @@ tListePropTexte* getManaComposantListePropTexte(tManaComposant *pManaComposant){
 //*****************************************************************************************************//
 tPointeur *getManaComposantPointeur(tManaComposant *pManaComposant){
     return pManaComposant->pPointeur;
+}
+
+
+//###########################################
+//PROCEDURE manaAjoutMinute
+//*****************************************************************************************************//
+//
+// DESCRIPTION Procedure qui ajoute des minutes à l'horloge du manager de composant.
+//
+// ENTREE /La référence du manager de comosant, le nombre de minutes à ajouter.
+//
+// SORTIE /Le temps de l'horloge modifié.
+//
+// NOTE -
+//*****************************************************************************************************//
+void manaAjoutMinute(tManaComposant *pMana, const int nMinute){
+    ajoutMinute(&pMana->pEtatJeu->stHorloge,nMinute);
 }

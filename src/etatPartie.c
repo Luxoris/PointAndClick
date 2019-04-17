@@ -104,7 +104,6 @@ void gestionAction(const tAction nAction, tManaComposant *pMana, tEtatPartie *pE
                 *pEtatPartie = menu;
 
             case sauvegarder:
-                pMana->pEtatJeu->nAvancementLevelSauvegarde=pMana->pEtatJeu->nAvancementLevel;
                 pMana->pEtatJeu->nAvancementLevel = 0;
                 sauvegardePartie(pMana->pEtatJeu->cEmplFichierSauvegarde,*pMana->pEtatJeu);
                 break;

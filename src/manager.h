@@ -5,6 +5,7 @@
 //APPEL DES BIBLIOTHEQUES//
 #include "bouton.h"
 #include "image.h"
+#include "horloge.h"
 
 //DECLARATION DES MACROS
 #define NB_CHOIX_JOUEUR 1
@@ -17,8 +18,7 @@
 typedef struct tEtatJeu{
     int nNumLevel;
     int nAvancementLevel;
-    int nAvancementLevelSauvegarde;
-    tBool stTabBool[NB_CHOIX_JOUEUR];
+    tHorloge stHorloge;
     char cEmplFichierSauvegarde[TAILLE_NOM_FICHIER_SAUVEGARDE_MAX];
 }tEtatJeu;
 
@@ -54,5 +54,8 @@ extern tListeObjet *getManaComposantListeObjet(tManaComposant *pManaComposant);
 extern tListeTexte *getManaComposantListeTexte(tManaComposant *pManaComposant);
 extern tListePropTexte *getManaComposantListePropTexte(tManaComposant *pManaComposant);
 extern tPointeur *getManaComposantPointeur(tManaComposant *pManaComposant);
+
+extern void manaAjoutMinute(tManaComposant *pMana, const int nMinute);
+
 
 #endif // MANAGER_H_INCLUDED

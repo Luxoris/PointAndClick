@@ -74,11 +74,15 @@ void recuperationChaine(FILE *pFile,char cChaine[]){
     }
 }
 
-void dialogueSuivant(tManaComposant *pMana, int nValeurAvancementLevel){
+tBool dialogueSuivant(tManaComposant *pMana, int nValeurAvancementLevel){
     if((pMana->pEtatJeu->nAvancementLevel==nValeurAvancementLevel)&&(recupBoutonParNom(pMana->pListeBouton,"suivant")->stClique)){
         texteSuivant(pMana->pFichierDialogue,recupTexteParNom(pMana->pListeTexte,"dialogue"));
         recupBoutonParNom(pMana->pListeBouton,"suivant")->stClique=false;
         SDL_Delay(DELAI_CLICK_BOUTON);
         pMana->pEtatJeu->nAvancementLevel++;
+
+        return true;
+    }else{
+        return false;
     }
 }
