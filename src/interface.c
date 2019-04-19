@@ -456,6 +456,7 @@ void supprInterfaceJeu(tManaComposant *pMana){
 
     //SUPPRESSION DES TEXTES
     suppressionTexteListe(pMana->pListeTexte,recupElementTexteParNom(pMana->pListeTexte,"dialogue"));
+    suppressionTexteListe(pMana->pListeTexte,recupElementTexteParNom(pMana->pListeTexte,"horloge"));
 }
 
 //###########################################

@@ -25,6 +25,12 @@ extern const SDL_Color SDL_CL_VERT;
 extern const SDL_Color SDL_CL_MAGENTA;
 extern const SDL_Color SDL_CL_JAUNE;
 extern const SDL_Color SDL_CL_CYAN;
+extern const SDL_Color SDL_CL_MERE;
+extern const SDL_Color SDL_CL_PERE;
+extern const SDL_Color SDL_CL_JOUEUR;
+extern const SDL_Color SDL_CL_CHAUFFEUR;
+extern const SDL_Color SDL_CL_SURVEILLANT;
+extern const SDL_Color SDL_CL_ELEVE;
 
 
 ///définition des types structurés

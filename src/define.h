@@ -9,7 +9,30 @@
 
 #define ABRICOT_PNG "./assets/abricot.png"
 #define ABRICOT_JPG "./assets/abricot.jpg"
-#define CHAMBRE_JPG "./assets/chambre.jpg"
+#define CHAMBRE "./assets/chambre.jpg"
+#define SALLEAMANGER "./assets/salleAManger.jpg"
+#define SALLE_DE_BAIN "./assets/salleDeBain.jpg"
+#define DEVANT_MAISON "./assets/devantMaison.jpg"
+#define BUS "./assets/bus.jpg"
+#define DANS_BUS "./assets/dansBus.jpg"
+#define ARRET_BUS "./assets/arretBus.jpg"
+#define NOIR "./assets/noir.jpg"
+#define RUE_PANNE_BUS "./assets/ruePanneBus.jpg"
+#define ECOLE "./assets/ecole.jpg"
+#define CLASSE "./assets/classe.jpg"
+#define CANTINE "./assets/cantine.jpg"
+#define TOILETTES "./assets/toilettes.jpg"
+
+#define MAMAN "./assets/maman.jpg"
+#define PAPA "./assets/papa.jpg"
+#define ELEVE "./assets/eleve.jpg"
+#define SURVEILLANT "./assets/surveillant.jpg"
+#define CHAUFFEUR "./assets/chauffeur.jpg"
+
+#define LARGEUR_PERSONNAGE 400
+#define HAUTEUR_PERSONNAGE 600
+#define POS_X_PERSONNAGE (WINDOW_LARGEUR -(LARGEUR_PERSONNAGE))
+#define POS_Y_PERSONNAGE (WINDOW_HAUTEUR -(HAUTEUR_PERSONNAGE))
 //déclaration des définitions de la partie
 
 

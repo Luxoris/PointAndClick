@@ -10,6 +10,12 @@ const SDL_Color SDL_CL_VERT = {0,255,0,255};
 const SDL_Color SDL_CL_MAGENTA = {255,0,255,255};
 const SDL_Color SDL_CL_JAUNE = {255,255,0,255};
 const SDL_Color SDL_CL_CYAN = {0,255,255,255};
+const SDL_Color SDL_CL_MERE = {255,0,255,255};
+const SDL_Color SDL_CL_PERE = {0,255,0,255};
+const SDL_Color SDL_CL_JOUEUR = {255,255,255,255};
+const SDL_Color SDL_CL_CHAUFFEUR = {0,255,255,255};
+const SDL_Color SDL_CL_SURVEILLANT = {0,255,255,255};
+const SDL_Color SDL_CL_ELEVE = {255,255,0,255};
 
 ///METHODES DE LA LISTE DE PROPTEXTE///
 
@@ -885,7 +891,7 @@ void setTexte(tTexte* pTexte,char pcTexte[], tObjet *pstObjet, tPropTexte *pProp
 // NOTE -
 //*****************************************************************************************************//
 void setTexteTexte(tTexte* pTexte, char pcTexte[]){
-    strcpy(pTexte->sTexte,pcTexte);
+    strncpy(pTexte->sTexte,pcTexte,TTF_TAILLE_CHAINE);
 }
 
 //###########################################
@@ -1018,79 +1024,82 @@ void ecrireTexte(SDL_Renderer* pRenderer, tTexte * pstTexte){
     //récupération de la chiane du texte
     //getTexteTexte(pstTexte,getTexteTexte(pstTexte));
 
-    strcpy(pcEmplPolice,getPropTexteEmplpolice(pstPropTexte));
-    //Vérification du bon chargement de la police
-    if((pstPolice=TTF_OpenFont(pcEmplPolice,getPropTexteTaille(pstPropTexte)))==NULL){
-        printf("\nImpossible de charger la police : %s - TTF_OpenFont: %s\n",pcEmplPolice, TTF_GetError());
-    }else{
-        while(cStyle[nI]!='\0'){
-            switch(cStyle[nI]){
-            case 'u': TTF_SetFontStyle(pstPolice,TTF_STYLE_UNDERLINE);break;
-            case 'i': TTF_SetFontStyle(pstPolice,TTF_STYLE_ITALIC);break;
-            case 'b': TTF_SetFontStyle(pstPolice,TTF_STYLE_BOLD);break;
-            }
-        }
-
-
-        switch(getPropTexteCharset(pstPropTexte)){
-            case TTF_Charset_Latin1:
-                switch (getPropTexteMode(pstPropTexte)){
-                    case TTF_Mode_Solid: pstSurfaceTexte=TTF_RenderText_Solid(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte)); break;
-                    case TTF_Mode_Shaded: pstSurfaceTexte=TTF_RenderText_Shaded(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte),*getPropTexteCouleur(pstPropTexte)); break;
-                    case TTF_Mode_Blended: pstSurfaceTexte=TTF_RenderText_Blended(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte)); break;
-                }
-                break;
-            case TTF_Charset_UTF8:
-                switch (getPropTexteMode(pstPropTexte)){
-                    case TTF_Mode_Solid: pstSurfaceTexte=TTF_RenderUTF8_Solid(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte)); break;
-                    case TTF_Mode_Shaded: pstSurfaceTexte=TTF_RenderUTF8_Shaded(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte),*getPropTexteCouleur(pstPropTexte)); break;
-                    case TTF_Mode_Blended: pstSurfaceTexte=TTF_RenderUTF8_Blended(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte)); break;
-                }
-                break;
-            /*case TTF_Charset_Unicode:
-                switch (getPropTexteMode(pstPropTexte)){
-                    case TTF_Mode_Solid: pstSurfaceTexte=TTF_RenderUNICODE_Solid(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte)); break;
-                    case TTF_Mode_Shaded: pstSurfaceTexte=TTF_RenderUNICODE_Shaded(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte),*getPropTexteCouleur(pstPropTexte)); break;
-                    case TTF_Mode_Blended: pstSurfaceTexte=TTF_RenderUNICODE_Blended(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte)); break;
-                }
-                break;
-            case TTF_Charset_UnicodeGlyph:
-                switch (getPropTexteMode(pstPropTexte)){
-                    case TTF_Mode_Solid: pstSurfaceTexte=TTF_RenderGlyph_Solid(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte)); break;
-                    case TTF_Mode_Shaded: pstSurfaceTexte=TTF_RenderGlyph_Shaded(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte),*getPropTexteCouleur(pstPropTexte)); break;
-                    case TTF_Mode_Blended: pstSurfaceTexte=TTF_RenderGlyph_Blended(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte)); break;
-                }
-                break;*/
-            }
-
-        TTF_CloseFont(pstPolice);   //fermeture de la police
-
-        //si la surface a été créer
-        if(pstSurfaceTexte==NULL){
-            printf("\nImpossible de creer la surface du texte. - %s\n", TTF_GetError());
+    if(!(strcmp(getTexteTexte(pstTexte),"")==0)){   //si le texte n'est pas vide
+        strcpy(pcEmplPolice,getPropTexteEmplpolice(pstPropTexte));
+        //Vérification du bon chargement de la police
+        if((pstPolice=TTF_OpenFont(pcEmplPolice,getPropTexteTaille(pstPropTexte)))==NULL){
+            printf("\nImpossible de charger la police : %s - TTF_OpenFont: %s\n",pcEmplPolice, TTF_GetError());
         }else{
-            //vérifie si la texture a bien été crée
-            if((pstTexture=SDL_CreateTextureFromSurface(pRenderer,pstSurfaceTexte))==NULL){
-                printf("\nErreur lors de la création de la texture. - %s\n", SDL_GetError());
-            }else{
-                SDL_FreeSurface(pstSurfaceTexte);   //libère la surface
-
-                SDL_QueryTexture(pstTexture,NULL,NULL,&nTexteLargeur,&nTexteHauteur);
-                stSurfaceDuTexte.w = nTexteLargeur;
-                stSurfaceDuTexte.h = nTexteHauteur;
-                stPoint = convertionPointVersSDL_Point(getRectanglePointCentral(getObjetRectangle(getTexteObjet(pstTexte))));
-                stSurfaceDuTexte.x = getSDLPointX(&stPoint)-(nTexteLargeur*0.5);
-                stSurfaceDuTexte.y = getSDLPointY(&stPoint)-(nTexteHauteur*0.5);
-
-
-                    //applique la texture dans la surface
-                SDL_RenderCopy(pRenderer,pstTexture,NULL,&stSurfaceDuTexte); //applique la texture
-                SDL_DestroyTexture(pstTexture);  //détruit la texture
-
+            while(cStyle[nI]!='\0'){
+                switch(cStyle[nI]){
+                case 'u': TTF_SetFontStyle(pstPolice,TTF_STYLE_UNDERLINE);break;
+                case 'i': TTF_SetFontStyle(pstPolice,TTF_STYLE_ITALIC);break;
+                case 'b': TTF_SetFontStyle(pstPolice,TTF_STYLE_BOLD);break;
+                }
             }
-        }
 
+
+            switch(getPropTexteCharset(pstPropTexte)){
+                case TTF_Charset_Latin1:
+                    switch (getPropTexteMode(pstPropTexte)){
+                        case TTF_Mode_Solid: pstSurfaceTexte=TTF_RenderText_Solid(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte)); break;
+                        case TTF_Mode_Shaded: pstSurfaceTexte=TTF_RenderText_Shaded(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte),*getPropTexteCouleur(pstPropTexte)); break;
+                        case TTF_Mode_Blended: pstSurfaceTexte=TTF_RenderText_Blended(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte)); break;
+                    }
+                    break;
+                case TTF_Charset_UTF8:
+                    switch (getPropTexteMode(pstPropTexte)){
+                        case TTF_Mode_Solid: pstSurfaceTexte=TTF_RenderUTF8_Solid(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte)); break;
+                        case TTF_Mode_Shaded: pstSurfaceTexte=TTF_RenderUTF8_Shaded(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte),*getPropTexteCouleur(pstPropTexte)); break;
+                        case TTF_Mode_Blended: pstSurfaceTexte=TTF_RenderUTF8_Blended(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte)); break;
+                    }
+                    break;
+                /*case TTF_Charset_Unicode:
+                    switch (getPropTexteMode(pstPropTexte)){
+                        case TTF_Mode_Solid: pstSurfaceTexte=TTF_RenderUNICODE_Solid(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte)); break;
+                        case TTF_Mode_Shaded: pstSurfaceTexte=TTF_RenderUNICODE_Shaded(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte),*getPropTexteCouleur(pstPropTexte)); break;
+                        case TTF_Mode_Blended: pstSurfaceTexte=TTF_RenderUNICODE_Blended(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte)); break;
+                    }
+                    break;
+                case TTF_Charset_UnicodeGlyph:
+                    switch (getPropTexteMode(pstPropTexte)){
+                        case TTF_Mode_Solid: pstSurfaceTexte=TTF_RenderGlyph_Solid(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte)); break;
+                        case TTF_Mode_Shaded: pstSurfaceTexte=TTF_RenderGlyph_Shaded(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte),*getPropTexteCouleur(pstPropTexte)); break;
+                        case TTF_Mode_Blended: pstSurfaceTexte=TTF_RenderGlyph_Blended(pstPolice,getTexteTexte(pstTexte),*getPropTexteCouleur(pstPropTexte)); break;
+                    }
+                    break;*/
+                }
+
+            TTF_CloseFont(pstPolice);   //fermeture de la police
+
+            //si la surface a été créer
+            if(pstSurfaceTexte==NULL){
+                printf("\nImpossible de creer la surface du texte. - %s\n", TTF_GetError());
+            }else{
+                //vérifie si la texture a bien été crée
+                if((pstTexture=SDL_CreateTextureFromSurface(pRenderer,pstSurfaceTexte))==NULL){
+                    printf("\nErreur lors de la création de la texture. - %s\n", SDL_GetError());
+                }else{
+                    SDL_FreeSurface(pstSurfaceTexte);   //libère la surface
+
+                    SDL_QueryTexture(pstTexture,NULL,NULL,&nTexteLargeur,&nTexteHauteur);
+                    stSurfaceDuTexte.w = nTexteLargeur;
+                    stSurfaceDuTexte.h = nTexteHauteur;
+                    stPoint = convertionPointVersSDL_Point(getRectanglePointCentral(getObjetRectangle(getTexteObjet(pstTexte))));
+                    stSurfaceDuTexte.x = getSDLPointX(&stPoint)-(nTexteLargeur*0.5);
+                    stSurfaceDuTexte.y = getSDLPointY(&stPoint)-(nTexteHauteur*0.5);
+
+
+                        //applique la texture dans la surface
+                    SDL_RenderCopy(pRenderer,pstTexture,NULL,&stSurfaceDuTexte); //applique la texture
+                    SDL_DestroyTexture(pstTexture);  //détruit la texture
+
+                }
+            }
+
+        }
     }
+
 }
 
 //###########################################

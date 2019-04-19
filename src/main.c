@@ -101,6 +101,45 @@ int main( int argc, char* args[]/*, char * env[]*/ )
                 */
                 case leReveil: gestionLevelLeReveil(pManaComposant);
                     break;
+
+                case lePetitDejeuner : gestionLevelLePetitDejeuner(pManaComposant);
+                    break;
+
+                case laToilette : gestionLevelLaToilette(pManaComposant);
+                    break;
+
+                case moyenLocomotion : gestionLevelMoyenLocomotion(pManaComposant);
+                    break;
+
+                case preparation : gestionLevelPreparation(pManaComposant);
+                    break;
+
+                case leTicket : gestionLevelLeTicket(pManaComposant);
+                    break;
+
+                case arriveeEcole : gestionLevelArriveeEcole(pManaComposant);
+                    break;
+
+                case repasMidi : gestionLevelRepasMidi(pManaComposant);
+                    break;
+
+                case toilettes : gestionLevelToilettes(pManaComposant);
+                    break;
+
+                case sortieEcole : gestionLevelSortieEcole(pManaComposant);
+                    break;
+
+                case devoirs : gestionLevelDevoirs(pManaComposant);
+                    break;
+
+                case sport : gestionLevelSport(pManaComposant);
+                    break;
+
+                case diner : gestionLevelDiner(pManaComposant);
+                    break;
+
+                case bonneNuit : gestionLevelBonneNuit(pManaComposant);
+                    break;
             }
             break;
         case pause:

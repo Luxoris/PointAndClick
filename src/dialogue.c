@@ -36,11 +36,10 @@ void initFichierDialogue(FILE **ppFile,char cEmpl[]){
 // NOTE -
 //*****************************************************************************************************//
 void texteSuivant(FILE *pFile,tTexte *pTexte){
-    char cChaine[TAILLE_MAX_LIGNE_DIALOGUE];
+    char cChaine[TAILLE_MAX_LIGNE_DIALOGUE]="";
     recuperationChaine(pFile,cChaine);
     setTexteTexte(pTexte,cChaine);
 }
-
 
 //###########################################
 //PROCEDURE recuperationChaine
@@ -59,7 +58,6 @@ void texteSuivant(FILE *pFile,tTexte *pTexte){
 void recuperationChaine(FILE *pFile,char cChaine[]){
     char cChar;
     if(pFile!=NULL){
-        strcpy(cChaine,"");
         do{
           cChar = fgetc(pFile);
           if(cChar==EOF){
