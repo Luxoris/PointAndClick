@@ -78,7 +78,9 @@ int main( int argc, char* args[]/*, char * env[]*/ )
         //affectation de la valeur du timer pour connaitre le temps d'exécution d'exécution du programme au début de l'intérration
         nTempsDebutBoucle = SDL_GetTicks();
 
-
+        gestionEvenements(&stEtatPartie,getManaComposantPointeur(pManaComposant));
+        gestionActionListeBouton(pManaComposant,&stEtatPartie);
+        gestionListeBoutonPointeur(pManaComposant->pListeBouton,pManaComposant->pPointeur);
 
         switch(stEtatPartie){
         case initialisation:
@@ -94,11 +96,11 @@ int main( int argc, char* args[]/*, char * env[]*/ )
             break;
         case enCours:
             switch(stEtatJeu.nNumLevel){
-                case level1 : gestionLevel1(pManaComposant);
+                case level1 : //gestionLevel1(pManaComposant);
                     break;
-                /*case  level2 :
+                case miniJeuReve: gestionLevelMiniJeuReve(pManaComposant);
                     break;
-                */
+
                 case leReveil: gestionLevelLeReveil(pManaComposant);
                     break;
 
@@ -117,13 +119,22 @@ int main( int argc, char* args[]/*, char * env[]*/ )
                 case leTicket : gestionLevelLeTicket(pManaComposant);
                     break;
 
+                case miniJeuPanneaux : gestionLevelMiniJeuPanneaux(pManaComposant);
+                    break;
+
                 case arriveeEcole : gestionLevelArriveeEcole(pManaComposant);
                     break;
 
                 case repasMidi : gestionLevelRepasMidi(pManaComposant);
                     break;
 
+                case miniJeuRepas : gestionLevelMiniJeuRepas(pManaComposant);
+                    break;
+
                 case toilettes : gestionLevelToilettes(pManaComposant);
+                    break;
+
+                case miniJeuGrammaire : gestionLevelMiniJeuGrammaire(pManaComposant);
                     break;
 
                 case sortieEcole : gestionLevelSortieEcole(pManaComposant);
@@ -132,7 +143,13 @@ int main( int argc, char* args[]/*, char * env[]*/ )
                 case devoirs : gestionLevelDevoirs(pManaComposant);
                     break;
 
+                case miniJeuJeuxVideo : gestionLevelMiniJeuJeuxVideo(pManaComposant);
+                    break;
+
                 case sport : gestionLevelSport(pManaComposant);
+                    break;
+
+                case miniJeuSecourisme : gestionLevelMiniJeuSecourisme(pManaComposant);
                     break;
 
                 case diner : gestionLevelDiner(pManaComposant);
@@ -152,26 +169,20 @@ int main( int argc, char* args[]/*, char * env[]*/ )
             break;
         }
 
-        gestionEvenements(&stEtatPartie,getManaComposantPointeur(pManaComposant));
-        gestionActionListeBouton(pManaComposant,&stEtatPartie);
+
 
         ///AFFICHAGE
         //écran en noir
         SDL_SetRenderDrawColor(pRenderer,0,0,0,255);
         SDL_RenderClear(pRenderer);
-
-
-        gestionListeBoutonPointeur(pManaComposant->pListeBouton,pManaComposant->pPointeur);
-
-
         //gestionEvenementsListeBoutons(pManaComposant->pListeBouton,&stEtatPartie);
-
-
         //
-        SDL_SetRenderDrawColor(pRenderer,255,255,255,255);
+
         affichageListeImage(pRenderer,pManaComposant->pListeImage);
         affichageListeTexte(pRenderer,pManaComposant->pListeTexte);
+        //SDL_SetRenderDrawColor(pRenderer,255,0,255,255);
         //affichageListeObjet(pRenderer,pManaComposant->pListeObjet);
+        SDL_SetRenderDrawColor(pRenderer,255,255,255,255);
         affichageListeBouton(pRenderer,pManaComposant->pListeBouton);
 
 

@@ -1,0 +1,5 @@
+*Je dois choisir des aliments pour mon repas.*
+(Surveillant) Félicitations, les aliments que tu as choisi sont très équilibrés.
+(Surveillant) Les aliments que tu as choisis ne sont pas très équilibrés.
+Tu devrais essayer de manger plus de légumes, et d'éviter les aliments trop gras
+comme les frites, le fromage, ou trop sucré comme les gateaux et les sodas.

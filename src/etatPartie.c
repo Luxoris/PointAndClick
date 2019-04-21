@@ -96,6 +96,7 @@ void gestionAction(const tAction nAction, tManaComposant *pMana, tEtatPartie *pE
             case reprendrePartie:
                 supprMenuJeu(pMana);
                 ajoutInterfaceJeu(pMana);
+                manaMajAffichageHorloge(pMana);
                 *pEtatPartie = enCours;
                 break;
             case quitterPartie:

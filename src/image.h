@@ -60,7 +60,7 @@ extern tObjet * getImageObjet(tImage *pstImage);
 extern char * getImageEmpl(tImage *pstImage);
 
 extern void afficheImage(SDL_Renderer *pRenderer,tImage *pstImage);
-extern void dragAndDropImage(tImage *pstImage, tPointeur *pstPointeur);
+extern tBool dragAndDropImage(tImage *pstImage, tPointeur *pstPointeur);
 
 
 

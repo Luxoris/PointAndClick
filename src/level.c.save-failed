@@ -2428,12 +2428,13 @@ void gestionLevelMiniJeuSecourisme(tManaComposant *pMana){
         }
         if(getPointeurCliqueGauche(pMana->pPointeur)&&collisionPointRectangle(getPointeurPosition(pMana->pPointeur),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"telephone")))){
             SDL_Delay(DELAI_CLICK_BOUTON);
-            texteSuivant(pMana->pFichierDialogue,recupTexteParNom(pMana->pListeTexte,"dialogue"));
-            SDL_Delay(DELAI_REPRISE_PARTIE);
-            pMana->pEtatJeu->nAvancementLevel=6;
+            pMana->pEtatJeu->nAvancementLevel=60;
         }
     }
 
+    if(dialogueSuivant(pMana,60)){
+        pMana->pEtatJeu->nAvancementLevel=6;
+    }
 
 
     if(pMana->pEtatJeu->nAvancementLevel==5){
@@ -2445,12 +2446,13 @@ void gestionLevelMiniJeuSecourisme(tManaComposant *pMana){
         }
         if(getPointeurCliqueGauche(pMana->pPointeur)&&collisionPointRectangle(getPointeurPosition(pMana->pPointeur),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"telephone")))){
             SDL_Delay(DELAI_CLICK_BOUTON);
-            texteSuivant(pMana->pFichierDialogue,recupTexteParNom(pMana->pListeTexte,"dialogue"));
-            SDL_Delay(DELAI_REPRISE_PARTIE);
-            pMana->pEtatJeu->nAvancementLevel=5;
+            pMana->pEtatJeu->nAvancementLevel=50;
         }
     }
 
+    if(dialogueSuivant(pMana,50)){
+        pMana->pEtatJeu->nAvancementLevel=5;
+    }
 
 
     if(pMana->pEtatJeu->nAvancementLevel==4){
@@ -2461,17 +2463,18 @@ void gestionLevelMiniJeuSecourisme(tManaComposant *pMana){
         }
         if(getPointeurCliqueGauche(pMana->pPointeur)&&collisionPointRectangle(getPointeurPosition(pMana->pPointeur),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"telephone")))){
             SDL_Delay(DELAI_CLICK_BOUTON);
-            texteSuivant(pMana->pFichierDialogue,recupTexteParNom(pMana->pListeTexte,"dialogue"));
-            SDL_Delay(DELAI_REPRISE_PARTIE);
-            pMana->pEtatJeu->nAvancementLevel=4;
+            pMana->pEtatJeu->nAvancementLevel=40;
         }
     }
 
+    if(dialogueSuivant(pMana,40)){
+        pMana->pEtatJeu->nAvancementLevel=4;
+    }
 
    if(pMana->pEtatJeu->nAvancementLevel==8){
         SDL_Delay(DELAI_REPRISE_PARTIE);
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"titreMenuCharger");
-        insertionPropTexteListe(pMana->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_TITRE*3,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_ROUGE,"",TTF_Charset_Latin1,TTF_Mode_Solid),"titreMenuCharger");
+        insertionPropTexteListe(pMana->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_TITRE*2,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_ROUGE,"",TTF_Charset_Latin1,TTF_Mode_Solid),"titreMenuCharger");
         insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("VICTOIRE!",recupObjetParNom(pMana->pListeObjet,"titreMenuCharger"),recupPropTexteParNom(pMana->pListePropTexte,"titreMenuCharger")),"titreMenuCharger");
         pMana->pEtatJeu->nAvancementLevel++;
     }

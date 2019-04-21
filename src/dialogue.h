@@ -25,10 +25,12 @@
 #define EMPL_DIALOGUE_SPORT "./dialogue/sport.txt"
 #define EMPL_DIALOGUE_TOILETTES "./dialogue/toilettes.txt"
 #define EMPL_DIALOGUE_REPASMIDI "./dialogue/repasMidi.txt"
-#define EMPL_DIALOGUE_ "./dialogue/"
-#define EMPL_DIALOGUE_ "./dialogue/"
-#define EMPL_DIALOGUE_ "./dialogue/"
-#define EMPL_DIALOGUE_ "./dialogue/"
+#define EMPL_DIALOGUE_MINI_JEU_REVE "./dialogue/miniJeuReve.txt"
+#define EMPL_DIALOGUE_MINI_JEU_PANNEAUX "./dialogue/miniJeuPanneaux.txt"
+#define EMPL_DIALOGUE_MINI_JEU_REPAS "./dialogue/miniJeuRepas.txt"
+#define EMPL_DIALOGUE_MINI_JEU_GRAMMAIRE "./dialogue/miniJeuGrammaire.txt"
+#define EMPL_DIALOGUE_MINI_JEU_JEUXVIDEO "./dialogue/miniJeuJeuxVideo.txt"
+#define EMPL_DIALOGUE_MINI_JEU_SECOURISME "./dialogue/miniJeuSecourisme.txt"
 
 
 

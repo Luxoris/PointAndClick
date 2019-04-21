@@ -479,19 +479,23 @@ void afficheImage(SDL_Renderer *pRenderer,tImage *pstImage){
 }
 
 //###########################################
-//PROCEDURE dragAndDropImage
+//FONCTION dragAndDropImage
 //*****************************************************************************************************//
 //
 // DESCRIPTION Procedure qui gère le glisser déposer d'un image.
 //
 // ENTREE /La référence de l'image, la référence du pointeur.
 //
-// SORTIE / La position de l'image modifiée
+// SORTIE / La position de l'image modifiée, le booleen correspondant à etat du drag and drop (si drag andr dop renvoie true sinon false)
 //
 // NOTE -
 //*****************************************************************************************************//
-void dragAndDropImage(tImage *pstImage, tPointeur *pstPointeur){
-    if(getPointeurCliqueGauche(pstPointeur)&&collisionPointRectangle(getPointeurPosition(pstPointeur),getObjetRectangle(getImageObjet(pstImage)))){
+tBool dragAndDropImage(tImage *pstImage, tPointeur *pstPointeur){
+    tRectangle stRectangleSouris = creeRectangle(*getPointeurPosition(pstPointeur),LARGEUR_SOURIS,HAUTEUR_SOURIS);
+    if(getPointeurCliqueGauche(pstPointeur)&&collisionRectangleRectangle(&stRectangleSouris,getObjetRectangle(getImageObjet(pstImage)))){
         setRectanglePointCentral(getObjetRectangle(getImageObjet(pstImage)),*getPointeurPosition(pstPointeur));
-       }
+        return true;
+    }else{
+        return false;
+    }
 }

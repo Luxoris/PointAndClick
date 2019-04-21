@@ -9,11 +9,19 @@
 
 
 //DEFINITION DES TYPES STRUCTURES
-typedef enum tLevel{level1, leReveil, lePetitDejeuner, laToilette, moyenLocomotion,preparation, miniJeuPanneaux, leTicket, arriveeEcole, repasMidi, toilettes, sortieEcole, devoirs, sport, diner, bonneNuit}tLevel;
+typedef enum tLevel{level1,miniJeuReve, leReveil, lePetitDejeuner, laToilette, moyenLocomotion,preparation, miniJeuPanneaux, leTicket, arriveeEcole, repasMidi, miniJeuRepas, toilettes, miniJeuGrammaire, sortieEcole, devoirs, miniJeuJeuxVideo, sport, miniJeuSecourisme, diner, bonneNuit}tLevel;
 
 
 //PROTOTYPE DES METHODES
 extern void gestionLevel1(tManaComposant *pMana);
+extern void gestionLevelMiniJeuReve(tManaComposant *pMana);
+extern void gestionLevelMiniJeuPanneaux(tManaComposant *pMana);
+extern void gestionLevelMiniJeuRepas(tManaComposant *pMana);
+extern void gestionLevelMiniJeuGrammaire(tManaComposant *pMana);
+extern void gestionLevelMiniJeuJeuxVideo(tManaComposant *pMana);
+extern void gestionLevelMiniJeuSecourisme(tManaComposant *pMana);
+
+
 extern void gestionLevelLeReveil(tManaComposant *pMana);
 extern void gestionLevelLePetitDejeuner(tManaComposant *pMana);
 extern void gestionLevelLaToilette(tManaComposant *pMana);

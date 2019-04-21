@@ -3657,7 +3657,7 @@
 	"collision.h"
 	"renderer.h"
 
-1555691266 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\define.h
+1555813859 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\define.h
 
 1554392445 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\joueur.h
 	<SDL.h>
@@ -3665,7 +3665,7 @@
 	<stdlib.h>
 	"tObjet.h"
 
-1555007770 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\bouton.c
+1555791366 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\bouton.c
 	"bouton.h"
 
 1555166608 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\bouton.h
@@ -3678,7 +3678,7 @@
 	"SDL2_texte.h"
 	"renderer.h"
 
-1553363069 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\pointeur.h
+1555791296 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\pointeur.h
 	<stdlib.h>
 	<stdio.h>
 	"tBool.h"
@@ -3752,7 +3752,7 @@
 	"SDLPoint.h"
 	"rectangle.h"
 
-1555683543 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\sdl2_texte.h
+1555769348 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\sdl2_texte.h
 	<SDL.h>
 	<stdio.h>
 	<SDL_ttf.h>
@@ -3764,7 +3764,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1555690781 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\sdl2_texte.c
+1555769371 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\sdl2_texte.c
 	"SDL2_texte.h"
 
 1551976443 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\sdlpoint.c
@@ -3794,12 +3794,12 @@
 	"define.h"
 	<stdio.h>
 
-1555167199 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\image.c
+1555791422 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\image.c
 	"image.h"
 	<stdlib.h>
 	<stdio.h>
 
-1555167152 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\image.h
+1555781528 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\image.h
 	<SDL.h>
 	<SDL_image.h>
 	"tObjet.h"
@@ -3812,7 +3812,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1555707053 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\main.c
+1555813665 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\main.c
 	<stdio.h>
 	<stdlib.h>
 	<SDL.h>
@@ -3839,17 +3839,17 @@
 	"image.h"
 	"horloge.h"
 
-1555671008 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\interface.c
+1555769137 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\interface.c
 	"interface.h"
 
 1555517767 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\interface.h
 	"etatPartie.h"
 	"manager.h"
 
-1555705472 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\level.c
+1555814782 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\level.c
 	"level.h"
 
-1555691175 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\level.h
+1555809845 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\level.h
 	"manager.h"
 	"dialogue.h"
 	"interface.h"
@@ -3864,13 +3864,13 @@
 	"define.h"
 	"collision.h"
 
-1555521817 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\etatpartie.c
+1555790963 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\etatpartie.c
 	"etatPartie.h"
 
 1555658808 source:d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\dialogue.c
 	"dialogue.h"
 
-1555668377 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\dialogue.h
+1555775111 d:\documents\onedrive\documents\cours\ludus f2\divers\defi point&click\git\pointandclick\src\dialogue.h
 	<stdio.h>
 	"SDL2_texte.h"
 	"manager.h"

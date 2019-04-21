@@ -619,7 +619,8 @@ void dessineBouton(SDL_Renderer *pRenderer,tBouton *pstBouton){
 // NOTE -
 //*****************************************************************************************************//
 void gestionBoutonPointeur(tBouton *pstBouton, tPointeur *pstPointeur){
-    if(collisionPointRectangle(getPointeurPosition(pstPointeur),getObjetRectangle(getBoutonObjet(pstBouton)))){
+    tRectangle stRectangleSouris = creeRectangle(*getPointeurPosition(pstPointeur),LARGEUR_SOURIS,HAUTEUR_SOURIS);
+    if(collisionRectangleRectangle(&stRectangleSouris,getObjetRectangle(getBoutonObjet(pstBouton)))){
         setBoutonSurvole(pstBouton,true);
         if(getPointeurCliqueGauche(pstPointeur)){
             setBoutonClique(pstBouton,true);

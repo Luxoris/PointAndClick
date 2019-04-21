@@ -406,7 +406,9 @@ void ajoutInterfaceJeu(tManaComposant *pMana){
     //DECLARATION DES OBJETS
     insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"centre");
     insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR-(LARGEUR_BOUTON*0.5),HAUTEUR_BOUTON*0.5),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"boutonEmp1");
-    insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR-(LARGEUR_BOUTON*0.5),WINDOW_HAUTEUR-(HAUTEUR_BOUTON*2)),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"boutonEmp2");
+    if(recupElementObjetParNom(pMana->pListeObjet,"boutonEmp2")==NULL){
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR-(LARGEUR_BOUTON*0.5),WINDOW_HAUTEUR-(HAUTEUR_BOUTON*2)),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"boutonEmp2");
+    }
     insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,HAUTEUR_DIALOGUE),LARGEUR_DIALOGUE,HAUTEUR_DIALOGUE),creeVecteur(0,0),creeVecteur(0,0)),"dialogue");
     insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"centre");
     insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(LARGEUR_BOUTON*0.5,HAUTEUR_BOUTON*0.5),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"horloge");
@@ -419,8 +421,8 @@ void ajoutInterfaceJeu(tManaComposant *pMana){
     //insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"centre"),ABRICOT_JPG),"imgTest");
 
     //DECLARATION DES TEXTES
-    insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("Test de dialogue par défaut",recupObjetParNom(pMana->pListeObjet,"dialogue"),recupPropTexteParNom(pMana->pListePropTexte,"dialogue")),"dialogue");
-    insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("07:00",recupObjetParNom(pMana->pListeObjet,"horloge"),recupPropTexteParNom(pMana->pListePropTexte,"horloge")),"horloge");
+    insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("",recupObjetParNom(pMana->pListeObjet,"dialogue"),recupPropTexteParNom(pMana->pListePropTexte,"dialogue")),"dialogue");
+    insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("",recupObjetParNom(pMana->pListeObjet,"horloge"),recupPropTexteParNom(pMana->pListePropTexte,"horloge")),"horloge");
 }
 
 //###########################################
@@ -444,7 +446,7 @@ void supprInterfaceJeu(tManaComposant *pMana){
     //SUPPRESSION DES OBJETS
     suppressionObjetListe(pMana->pListeObjet,recupElementObjetParNom(pMana->pListeObjet,"dialogue"));
     suppressionObjetListe(pMana->pListeObjet,recupElementObjetParNom(pMana->pListeObjet,"boutonEmp1"));
-    suppressionObjetListe(pMana->pListeObjet,recupElementObjetParNom(pMana->pListeObjet,"boutonEmp2"));
+    //suppressionObjetListe(pMana->pListeObjet,recupElementObjetParNom(pMana->pListeObjet,"boutonEmp2"));
     suppressionObjetListe(pMana->pListeObjet,recupElementObjetParNom(pMana->pListeObjet,"centre"));
 
     //SUPPRESSION DES BOUTONS
@@ -498,7 +500,9 @@ void ajoutBoutonChoix(tManaComposant *pMana,char sChoix1[], char sChoix2[]){
     insertionBoutonListe(pMana->pListeBouton,NULL,creeBouton(recupObjetParNom(pMana->pListeObjet,"boutonChoixEmp1"),sChoix1,recupPropTexteParNom(pMana->pListePropTexte,"boutonMenu"),false,false,0),"choix1");
     insertionBoutonListe(pMana->pListeBouton,NULL,creeBouton(recupObjetParNom(pMana->pListeObjet,"boutonChoixEmp2"),sChoix2,recupPropTexteParNom(pMana->pListePropTexte,"boutonMenu"),false,false,0),"choix2");
 
-
+//SUPRESSION DES BOUTONS
+    suppressionBoutonListe(pMana->pListeBouton,recupElementBoutonParNom(pMana->pListeBouton,"suivant"));
+    suppressionBoutonListe(pMana->pListeBouton,recupElementBoutonParNom(pMana->pListeBouton,"ouvrirMenuJeu"));
 }
 
 //###########################################
@@ -521,6 +525,11 @@ void supprBoutonChoix(tManaComposant *pMana){
     //SUPPRESSION DES BOUTONS
     suppressionBoutonListe(pMana->pListeBouton,recupElementBoutonParNom(pMana->pListeBouton,"choix1"));
     suppressionBoutonListe(pMana->pListeBouton,recupElementBoutonParNom(pMana->pListeBouton,"choix2"));
+
+    //AJOUT DES BOUTONS D'INTERFACE
+    insertionBoutonListe(pMana->pListeBouton,NULL,creeBouton(recupObjetParNom(pMana->pListeObjet,"boutonEmp1"),"Menu",recupPropTexteParNom(pMana->pListePropTexte,"boutonMenu"),false,false,ouvrirMenuJeu),"ouvrirMenuJeu");
+    insertionBoutonListe(pMana->pListeBouton,NULL,creeBouton(recupObjetParNom(pMana->pListeObjet,"boutonEmp2"),"Suivant",recupPropTexteParNom(pMana->pListePropTexte,"boutonMenu"),false,false,0),"suivant");
+
 
 }
 
