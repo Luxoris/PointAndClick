@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Test" />
+		<Option title="PointAndClick" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -123,7 +123,6 @@
 		<Unit filename="src/pointeur.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/pointeur.c.save-failed" />
 		<Unit filename="src/pointeur.h" />
 		<Unit filename="src/raquette.c">
 			<Option compilerVar="CC" />
@@ -137,7 +136,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/renderer.h" />
-		<Unit filename="src/sauvegarde.h" />
 		<Unit filename="src/tBool.h" />
 		<Unit filename="src/tObjet.c">
 			<Option compilerVar="CC" />

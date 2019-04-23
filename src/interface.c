@@ -34,7 +34,7 @@ void ajoutMenuPrincipale(tManaComposant *pMana){
     insertionBoutonListe(pMana->pListeBouton,NULL,creeBouton(recupObjetParNom(pMana->pListeObjet,"mPpEmp4"),"Quitter",recupPropTexteParNom(pMana->pListePropTexte,"boutonMenu"),false,false,fermerJeu),"fermerJeu");
 
     //DECLARATION DES IMAGES
-    insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"centre"),ABRICOT_JPG),"fondEcranMenuPrincipale");
+    insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"centre"),CHAMBRE),"fondEcranMenuPrincipale");
 
     //DECLARATION DES TEXTES
     insertionTexteListe(pMana->pListeTexte,NULL,creeTexte(NOM_DU_JEU,recupObjetParNom(pMana->pListeObjet,"titreJeu"),recupPropTexteParNom(pMana->pListePropTexte,"titreJeu")),"titreJeu");
@@ -111,7 +111,7 @@ void ajoutMenuJeu(tManaComposant *pMana){
     insertionBoutonListe(pMana->pListeBouton,NULL,creeBouton(recupObjetParNom(pMana->pListeObjet,"mJeuEmp3"),"Quitter",recupPropTexteParNom(pMana->pListePropTexte,"boutonMenu"),false,false,quitterPartie),"quitterJeu");
 
     //DECLARATION DES IMAGES
-    insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"centre"),ABRICOT_JPG),"fondEcranMenuJeu");
+    insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"centre"),CHAMBRE),"fondEcranMenuJeu");
 
     //DECLARATION DES TEXTES
     insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("Partie en Pause",recupObjetParNom(pMana->pListeObjet,"titreMenuJeu"),recupPropTexteParNom(pMana->pListePropTexte,"titreMenuJeu")),"titreMenuJeu");
@@ -184,7 +184,7 @@ void ajoutMenuOptions(tManaComposant *pMana){
     insertionBoutonListe(pMana->pListeBouton,NULL,creeBouton(recupObjetParNom(pMana->pListeObjet,"mEmp1"),"Retour",recupPropTexteParNom(pMana->pListePropTexte,"boutonMenu"),false,false,retourMenuPrincipalDepuisOptions),"retourMenuDepuisOptions");
 
     //DECLARATION DES IMAGES
-    insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"centre"),ABRICOT_JPG),"fondEcranMenuOptions");
+    insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"centre"),CHAMBRE),"fondEcranMenuOptions");
 
     //DECLARATION DES TEXTES
     insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("Options",recupObjetParNom(pMana->pListeObjet,"titreMenuOptions"),recupPropTexteParNom(pMana->pListePropTexte,"titreMenuOptions")),"titreMenuOptions");
@@ -257,7 +257,7 @@ void ajoutMenuNouvellePartie(tManaComposant *pMana){
     insertionBoutonListe(pMana->pListeBouton,NULL,creeBouton(recupObjetParNom(pMana->pListeObjet,"mEmp4"),"Retour",recupPropTexteParNom(pMana->pListePropTexte,"boutonMenu"),false,false,retourMenuPrincipalDepuisNouvellePartie),"retourMenuDepuisNouvellePartie");
 
     //DECLARATION DES IMAGES
-    insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"centre"),ABRICOT_JPG),"fondEcranMenuNouvellePartie");
+    insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"centre"),CHAMBRE),"fondEcranMenuNouvellePartie");
 
     //DECLARATION DES TEXTES
     insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("Empl de sauvegarde ?",recupObjetParNom(pMana->pListeObjet,"titreMenuNouvellePartie"),recupPropTexteParNom(pMana->pListePropTexte,"titreMenuNouvellePartie")),"titreMenuNouvellePartie");
@@ -336,7 +336,7 @@ void ajoutMenuCharger(tManaComposant *pMana){
     insertionBoutonListe(pMana->pListeBouton,NULL,creeBouton(recupObjetParNom(pMana->pListeObjet,"mEmp4"),"Retour",recupPropTexteParNom(pMana->pListePropTexte,"boutonMenu"),false,false,retourMenuPrincipalDepuisCharger),"retourMenuDepuisCharger");
 
     //DECLARATION DES IMAGES
-    insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"centre"),ABRICOT_JPG),"fondEcranMenuCharger");
+    insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"centre"),CHAMBRE),"fondEcranMenuCharger");
 
     //DECLARATION DES TEXTES
     insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("Charger",recupObjetParNom(pMana->pListeObjet,"titreMenuCharger"),recupPropTexteParNom(pMana->pListePropTexte,"titreMenuCharger")),"titreMenuCharger");
@@ -418,7 +418,7 @@ void ajoutInterfaceJeu(tManaComposant *pMana){
     insertionBoutonListe(pMana->pListeBouton,NULL,creeBouton(recupObjetParNom(pMana->pListeObjet,"boutonEmp2"),"Suivant",recupPropTexteParNom(pMana->pListePropTexte,"boutonMenu"),false,false,0),"suivant");
 
     //DECLARATION DES IMAGES
-    //insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"centre"),ABRICOT_JPG),"imgTest");
+    //insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"centre"),CHAMBRE),"imgTest");
 
     //DECLARATION DES TEXTES
     insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("",recupObjetParNom(pMana->pListeObjet,"dialogue"),recupPropTexteParNom(pMana->pListePropTexte,"dialogue")),"dialogue");

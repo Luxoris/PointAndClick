@@ -110,8 +110,16 @@ void suppressionImageListe(tListeImage *pListe, tElementImage *pElementSupprimer
                 //la liste récupère le second élément, et le définit comme premier élément
                 pListe->pPremier = pListe->pPremier->pSuivant; //la liste récupère la référence de l'élément suivant
 
-                //libère l'élément a supprimer.
+                ///libère l'élément a supprimer.
+
+                //détruit la texture si l'image est supprimer
+                if(pElement->stImage.pTexture!=NULL){
+                    SDL_DestroyTexture(pElement->stImage.pTexture);
+                    pElement->stImage.pTexture=NULL;
+                }
+                //libère l'élément
                 free(pElement);
+
             }else{
 
             // SINON parcourt les éléments de la liste pour trouver l'élément précédent a supprimer.
@@ -125,7 +133,15 @@ void suppressionImageListe(tListeImage *pListe, tElementImage *pElementSupprimer
                 //raccorche l'lément précédent avec le suivant
                 pElement->pSuivant = pElementSupprimer->pSuivant;
 
-                free(pElementSupprimer);    //libère l'élément a supprimer.
+                ///libère l'élément a supprimer.
+
+                //détruit la texture si l'image est supprimer
+                if(pElementSupprimer->stImage.pTexture!=NULL){
+                    SDL_DestroyTexture(pElementSupprimer->stImage.pTexture);
+                    pElementSupprimer->stImage.pTexture=NULL;
+                }
+                //libère l'élément
+                free(pElementSupprimer);
             }
 
             pListe->nbElements--;       //décrémente le nombre d'éléments de la liste
@@ -256,7 +272,7 @@ tElementImage* recupElementImageParNom(tListeImage *pListe,const char sNom[]){
         }
     }while(pElement->pSuivant!=NULL);   //tant qu'il existe un élément suivant
 
-    printf("\nLe nom ne correspond a aucun élément");
+    printf("\nLe nom %s,ne correspond a aucun element.",sNom);
     return NULL;
 
 }
@@ -340,6 +356,7 @@ void initImage(tImage **ppstImage,tObjet *pstObjet, char sEmplImage[]){
 //*****************************************************************************************************//
 void setImage(tImage *pstImage,tObjet *pstObjet, char sEmplImage[]){
     setImageObjet(pstImage,pstObjet);
+    pstImage->pTexture=NULL;
     setImageEmpl(pstImage,sEmplImage);
 }
 
@@ -374,6 +391,10 @@ void setImageObjet(tImage *pstImage, tObjet *pstObjet){
 //*****************************************************************************************************//
 void setImageEmpl(tImage *pstImage, char sEmplImage[]){
     strcpy(pstImage->sEmplImage,sEmplImage);
+    if(pstImage->pTexture!=NULL){   //si l'image possède une texture, détruit la texture;
+        SDL_DestroyTexture(pstImage->pTexture);
+        pstImage->pTexture=NULL;    //affecte NULL au pointeur de texture.
+    }
 }
 
 //###########################################
@@ -437,44 +458,43 @@ char * getImageEmpl(tImage *pstImage){
 //
 // SORTIE / L'image affichée.
 //
-// NOTE -
+// NOTE / Si la référence de la texture est NULL, créer la nouvelle texture en fonction de l'emplacement de l'image.
 //*****************************************************************************************************//
 void afficheImage(SDL_Renderer *pRenderer,tImage *pstImage){
     int nImageHauteur,nImageLargeur;
     char pcEmplImage[IMAGE_TAILLE_CHAINE]="";
     SDL_Surface *pstSurfaceImage=NULL;
-    SDL_Texture *pstTexture;
     SDL_Rect stSurfaceImage;
     SDL_Point stPoint;
 
     strcpy(pcEmplImage,getImageEmpl(pstImage));
     //Vérification du bon chargement de la police
 
-
-    //creation de la surface de l'image
-    pstSurfaceImage = IMG_Load(pcEmplImage);//Chargement de l'image
-
-    //si la surface a été créer
-    if(pstSurfaceImage==NULL){
-        printf("\nImpossible de creer la surface de l'image. - %s\n", IMG_GetError());
-    }else{
-        //vérifie si la texture a bien été crée
-        if((pstTexture=SDL_CreateTextureFromSurface(pRenderer,pstSurfaceImage))==NULL){
-            printf("\nErreur lors de la création de la texture. - %s\n", SDL_GetError());
+    if(pstImage->pTexture==NULL){   //si la texture est null, création de la surface.
+        //creation de la surface de l'image
+        pstSurfaceImage = IMG_Load(pcEmplImage);//Chargement de la surface de l'image
+        //si la surface a été créer
+        if(pstSurfaceImage==NULL){
+            printf("\nImpossible de creer la surface de l'image. - %s\n", IMG_GetError());
         }else{
-            SDL_FreeSurface(pstSurfaceImage);   //libère la surface
-
-            SDL_QueryTexture(pstTexture,NULL,NULL,&nImageLargeur,&nImageHauteur);
-            stSurfaceImage.w = nImageLargeur;
-            stSurfaceImage.h = nImageHauteur;
-            stPoint = convertionPointVersSDL_Point(getRectanglePointCentral(getObjetRectangle(getImageObjet(pstImage))));
-            stSurfaceImage.x = getSDLPointX(&stPoint)-(nImageLargeur*0.5);
-            stSurfaceImage.y = getSDLPointY(&stPoint)-(nImageHauteur*0.5);
-
-                //applique la texture dans la surface
-            SDL_RenderCopy(pRenderer,pstTexture,NULL,&stSurfaceImage); //applique la texture
-            SDL_DestroyTexture(pstTexture);  //détruit la texture
+            //vérifie si la texture a bien été crée
+            if((pstImage->pTexture=SDL_CreateTextureFromSurface(pRenderer,pstSurfaceImage))==NULL){
+                printf("\nErreur lors de la création de la texture. - %s\n", SDL_GetError());
+            }else{
+                SDL_FreeSurface(pstSurfaceImage);   //libère la surface
+            }
         }
+    }
+    if(pstImage->pTexture!=NULL){
+        SDL_QueryTexture(pstImage->pTexture,NULL,NULL,&nImageLargeur,&nImageHauteur);
+        stSurfaceImage.w = nImageLargeur;
+        stSurfaceImage.h = nImageHauteur;
+        stPoint = convertionPointVersSDL_Point(getRectanglePointCentral(getObjetRectangle(getImageObjet(pstImage))));
+        stSurfaceImage.x = getSDLPointX(&stPoint)-(nImageLargeur*0.5);
+        stSurfaceImage.y = getSDLPointY(&stPoint)-(nImageHauteur*0.5);
+
+        //applique la texture dans la surface
+        SDL_RenderCopy(pRenderer,pstImage->pTexture,NULL,&stSurfaceImage); //applique la texture
     }
 }
 

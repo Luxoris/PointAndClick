@@ -17,6 +17,7 @@
 typedef struct tImage{
     tObjet *pstObjet;
     char sEmplImage[IMAGE_TAILLE_CHAINE];
+    SDL_Texture *pTexture;
 }tImage;
 
 //DEFINITION DE L'ELEMENT IMAGE

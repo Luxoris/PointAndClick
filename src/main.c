@@ -37,7 +37,7 @@ int main( int argc, char* args[]/*, char * env[]*/ )
     ///INITIALISATION DE LA SDL, DE LA FENETRE, DU RENDERER, DU TTF///
     initSDL();
     initFenetre(&pFenetre,NOM_DU_JEU);
-    //SDL_SetWindowFullscreen(pFenetre,SDL_WINDOW_FULLSCREEN_DESKTOP);    //mise ne plein écran
+    SDL_SetWindowFullscreen(pFenetre,SDL_WINDOW_FULLSCREEN_DESKTOP);    //mise ne plein écran
     initMoteurRendu(&pFenetre,&pRenderer);
     initSDLImage();
     initTTF();
@@ -87,6 +87,8 @@ int main( int argc, char* args[]/*, char * env[]*/ )
             //Définit l'état du jeu comme celui d'un nouvelle partie.
             stEtatJeu.nAvancementLevel=0;
             stEtatJeu.nNumLevel=1;
+            stEtatJeu.stHorloge.nHeure=0;
+            stEtatJeu.stHorloge.nMinute=0;
             //Ecrase la sauvegarde précédente de l'empl 1
             sauvegardePartie(pManaComposant->pEtatJeu->cEmplFichierSauvegarde,*pManaComposant->pEtatJeu);
             //Ajoute l'interface du jeu

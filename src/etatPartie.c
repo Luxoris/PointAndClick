@@ -15,6 +15,7 @@
 // NOTE -
 //*****************************************************************************************************//
 void gestionAction(const tAction nAction, tManaComposant *pMana, tEtatPartie *pEtatPartie){
+    tEtatJeu stEtatJeu;
     if(nAction!=0){
         switch(nAction){
             //MENU PRINCIPALE
@@ -67,15 +68,15 @@ void gestionAction(const tAction nAction, tManaComposant *pMana, tEtatPartie *pE
                 break;
             case chargerEmpl2:
                 if(chargementPartie(EMPL_FICHIER_SAUVEGARDE_2,pMana->pEtatJeu)){
-                    ajoutInterfaceJeu(pMana);
                     vidageComposantsProgramme(pMana);
+                    ajoutInterfaceJeu(pMana);
                     *pEtatPartie = enCours;
                 }
                 break;
             case chargerEmpl3:
                 if(chargementPartie(EMPL_FICHIER_SAUVEGARDE_3,pMana->pEtatJeu)){
-                    ajoutInterfaceJeu(pMana);
                     vidageComposantsProgramme(pMana);
+                    ajoutInterfaceJeu(pMana);
                     *pEtatPartie = enCours;
                 }
                 break;
@@ -105,8 +106,9 @@ void gestionAction(const tAction nAction, tManaComposant *pMana, tEtatPartie *pE
                 *pEtatPartie = menu;
 
             case sauvegarder:
-                pMana->pEtatJeu->nAvancementLevel = 0;
-                sauvegardePartie(pMana->pEtatJeu->cEmplFichierSauvegarde,*pMana->pEtatJeu);
+                stEtatJeu = *pMana->pEtatJeu;
+                stEtatJeu.nAvancementLevel = 0;
+                sauvegardePartie(pMana->pEtatJeu->cEmplFichierSauvegarde,stEtatJeu);
                 break;
 
             //EN JEU

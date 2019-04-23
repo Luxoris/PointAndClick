@@ -19,6 +19,7 @@ typedef struct tEtatJeu{
     int nNumLevel;
     int nAvancementLevel;
     tHorloge stHorloge;
+    tHorloge stHorlogeSauvegarde;
     char cEmplFichierSauvegarde[TAILLE_NOM_FICHIER_SAUVEGARDE_MAX];
 }tEtatJeu;
 

@@ -21,7 +21,7 @@ typedef struct tSauvegarde{
 
 //DECLARATION DES METHODES
 extern void sauvegarder(tSauvegarde stSauvegarde, char cEmplacement[]);
-extern void charger(tSauvegarde stSauvegarde, char cEmplacement[])
+extern void charger(tSauvegarde stSauvegarde, char cEmplacement[]);
 
 
 

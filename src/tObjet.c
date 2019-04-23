@@ -252,7 +252,7 @@ tElementObjet* recupElementObjetParNom(tListeObjet *pListe,const char sNom[]){
         }
     }while(pElement->pSuivant!=NULL);   //tant qu'il existe un élément suivant
 
-    printf("\nLe nom ne correspond a aucun élément");
+    printf("\nLe nom %s,ne correspond a aucun element.",sNom);
     return NULL;
 
 

@@ -54,6 +54,7 @@ void gestionLevelMiniJeuReve(tManaComposant *pMana){
         setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"dialogue"),SDL_CL_MONSTRE);
         setBoutonTexte(recupBoutonParNom(pMana->pListeBouton,"suivant"),"Courir");
         setObjetRectangle(recupObjetParNom(pMana->pListeObjet,"boutonEmp2"),creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR-(HAUTEUR_BOUTON*2)),LARGEUR_BOUTON,HAUTEUR_BOUTON));
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         pMana->pEtatJeu->nAvancementLevel++;
 
     }
@@ -203,6 +204,7 @@ void gestionLevelLeReveil(tManaComposant *pMana){
         initFichierDialogue(&pMana->pFichierDialogue,EMPL_DIALOGUE_LEREVEIL);
         setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"dialogue"),SDL_CL_JOUEUR);
         texteSuivant(pMana->pFichierDialogue,recupTexteParNom(pMana->pListeTexte,"dialogue"));
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         pMana->pEtatJeu->nAvancementLevel++;
 
     }
@@ -272,6 +274,7 @@ void gestionLevelLePetitDejeuner(tManaComposant *pMana){
         initFichierDialogue(&pMana->pFichierDialogue,EMPL_DIALOGUE_LEPETITDEJEUNER);
         setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"dialogue"),SDL_CL_MERE);
         texteSuivant(pMana->pFichierDialogue,recupTexteParNom(pMana->pListeTexte,"dialogue"));
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         pMana->pEtatJeu->nAvancementLevel++;
 
     }
@@ -343,6 +346,7 @@ void gestionLevelLaToilette(tManaComposant *pMana){
         initFichierDialogue(&pMana->pFichierDialogue,EMPL_DIALOGUE_LATOILETTE);
         setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"dialogue"),SDL_CL_PERE);
         texteSuivant(pMana->pFichierDialogue,recupTexteParNom(pMana->pListeTexte,"dialogue"));
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         pMana->pEtatJeu->nAvancementLevel++;
 
     }
@@ -459,6 +463,7 @@ void gestionLevelMoyenLocomotion(tManaComposant *pMana){
         initFichierDialogue(&pMana->pFichierDialogue,EMPL_DIALOGUE_MOYENLOCOMOTION);
         setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"dialogue"),SDL_CL_JOUEUR);
         texteSuivant(pMana->pFichierDialogue,recupTexteParNom(pMana->pListeTexte,"dialogue"));
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         pMana->pEtatJeu->nAvancementLevel++;
 
     }
@@ -513,6 +518,7 @@ void gestionLevelPreparation(tManaComposant *pMana){
         initFichierDialogue(&pMana->pFichierDialogue,EMPL_DIALOGUE_PREPARATION);
         setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"dialogue"),SDL_CL_JOUEUR);
         setTexteTexte(recupTexteParNom(pMana->pListeTexte,"dialogue"),"");
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         pMana->pEtatJeu->nAvancementLevel++;
 
     }
@@ -621,6 +627,7 @@ void gestionLevelLeTicket(tManaComposant *pMana){
 
     if(pMana->pEtatJeu->nAvancementLevel==0){
         manaMajAffichageHorloge(pMana);
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"bg");
         insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"bg"),ARRET_BUS),"bg");
         initFichierDialogue(&pMana->pFichierDialogue,EMPL_DIALOGUE_LETICKET);
@@ -787,6 +794,7 @@ void gestionLevelLeTicket(tManaComposant *pMana){
 void gestionLevelMiniJeuPanneaux(tManaComposant *pMana){
     if(pMana->pEtatJeu->nAvancementLevel==0){
         manaMajAffichageHorloge(pMana);
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"bg");
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((LARGEUR_BOUTON*1.5),WINDOW_HAUTEUR-(HAUTEUR_BOUTON*2)),LARGEUR_BOUTON*1.5,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"boutonEmp3");
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR-(HAUTEUR_BOUTON*2)),LARGEUR_BOUTON*1.5,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"boutonEmp4");
@@ -925,6 +933,7 @@ void gestionLevelMiniJeuPanneaux(tManaComposant *pMana){
 void gestionLevelArriveeEcole(tManaComposant *pMana){
 
     if(pMana->pEtatJeu->nAvancementLevel==0){
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"bg");
         insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"bg"),ECOLE),"bg");
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(POS_X_PERSONNAGE,POS_Y_PERSONNAGE),LARGEUR_PERSONNAGE,HAUTEUR_PERSONNAGE),creeVecteur(0,0),creeVecteur(0,0)),"surveillant");
@@ -993,6 +1002,7 @@ void gestionLevelRepasMidi(tManaComposant *pMana){
 
     if(pMana->pEtatJeu->nAvancementLevel==0){
         manaMajAffichageHorloge(pMana);
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"bg");
         insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"bg"),CLASSE),"bg");
         initFichierDialogue(&pMana->pFichierDialogue,EMPL_DIALOGUE_REPASMIDI);
@@ -1087,6 +1097,7 @@ void gestionLevelMiniJeuRepas(tManaComposant *pMana){
 
     if(pMana->pEtatJeu->nAvancementLevel==0){
         manaMajAffichageHorloge(pMana);
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"bg");
         insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"bg"),CANTINE),"bg");
         initFichierDialogue(&pMana->pFichierDialogue,EMPL_DIALOGUE_MINI_JEU_REPAS);
@@ -1332,6 +1343,7 @@ void gestionLevelToilettes(tManaComposant *pMana){
 
     if(pMana->pEtatJeu->nAvancementLevel==0){
         manaMajAffichageHorloge(pMana);
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"bg");
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(POS_X_PERSONNAGE,POS_Y_PERSONNAGE),LARGEUR_PERSONNAGE,HAUTEUR_PERSONNAGE),creeVecteur(0,0),creeVecteur(0,0)),"surveillant");
         insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"bg"),NOIR),"bg");
@@ -1475,6 +1487,7 @@ void gestionLevelMiniJeuGrammaire(tManaComposant *pMana){
 
     if(pMana->pEtatJeu->nAvancementLevel==0){
         manaMajAffichageHorloge(pMana);
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"bg");
         insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"bg"),CLASSE),"bg");
         //initFichierDialogue(&pMana->pFichierDialogue,EMPL_DIALOGUE_MINI_JEU_GRAMMAIRE);
@@ -1681,7 +1694,7 @@ void gestionLevelMiniJeuGrammaire(tManaComposant *pMana){
         }
 
         if(nNBCorrecte==6){
-            pMana->pEtatJeu->nAvancementLevel=4;
+            pMana->pEtatJeu->nAvancementLevel=6;
         }else{
             pMana->pEtatJeu->nAvancementLevel=50;
         }
@@ -1907,6 +1920,7 @@ void gestionLevelSortieEcole(tManaComposant *pMana){
 
     if(pMana->pEtatJeu->nAvancementLevel==0){
         manaMajAffichageHorloge(pMana);
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"bg");
         insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"bg"),NOIR),"bg");
         initFichierDialogue(&pMana->pFichierDialogue,EMPL_DIALOGUE_SORTIEECOLE);
@@ -2047,6 +2061,7 @@ void gestionLevelDevoirs(tManaComposant *pMana){
 
     if(pMana->pEtatJeu->nAvancementLevel==0){
         manaMajAffichageHorloge(pMana);
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"bg");
         insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"bg"),CHAMBRE),"bg");
         initFichierDialogue(&pMana->pFichierDialogue,EMPL_DIALOGUE_DEVOIRS);
@@ -2111,6 +2126,7 @@ void gestionLevelDevoirs(tManaComposant *pMana){
 void gestionLevelMiniJeuJeuxVideo(tManaComposant *pMana){
     tBool isDragging=false;
     if(pMana->pEtatJeu->nAvancementLevel==0){
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"bg");
         insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"bg"),NOIR),"bg");
         initFichierDialogue(&pMana->pFichierDialogue,EMPL_DIALOGUE_MINI_JEU_JEUXVIDEO);
@@ -2126,11 +2142,11 @@ void gestionLevelMiniJeuJeuxVideo(tManaComposant *pMana){
 
 
     if(actionBouton(pMana,"suivant",2)){
-        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.6,HAUTEUR_PERSONNAGE*0.6),LARGEUR_PERSONNAGE*0.2,HAUTEUR_PERSONNAGE*0.2),creeVecteur(0,0),creeVecteur(0,0)),"monstre");
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.7,HAUTEUR_PERSONNAGE*0.7),LARGEUR_PERSONNAGE*0.2,HAUTEUR_PERSONNAGE*0.2),creeVecteur(0,0),creeVecteur(0,0)),"monstre");
 
-        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR)*0.6,HAUTEUR_PERSONNAGE*0.3-(HAUTEUR_COEUR*0.5)),LARGEUR_PERSONNAGE,HAUTEUR_PERSONNAGE),creeVecteur(0,0),creeVecteur(0,0)),"c2");
-        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR)*0.6-LARGEUR_COEUR*1.5,HAUTEUR_PERSONNAGE*0.3-(HAUTEUR_COEUR*0.5)),LARGEUR_COEUR,HAUTEUR_COEUR),creeVecteur(0,0),creeVecteur(0,0)),"c1");
-        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR)*0.6+LARGEUR_COEUR*1.5,HAUTEUR_PERSONNAGE*0.3-(HAUTEUR_COEUR*0.5)),LARGEUR_COEUR,HAUTEUR_COEUR),creeVecteur(0,0),creeVecteur(0,0)),"c3");
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR)*0.7,HAUTEUR_PERSONNAGE*0.3-(HAUTEUR_COEUR*0.5)),LARGEUR_PERSONNAGE,HAUTEUR_PERSONNAGE),creeVecteur(0,0),creeVecteur(0,0)),"c2");
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR)*0.7-LARGEUR_COEUR*1.5,HAUTEUR_PERSONNAGE*0.3-(HAUTEUR_COEUR*0.5)),LARGEUR_COEUR,HAUTEUR_COEUR),creeVecteur(0,0),creeVecteur(0,0)),"c1");
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR)*0.7+LARGEUR_COEUR*1.5,HAUTEUR_PERSONNAGE*0.3-(HAUTEUR_COEUR*0.5)),LARGEUR_COEUR,HAUTEUR_COEUR),creeVecteur(0,0),creeVecteur(0,0)),"c3");
 
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(LARGEUR_CAILLOU_1*0.2,WINDOW_HAUTEUR-HAUTEUR_CAILLOU_1*0.5),LARGEUR_CAILLOU_1,HAUTEUR_CAILLOU_1),creeVecteur(0,0),creeVecteur(0,0)),"caillou1");
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((LARGEUR_CAILLOU_1*0.2+LARGEUR_CAILLOU_2*0.5),WINDOW_HAUTEUR-(HAUTEUR_CAILLOU_1+HAUTEUR_CAILLOU_2)*0.5),LARGEUR_CAILLOU_2,HAUTEUR_CAILLOU_2),creeVecteur(0,0),creeVecteur(0,0)),"caillou2");
@@ -2289,6 +2305,7 @@ void gestionLevelSport(tManaComposant *pMana){
     if(pMana->pEtatJeu->nAvancementLevel==0){
         pMana->pEtatJeu->stHorloge.nHeure=17;
         pMana->pEtatJeu->stHorloge.nMinute=20;
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         manaMajAffichageHorloge(pMana);
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"bg");
         insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"bg"),CHAMBRE),"bg");
@@ -2386,6 +2403,7 @@ void gestionLevelSport(tManaComposant *pMana){
 ///
 void gestionLevelMiniJeuSecourisme(tManaComposant *pMana){
     if(pMana->pEtatJeu->nAvancementLevel==0){
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"bg");
         insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"bg"),NOIR),"bg");
         initFichierDialogue(&pMana->pFichierDialogue,EMPL_DIALOGUE_MINI_JEU_SECOURISME);
@@ -2496,6 +2514,7 @@ void gestionLevelDiner(tManaComposant *pMana){
     if(pMana->pEtatJeu->nAvancementLevel==0){
         pMana->pEtatJeu->stHorloge.nHeure=19;
         pMana->pEtatJeu->stHorloge.nMinute=30;
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         manaMajAffichageHorloge(pMana);
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"bg");
         insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"bg"),CHAMBRE),"bg");
@@ -2628,6 +2647,7 @@ void gestionLevelBonneNuit(tManaComposant *pMana){
     if(pMana->pEtatJeu->nAvancementLevel==0){
         pMana->pEtatJeu->stHorloge.nHeure=21;
         pMana->pEtatJeu->stHorloge.nMinute=00;
+        pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         manaMajAffichageHorloge(pMana);
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"bg");
         insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"bg"),CHAMBRE),"bg");
@@ -2779,6 +2799,7 @@ int chargementPartie(const char cCheminFichier[],tEtatJeu *pstEtatJeu){
         return 0;
     }else{
         fread(pstEtatJeu,sizeof(*pstEtatJeu),1,pFile);
+        pstEtatJeu->stHorloge=pstEtatJeu->stHorlogeSauvegarde;
         fclose(pFile);
         return 1;
     }
