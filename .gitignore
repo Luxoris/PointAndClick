@@ -32,8 +32,10 @@
 *.dSYM/
 
 # Ignored folders
-/Assets/
+/assets/
 /bin/
-/Fonts/
+/fonts/
 /obj/
 /SDL/
+/son/
+/save/

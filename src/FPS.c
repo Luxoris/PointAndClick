@@ -31,7 +31,7 @@ void calculFPS(float * pfFPS, const Uint32 nTempsDebutBoucle, const Uint32 nTemp
 //
 //*****************************************************************************************************//
 void priseEnCompteFPSMax(float *pfFPS, const int nFPSMax, const Uint32 nTempsExecution){
-    if(nFPSMax<(*pfFPS)){
+    if(nFPSMax<(*pfFPS)&&(*pfFPS>=1)){
         SDL_Delay((1000/nFPSMax)-nTempsExecution);
         *pfFPS = nFPSMax;
     }

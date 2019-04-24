@@ -178,10 +178,14 @@ void ajoutMenuOptions(tManaComposant *pMana){
     insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"centre");
     insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"centre");
     insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,(WINDOW_HAUTEUR/(NB_BOUTON_MENU_OPTION+2))*2),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"mEmp1");
+    insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,(WINDOW_HAUTEUR/(NB_BOUTON_MENU_OPTION+2))*3),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"mEmp2");
+    insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,(WINDOW_HAUTEUR/(NB_BOUTON_MENU_OPTION+2))*4),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"mEmp3");
     insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,(WINDOW_HAUTEUR/(NB_BOUTON_MENU_OPTION+2))),LARGEUR_BOUTON,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"titreMenuOptions");
 
     //INSERTION DES BOUTONS
-    insertionBoutonListe(pMana->pListeBouton,NULL,creeBouton(recupObjetParNom(pMana->pListeObjet,"mEmp1"),"Retour",recupPropTexteParNom(pMana->pListePropTexte,"boutonMenu"),false,false,retourMenuPrincipalDepuisOptions),"retourMenuDepuisOptions");
+    insertionBoutonListe(pMana->pListeBouton,NULL,creeBouton(recupObjetParNom(pMana->pListeObjet,"mEmp3"),"Retour",recupPropTexteParNom(pMana->pListePropTexte,"boutonMenu"),false,false,retourMenuPrincipalDepuisOptions),"retourMenuDepuisOptions");
+    insertionBoutonListe(pMana->pListeBouton,NULL,creeBouton(recupObjetParNom(pMana->pListeObjet,"mEmp1"),"Son On",recupPropTexteParNom(pMana->pListePropTexte,"boutonMenu"),false,false,sonOn),"sonOn");
+    insertionBoutonListe(pMana->pListeBouton,NULL,creeBouton(recupObjetParNom(pMana->pListeObjet,"mEmp2"),"Son Off",recupPropTexteParNom(pMana->pListePropTexte,"boutonMenu"),false,false,sonOff),"sonOff");
 
     //DECLARATION DES IMAGES
     insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"centre"),CHAMBRE),"fondEcranMenuOptions");
@@ -211,11 +215,15 @@ void supprMenuOptions(tManaComposant *pMana){
     //SUPPRESSION DES OBJETS
     suppressionObjetListe(pMana->pListeObjet,recupElementObjetParNom(pMana->pListeObjet,"titreMenuOptions"));
     suppressionObjetListe(pMana->pListeObjet,recupElementObjetParNom(pMana->pListeObjet,"mEmp1"));
+    suppressionObjetListe(pMana->pListeObjet,recupElementObjetParNom(pMana->pListeObjet,"mEmp2"));
+    suppressionObjetListe(pMana->pListeObjet,recupElementObjetParNom(pMana->pListeObjet,"mEmp3"));
     suppressionObjetListe(pMana->pListeObjet,recupElementObjetParNom(pMana->pListeObjet,"centre"));
 
 
     //SUPPRESSION DES BOUTONS
     suppressionBoutonListe(pMana->pListeBouton,recupElementBoutonParNom(pMana->pListeBouton,"retourMenuDepuisOptions"));
+    suppressionBoutonListe(pMana->pListeBouton,recupElementBoutonParNom(pMana->pListeBouton,"sonOn"));
+    suppressionBoutonListe(pMana->pListeBouton,recupElementBoutonParNom(pMana->pListeBouton,"sonOff"));
 
     //SUPPRESSION DES IMAGES
     suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"fondEcranMenuOptions"));

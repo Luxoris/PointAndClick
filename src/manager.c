@@ -69,6 +69,8 @@ void vidageComposantsProgramme(tManaComposant *pManaComposant){
     vidageListeTexte(pManaComposant->pListeTexte);
     vidageListeObjet(pManaComposant->pListeObjet);
     vidageListePropTexte(pManaComposant->pListePropTexte);
+    pManaComposant->pFichierDialogue = NULL;
+    pManaComposant->pImageDragAndDrop = NULL;
 }
 
 //###########################################
@@ -104,6 +106,8 @@ void freeManaComposant(tManaComposant *pManaComposant){
         if(getManaComposantPointeur(pManaComposant)!=NULL){
             freePointeur(getManaComposantPointeur(pManaComposant));
         }
+        pManaComposant->pFichierDialogue = NULL;
+        pManaComposant->pImageDragAndDrop = NULL;
         //LIBERE LE COMPOSANT
         free(pManaComposant);
     }else{
@@ -131,6 +135,7 @@ void setManaComposant(tManaComposant *pManaComposant,tListeBouton *pListeBouton,
     setManaComposantListeTexte(pManaComposant,pListeTexte);
     setManaComposantListePropTexte(pManaComposant,pListePropTexte);
     setManaComposantPointeur(pManaComposant,pPointeur);
+    pManaComposant->pImageDragAndDrop = NULL;
 }
 
 //###########################################
@@ -342,4 +347,75 @@ tPointeur *getManaComposantPointeur(tManaComposant *pManaComposant){
 //*****************************************************************************************************//
 void manaAjoutMinute(tManaComposant *pMana, const int nMinute){
     ajoutMinute(&pMana->pEtatJeu->stHorloge,nMinute);
+}
+
+//###########################################
+//PROCEDURE manaAjoutMinute
+//*****************************************************************************************************//
+//
+// DESCRIPTION Procedure qui déplace l'image en fonction de la position de la souris.
+//
+// ENTREE /La référence du manager de comosant.
+//
+// SORTIE /La position de l'image modifiée.
+//
+// NOTE -
+//*****************************************************************************************************//
+void manaGestionDragAndDrop(tManaComposant *pMana){
+    if(pMana->pImageDragAndDrop!=NULL){
+        if(pMana->pPointeur->stCliqueGauche){
+            setRectanglePointCentral(getObjetRectangle(getImageObjet(pMana->pImageDragAndDrop)),*getPointeurPosition(pMana->pPointeur));
+            deplacementRectangle(getObjetRectangle(getImageObjet(pMana->pImageDragAndDrop)),*getObjetVecteurVitesse(getImageObjet(pMana->pImageDragAndDrop)));
+        }else{
+            pMana->pImageDragAndDrop=NULL;
+        }
+    }
+
+}
+
+//###########################################
+//PROCEDURE ajoutGestionDragAndDrop
+//*****************************************************************************************************//
+//
+// DESCRIPTION Procedure qui initialise le drag and drop d'une image.
+//
+// ENTREE /La référence du manager de comosant, la référence de l'image
+//
+// SORTIE /La référnce de l'image stockée dans le ImageDrangAndDrop du manager de composants.
+//
+// NOTE -
+//*****************************************************************************************************//
+void ajoutGestionDragAndDrop(tManaComposant *pMana, tImage *pImage,char sNom[]){
+    tVecteur stVecteur;
+    if(pMana->pImageDragAndDrop==NULL){
+        if(getPointeurCliqueGauche(pMana->pPointeur)&&collisionPointRectangle(getPointeurPosition(pMana->pPointeur),getObjetRectangle(getImageObjet(pImage)))){
+            setVecteurX(&stVecteur,-getPointX(getPointeurPosition(pMana->pPointeur))+getPointX(getRectanglePointCentral(getObjetRectangle(getImageObjet(pImage)))));
+            setVecteurY(&stVecteur,-getPointY(getPointeurPosition(pMana->pPointeur))+getPointY(getRectanglePointCentral(getObjetRectangle(getImageObjet(pImage)))));
+            pImage->pstObjet->stVecteurVitesse = stVecteur;
+
+
+            if(strcmp(sNom,"")!=0){
+                if(pMana->pListeImage->pPremier != NULL){
+                    tElementImage *pElement = pMana->pListeImage->pPremier;
+                    while(pElement->pSuivant!=NULL){
+                        pElement = pElement->pSuivant;
+                    }
+                    if(&pElement->stImage!=pImage){ //si l'image n'est pas le dernier élément.
+                        tImage SauvegardImage;
+                        setImage(&SauvegardImage,pImage->pstObjet,pImage->sEmplImage);
+                        suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,sNom));
+                        insertionImageListe(pMana->pListeImage,pElement,SauvegardImage,sNom);
+                        pMana->pImageDragAndDrop=recupImageParNom(pMana->pListeImage,sNom);
+                    }else{
+                         pMana->pImageDragAndDrop=pImage;
+                    }
+                }
+            }else{
+                pMana->pImageDragAndDrop=pImage;
+            }
+
+
+        }
+    }
+
 }
