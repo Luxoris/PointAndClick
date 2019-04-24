@@ -5,7 +5,6 @@
 #include "window.h"
 #include "renderer.h"
 #include "VUE_SDL2.h"
-#include "joueur.h"
 #include "etatPartie.h"
 #include "evenement.h"
 #include "FPS.h"
