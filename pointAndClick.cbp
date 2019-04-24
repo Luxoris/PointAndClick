@@ -97,10 +97,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/interface.h" />
-		<Unit filename="src/joueur.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/joueur.h" />
 		<Unit filename="src/level.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -124,10 +120,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/pointeur.h" />
-		<Unit filename="src/raquette.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="src/raquette.h" />
 		<Unit filename="src/rectangle.c">
 			<Option compilerVar="CC" />
 		</Unit>
