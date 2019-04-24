@@ -4,8 +4,8 @@
 
 //appel des bibliothèques
 #include <SDL.h>
-#include "define.h"
 #include <stdio.h>
+#include "define.h"
 
 //PROTOTYPE
 extern void initFenetre(SDL_Window** pFenetre, const char cTitre[]);

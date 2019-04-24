@@ -8,13 +8,13 @@
 //
 // DESCRIPTION Procedure qui fait les appels des méhtodes et modifie l'état de la partie en fonction des actions.
 //
-// ENTREE /La valeur de l'action, La réference du manager de composants, la référence de l'état de la partie.
+// ENTREE /La valeur de l'action, La réference du manager de composants, la référence de l'état de la partie, la référence de la fenêtre.
 //
 // SORTIE /Les listes de composants modifiés, l'etat de la partie modifié.
 //
 // NOTE -
 //*****************************************************************************************************//
-void gestionAction(const tAction nAction, tManaComposant *pMana, tEtatPartie *pEtatPartie){
+void gestionAction(const tAction nAction, tManaComposant *pMana, tEtatPartie *pEtatPartie, SDL_Window *pFenetre){
     tEtatJeu stEtatJeu;
     if(nAction!=0){
         switch(nAction){
@@ -80,6 +80,7 @@ void gestionAction(const tAction nAction, tManaComposant *pMana, tEtatPartie *pE
                     *pEtatPartie = enCours;
                 }
                 break;
+
             case retourMenuPrincipalDepuisCharger:
                 vidageComposantsProgramme(pMana);
                 ajoutMenuPrincipale(pMana);
@@ -87,6 +88,14 @@ void gestionAction(const tAction nAction, tManaComposant *pMana, tEtatPartie *pE
                 break;
 
             //MENU OPTION
+            case sonOn:
+                    Mix_ResumeMusic();
+                break;
+
+            case sonOff:
+                    Mix_PauseMusic();
+                break;
+
             case retourMenuPrincipalDepuisOptions:
                 supprMenuOptions(pMana);
                 ajoutMenuPrincipale(pMana);
@@ -127,13 +136,13 @@ void gestionAction(const tAction nAction, tManaComposant *pMana, tEtatPartie *pE
 //
 // DESCRIPTION Procedure qui appel la méthode qui gère les actions pour chaque bouton.
 //
-// ENTREE /La référence du manager de composant, la référence de l'état de la partie.
+// ENTREE /La référence du manager de composant, la référence de l'état de la partie, la référence de la fenêtre.
 //
 // SORTIE /Les listes de composants modifiés, l'etat de la partie modifié.
 //
 // NOTE -
 //*****************************************************************************************************//
-void gestionActionListeBouton(tManaComposant *pMana, tEtatPartie *pEtatPartie){
+void gestionActionListeBouton(tManaComposant *pMana, tEtatPartie *pEtatPartie, SDL_Window *pFenetre){
 
     //VERIFIE SI LA LISTE EXISTE
     if(pMana->pListeBouton == NULL){
@@ -157,7 +166,7 @@ void gestionActionListeBouton(tManaComposant *pMana, tEtatPartie *pEtatPartie){
 
         }
         if(nCodeAction!=0){
-            gestionAction(nCodeAction,pMana,pEtatPartie);
+            gestionAction(nCodeAction,pMana,pEtatPartie,pFenetre);
             pMana->pPointeur->stCliqueGauche = false; // évite que l'on clique sur un bouton qui va réaparraitre
             SDL_Delay(DELAI_CLICK_BOUTON);
         }

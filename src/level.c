@@ -157,6 +157,9 @@ void gestionLevelMiniJeuReve(tManaComposant *pMana){
         suppressionBoutonListe(pMana->pListeBouton,recupElementBoutonParNom(pMana->pListeBouton,"rep2"));
         suppressionBoutonListe(pMana->pListeBouton,recupElementBoutonParNom(pMana->pListeBouton,"rep3"));
         setImageEmpl(recupImageParNom(pMana->pListeImage,"bg"),VERT);
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"titreMenuCharger");
+        insertionPropTexteListe(pMana->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_TITRE*2,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_ROUGE,"",TTF_Charset_Latin1,TTF_Mode_Solid),"titreMenuCharger");
+        insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("VICTOIRE!",recupObjetParNom(pMana->pListeObjet,"titreMenuCharger"),recupPropTexteParNom(pMana->pListePropTexte,"titreMenuCharger")),"titreMenuCharger");
         pMana->pEtatJeu->nAvancementLevel++;
     }
 
@@ -166,6 +169,9 @@ void gestionLevelMiniJeuReve(tManaComposant *pMana){
         suppressionBoutonListe(pMana->pListeBouton,recupElementBoutonParNom(pMana->pListeBouton,"rep2"));
         suppressionBoutonListe(pMana->pListeBouton,recupElementBoutonParNom(pMana->pListeBouton,"rep3"));
         setImageEmpl(recupImageParNom(pMana->pListeImage,"bg"),ROUGE);
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"titreMenuCharger");
+        insertionPropTexteListe(pMana->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_TITRE*2,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_ROUGE,"",TTF_Charset_Latin1,TTF_Mode_Solid),"titreMenuCharger");
+        insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("DEFAITE!",recupObjetParNom(pMana->pListeObjet,"titreMenuCharger"),recupPropTexteParNom(pMana->pListePropTexte,"titreMenuCharger")),"titreMenuCharger");
         pMana->pEtatJeu->nAvancementLevel++;
     }
 
@@ -175,6 +181,9 @@ void gestionLevelMiniJeuReve(tManaComposant *pMana){
         suppressionBoutonListe(pMana->pListeBouton,recupElementBoutonParNom(pMana->pListeBouton,"rep2"));
         suppressionBoutonListe(pMana->pListeBouton,recupElementBoutonParNom(pMana->pListeBouton,"rep3"));
         setImageEmpl(recupImageParNom(pMana->pListeImage,"bg"),ROUGE);
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"titreMenuCharger");
+        insertionPropTexteListe(pMana->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_TITRE*2,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_ROUGE,"",TTF_Charset_Latin1,TTF_Mode_Solid),"titreMenuCharger");
+        insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("DEFAITE!",recupObjetParNom(pMana->pListeObjet,"titreMenuCharger"),recupPropTexteParNom(pMana->pListePropTexte,"titreMenuCharger")),"titreMenuCharger");
         pMana->pEtatJeu->nAvancementLevel++;
     }
 
@@ -522,7 +531,9 @@ void gestionLevelPreparation(tManaComposant *pMana){
         pMana->pEtatJeu->nAvancementLevel++;
 
     }
-    dialogueSuivant(pMana,1);
+    if(dialogueSuivant(pMana,1)){
+        setImageEmpl(recupImageParNom(pMana->pListeImage,"bg"),PREPARATION);
+    }
     dialogueSuivant(pMana,2);
 
     if(actionBouton(pMana,"suivant",3)){
@@ -532,6 +543,7 @@ void gestionLevelPreparation(tManaComposant *pMana){
     }
 
     if((nChoix = choixBouton(pMana,4))>0){
+        setImageEmpl(recupImageParNom(pMana->pListeImage,"bg"),DEVANT_MAISON);
         if(nChoix==1){
             supprBoutonChoix(pMana);
             texteSuivant(pMana->pFichierDialogue,recupTexteParNom(pMana->pListeTexte,"dialogue"));
@@ -597,6 +609,7 @@ void gestionLevelPreparation(tManaComposant *pMana){
 
     if(dialogueSuivant(pMana,205)){
         setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"dialogue"),SDL_CL_JOUEUR);
+        setImageEmpl(recupImageParNom(pMana->pListeImage,"bg"),PREPARATION);
     }
 
     if(actionBouton(pMana,"suivant",206)){
@@ -608,6 +621,7 @@ void gestionLevelPreparation(tManaComposant *pMana){
 
     if(dialogueSuivant(pMana,207)){
         setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"dialogue"),SDL_CL_PERE);
+        setImageEmpl(recupImageParNom(pMana->pListeImage,"bg"),DEVANT_MAISON);
     }
 
     if(actionBouton(pMana,"suivant",208)){
@@ -767,17 +781,10 @@ void gestionLevelLeTicket(tManaComposant *pMana){
     }
 
     if(actionBouton(pMana,"suivant",403)){
-        setImageEmpl(recupImageParNom(pMana->pListeImage,"bg"),RUE_PANNE_BUS);
-        pMana->pEtatJeu->nAvancementLevel++;
+        setImageEmpl(recupImageParNom(pMana->pListeImage,"bg"),ARRET_BUS);
+        pMana->pEtatJeu->nAvancementLevel=1000; //le joueur retourne chez lui pour prendre le vélo
     }
 
-    if(dialogueSuivant(pMana,404)){
-        setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"dialogue"),SDL_CL_JOUEUR);
-    }
-
-    if(actionBouton(pMana,"suivant",405)){
-        pMana->pEtatJeu->nAvancementLevel=43;
-    }
 
     //le joueur passe au mini-jeu suivant
     if(actionBouton(pMana,"suivant",43)){
@@ -1093,7 +1100,6 @@ void gestionLevelRepasMidi(tManaComposant *pMana){
 
 void gestionLevelMiniJeuRepas(tManaComposant *pMana){
     tRectangle *pRectangle1=NULL;
-    tBool isDragging = false;
 
     if(pMana->pEtatJeu->nAvancementLevel==0){
         manaMajAffichageHorloge(pMana);
@@ -1160,77 +1166,76 @@ void gestionLevelMiniJeuRepas(tManaComposant *pMana){
 
     if(pMana->pEtatJeu->nAvancementLevel==2){
         //ENTREE 1
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"1"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"-1"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"2"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"-2"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"3"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"-3"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"4"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"-4"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"5"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"-5"),pMana->pPointeur)){
-            isDragging = true;
-        }
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"1"),"1");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"-1"),"-1");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"2"),"2");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"-2"),"-2");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"3"),"3");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"-3"),"-3");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"4"),"4");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"-4"),"-4");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"5"),"5");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"-5"),"-5");
 
         //si collision entre l'image et l'image d'arrivée.
         //ENTREE
         pRectangle1=getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"f1"));
         if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e1")),pRectangle1)){
             setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t1"),SDL_CL_JAUNE); //le texte devient jaune
-        }
-        if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e2")),pRectangle1)){
-            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t1"),SDL_CL_JAUNE); //le texte devient jaune
+        }else{
+            if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e2")),pRectangle1)){
+                setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t1"),SDL_CL_JAUNE); //le texte devient jaune
+            }else{
+                setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t1"),SDL_CL_BLANC); //le texte devient blanc
+            }
+
         }
         //PLAT
         pRectangle1=getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"f2"));
         if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e3")),pRectangle1)){
             setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t2"),SDL_CL_JAUNE); //le texte devient jaune
+        }else {
+            if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e4")),pRectangle1)){
+                setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t2"),SDL_CL_JAUNE); //le texte devient jaune
+            }else{
+                setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t2"),SDL_CL_BLANC); //le texte devient blanc
+            }
         }
-        if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e4")),pRectangle1)){
-            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t2"),SDL_CL_JAUNE); //le texte devient jaune
-        }
+
         //LAITAGE
         pRectangle1=getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"f3"));
         if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e5")),pRectangle1)){
             setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t3"),SDL_CL_JAUNE); //le texte devient jaune
+        }else{
+            if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e6")),pRectangle1)){
+                setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t3"),SDL_CL_JAUNE); //le texte devient jaune
+            }else{
+                setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t3"),SDL_CL_BLANC); //le texte devient blanc
+            }
         }
-        if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e6")),pRectangle1)){
-            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t3"),SDL_CL_JAUNE); //le texte devient jaune
-        }
+
         //DESSERT
         pRectangle1=getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"f4"));
         if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e7")),pRectangle1)){
             setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t4"),SDL_CL_JAUNE); //le texte devient jaune
+        }else{
+            if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e8")),pRectangle1)){
+                setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t4"),SDL_CL_JAUNE); //le texte devient jaune
+            }else{
+                setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t4"),SDL_CL_BLANC); //le texte devient blanc
+            }
         }
-        if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e8")),pRectangle1)){
-            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t4"),SDL_CL_JAUNE); //le texte devient jaune
-        }
+
         //BOISSON
         pRectangle1=getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"f5"));
         if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e9")),pRectangle1)){
             setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t5"),SDL_CL_JAUNE); //le texte devient jaune
-        }
-        if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e10")),pRectangle1)){
-            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t5"),SDL_CL_JAUNE); //le texte devient jaune
+        }else{
+            if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e10")),pRectangle1)){
+                setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t5"),SDL_CL_JAUNE); //le texte devient jaune
+            }else{
+                setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t5"),SDL_CL_BLANC); //le texte devient blanc
+            }
         }
 
     }
@@ -1255,7 +1260,7 @@ void gestionLevelMiniJeuRepas(tManaComposant *pMana){
     }
 
     //modifie la couleur des boutons en fonctions des ingrédients selectionnés.
-    if(actionBouton(pMana,"suivant",3)){
+    if(pMana->pEtatJeu->nAvancementLevel==3){
         int nBMauvais=0;
         //si collision entre l'image et l'image d'arrivée.
         //ENTREE
@@ -1483,7 +1488,6 @@ void gestionLevelToilettes(tManaComposant *pMana){
 ///
 
 void gestionLevelMiniJeuGrammaire(tManaComposant *pMana){
-    tBool isDragging = false;
 
     if(pMana->pEtatJeu->nAvancementLevel==0){
         manaMajAffichageHorloge(pMana);
@@ -1526,24 +1530,12 @@ void gestionLevelMiniJeuGrammaire(tManaComposant *pMana){
     }
 
     if(pMana->pEtatJeu->nAvancementLevel==2){
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"1"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"2"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"3"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"4"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"5"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"6"),pMana->pPointeur)){
-            isDragging = true;
-        }
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"1"),"1");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"2"),"2");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"3"),"3");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"4"),"4");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"5"),"5");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"6"),"6");
     }
 
     //si le joueur appuie sur suivant, et s'il a placé toutes les réponses :
@@ -1720,24 +1712,12 @@ void gestionLevelMiniJeuGrammaire(tManaComposant *pMana){
 
 
     if(pMana->pEtatJeu->nAvancementLevel==51){
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"1"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"2"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"3"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"4"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"5"),pMana->pPointeur)){
-            isDragging = true;
-        }
-        if(!isDragging&&dragAndDropImage(recupImageParNom(pMana->pListeImage,"6"),pMana->pPointeur)){
-            isDragging = true;
-        }
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"1"),"1");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"2"),"2");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"3"),"3");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"4"),"4");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"5"),"5");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"6"),"6");
 
     }
 
@@ -2124,7 +2104,6 @@ void gestionLevelDevoirs(tManaComposant *pMana){
 ///
 ///
 void gestionLevelMiniJeuJeuxVideo(tManaComposant *pMana){
-    tBool isDragging=false;
     if(pMana->pEtatJeu->nAvancementLevel==0){
         pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"bg");
@@ -2135,11 +2114,15 @@ void gestionLevelMiniJeuJeuxVideo(tManaComposant *pMana){
         pMana->pEtatJeu->nAvancementLevel++;
 
     }
-    if(actionBouton(pMana,"suivant",1)){
+    if(pMana->pEtatJeu->nAvancementLevel==1){
         setImageEmpl(recupImageParNom(pMana->pListeImage,"bg"),COULOIR_1);
         pMana->pEtatJeu->nAvancementLevel++;
     }
 
+    if(pMana->pEtatJeu->nAvancementLevel==3){
+        SDL_Delay(DELAI_TRANSITION);
+        pMana->pEtatJeu->nAvancementLevel=31;
+    }
 
     if(actionBouton(pMana,"suivant",2)){
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.7,HAUTEUR_PERSONNAGE*0.7),LARGEUR_PERSONNAGE*0.2,HAUTEUR_PERSONNAGE*0.2),creeVecteur(0,0),creeVecteur(0,0)),"monstre");
@@ -2165,14 +2148,20 @@ void gestionLevelMiniJeuJeuxVideo(tManaComposant *pMana){
         pMana->pEtatJeu->nAvancementLevel++;
     }
 
-    if(actionBouton(pMana,"suivant",3)){
+    if(pMana->pEtatJeu->nAvancementLevel==32){
+        SDL_Delay(DELAI_TRANSITION);
+        pMana->pEtatJeu->nAvancementLevel=4;
+    }
+
+    if(pMana->pEtatJeu->nAvancementLevel==31){
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"titreMenuCharger");
         insertionPropTexteListe(pMana->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_TITRE*2,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_ROUGE,"",TTF_Charset_Latin1,TTF_Mode_Solid),"titreMenuCharger");
         insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("COMBAT!",recupObjetParNom(pMana->pListeObjet,"titreMenuCharger"),recupPropTexteParNom(pMana->pListePropTexte,"titreMenuCharger")),"titreMenuCharger");
         pMana->pEtatJeu->nAvancementLevel++;
     }
 
-    if(actionBouton(pMana,"suivant",4)){
+
+    if(pMana->pEtatJeu->nAvancementLevel==4){
         suppressionTexteListe(pMana->pListeTexte,recupElementTexteParNom(pMana->pListeTexte,"titreMenuCharger"));
         pMana->pEtatJeu->nAvancementLevel++;
     }
@@ -2180,94 +2169,121 @@ void gestionLevelMiniJeuJeuxVideo(tManaComposant *pMana){
     if(pMana->pEtatJeu->nAvancementLevel==5){
 
         tImage *pImage=NULL;
-        pImage = recupImageParNom(pMana->pListeImage,"caillou1");
         pImage = recupImageParNom(pMana->pListeImage,"caillou2");
-        if(!isDragging&&pImage!=NULL&&dragAndDropImage(pImage,pMana->pPointeur)){
-            isDragging = true;
+        if(pImage!=NULL){
+            ajoutGestionDragAndDrop(pMana,pImage,"caillou2");
+        }
+        if(pImage!=NULL&&pMana->pImageDragAndDrop!=NULL){    //SI DRAG AND DROP
                 if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"caillou2")),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"monstre")))){
-                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c3"));
-                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"caillou2"));
-                pMana->pEtatJeu->nAvancementLevel++;
+                    pMana->pImageDragAndDrop=NULL;  //fin de la gestion du drag and drop
+                    suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"caillou2"));
+                    suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c3"));
+                    pMana->pEtatJeu->nAvancementLevel++;
             }
         }
-        if(!isDragging&&pImage!=NULL&&dragAndDropImage(pImage,pMana->pPointeur)){
-            isDragging = true;
+        pImage = recupImageParNom(pMana->pListeImage,"caillou1");
+        if(pImage!=NULL){
+            ajoutGestionDragAndDrop(pMana,pImage,"caillou1");
+        }
+        if(pImage!=NULL&&pMana->pImageDragAndDrop!=NULL){
             if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"caillou1")),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"monstre")))){
-                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c3"));
+                pMana->pImageDragAndDrop=NULL;  //fin de la gestion du drag and drop
                 suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"caillou1"));
+                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c3"));
                 pMana->pEtatJeu->nAvancementLevel++;
             }
         }
         pImage = recupImageParNom(pMana->pListeImage,"epee");
-        if(!isDragging&&pImage!=NULL&&dragAndDropImage(pImage,pMana->pPointeur)){
-            isDragging = true;
+        if(pImage!=NULL){
+            ajoutGestionDragAndDrop(pMana,pImage,"epee");
+        }
+        if(pMana->pImageDragAndDrop!=NULL){
             if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"epee")),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"monstre")))){
-                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c3"));
+                pMana->pImageDragAndDrop=NULL;  //fin de la gestion du drag and drop
                 suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"epee"));
+                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c3"));
                 pMana->pEtatJeu->nAvancementLevel++;
             }
         }
     }
 
     if(pMana->pEtatJeu->nAvancementLevel==6){
+
         tImage *pImage=NULL;
         pImage = recupImageParNom(pMana->pListeImage,"caillou2");
-        if(!isDragging&&pImage!=NULL&&dragAndDropImage(pImage,pMana->pPointeur)){
-            isDragging = true;
+        if(pImage!=NULL){
+            ajoutGestionDragAndDrop(pMana,pImage,"caillou2");
+        }
+        if(pImage!=NULL&&pMana->pImageDragAndDrop!=NULL){    //SI DRAG AND DROP
                 if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"caillou2")),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"monstre")))){
-                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c2"));
-                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"caillou2"));
-                pMana->pEtatJeu->nAvancementLevel++;
+                    pMana->pImageDragAndDrop=NULL;  //fin de la gestion du drag and drop
+                    suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"caillou2"));
+                    suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c2"));
+                    pMana->pEtatJeu->nAvancementLevel++;
             }
         }
         pImage = recupImageParNom(pMana->pListeImage,"caillou1");
-        if(!isDragging&&pImage!=NULL&&dragAndDropImage(pImage,pMana->pPointeur)){
-            isDragging = true;
+        if(pImage!=NULL){
+            ajoutGestionDragAndDrop(pMana,pImage,"caillou1");
+        }
+        if(pImage!=NULL&&pMana->pImageDragAndDrop!=NULL){
             if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"caillou1")),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"monstre")))){
-                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c2"));
+                pMana->pImageDragAndDrop=NULL;  //fin de la gestion du drag and drop
                 suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"caillou1"));
+                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c2"));
                 pMana->pEtatJeu->nAvancementLevel++;
             }
         }
-
         pImage = recupImageParNom(pMana->pListeImage,"epee");
-        if(!isDragging&&pImage!=NULL&&dragAndDropImage(pImage,pMana->pPointeur)){
-            isDragging = true;
+        if(pImage!=NULL){
+            ajoutGestionDragAndDrop(pMana,pImage,"epee");
+        }
+        if(pMana->pImageDragAndDrop!=NULL){
             if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"epee")),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"monstre")))){
-                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c2"));
+                pMana->pImageDragAndDrop=NULL;  //fin de la gestion du drag and drop
                 suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"epee"));
+                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c2"));
                 pMana->pEtatJeu->nAvancementLevel++;
             }
         }
     }
 
     if(pMana->pEtatJeu->nAvancementLevel==7){
+
         tImage *pImage=NULL;
         pImage = recupImageParNom(pMana->pListeImage,"caillou2");
-        if(!isDragging&&pImage!=NULL&&dragAndDropImage(pImage,pMana->pPointeur)){
-            isDragging = true;
+        if(pImage!=NULL){
+            ajoutGestionDragAndDrop(pMana,pImage,"caillou2");
+        }
+        if(pImage!=NULL&&pMana->pImageDragAndDrop!=NULL){    //SI DRAG AND DROP
                 if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"caillou2")),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"monstre")))){
-                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c1"));
-                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"caillou2"));
-                pMana->pEtatJeu->nAvancementLevel++;
+                    pMana->pImageDragAndDrop=NULL;  //fin de la gestion du drag and drop
+                    suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"caillou2"));
+                    suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c1"));
+                    pMana->pEtatJeu->nAvancementLevel++;
             }
         }
         pImage = recupImageParNom(pMana->pListeImage,"caillou1");
-        if(!isDragging&&pImage!=NULL&&dragAndDropImage(pImage,pMana->pPointeur)){
-            isDragging = true;
+        if(pImage!=NULL){
+            ajoutGestionDragAndDrop(pMana,pImage,"caillou1");
+        }
+        if(pImage!=NULL&&pMana->pImageDragAndDrop!=NULL){
             if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"caillou1")),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"monstre")))){
-                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c1"));
+                pMana->pImageDragAndDrop=NULL;  //fin de la gestion du drag and drop
                 suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"caillou1"));
+                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c1"));
                 pMana->pEtatJeu->nAvancementLevel++;
             }
         }
-
         pImage = recupImageParNom(pMana->pListeImage,"epee");
-        if(!isDragging&&pImage!=NULL&&dragAndDropImage(pImage,pMana->pPointeur)){
-            isDragging = true;
+        if(pImage!=NULL){
+            ajoutGestionDragAndDrop(pMana,pImage,"epee");
+        }
+        if(pMana->pImageDragAndDrop!=NULL){
             if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"epee")),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"monstre")))){
-                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c1"));
+                pMana->pImageDragAndDrop=NULL;  //fin de la gestion du drag and drop
                 suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"epee"));
+                suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"c1"));
                 pMana->pEtatJeu->nAvancementLevel++;
             }
         }
@@ -2278,14 +2294,20 @@ void gestionLevelMiniJeuJeuxVideo(tManaComposant *pMana){
         pMana->pEtatJeu->nAvancementLevel++;
     }
 
-    if(actionBouton(pMana,"suivant",9)){
+    if(pMana->pEtatJeu->nAvancementLevel==10){
+        SDL_Delay(DELAI_TRANSITION);
+        pMana->pEtatJeu->nAvancementLevel++;
+    }
+
+
+    if(pMana->pEtatJeu->nAvancementLevel==9){
         setImageEmpl(recupImageParNom(pMana->pListeImage,"bg"),NOIR);
         insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("VOUS AVEZ GAGNE!",recupObjetParNom(pMana->pListeObjet,"titreMenuCharger"),recupPropTexteParNom(pMana->pListePropTexte,"titreMenuCharger")),"titreMenuCharger");
         pMana->pEtatJeu->nAvancementLevel++;
     }
 
 
-    if(actionBouton(pMana,"suivant",10)){
+    if(pMana->pEtatJeu->nAvancementLevel==11){
         vidageComposantsProgramme(pMana);
         ajoutInterfaceJeu(pMana);
         pMana->pEtatJeu->nNumLevel++;  //le joueur passe au niveau suivant
@@ -2402,91 +2424,193 @@ void gestionLevelSport(tManaComposant *pMana){
 ///
 ///
 void gestionLevelMiniJeuSecourisme(tManaComposant *pMana){
+    tRectangle *pRectangle1 = NULL;
     if(pMana->pEtatJeu->nAvancementLevel==0){
         pMana->pEtatJeu->stHorlogeSauvegarde=pMana->pEtatJeu->stHorloge;
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"bg");
-        insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"bg"),NOIR),"bg");
+        insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"bg"),GYMNASE),"bg");
         initFichierDialogue(&pMana->pFichierDialogue,EMPL_DIALOGUE_MINI_JEU_SECOURISME);
         setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"dialogue"),SDL_CL_SURVEILLANT);
         setBoutonTexte(recupBoutonParNom(pMana->pListeBouton,"suivant"),"Suivant");
+        texteSuivant(pMana->pFichierDialogue,recupTexteParNom(pMana->pListeTexte,"dialogue"));
         pMana->pEtatJeu->nAvancementLevel++;
 
     }
 
-    if(actionBouton(pMana,"suivant",1)){
-        setImageEmpl(recupImageParNom(pMana->pListeImage,"bg"),GYMNASE);
-        pMana->pEtatJeu->nAvancementLevel++;
+    if(dialogueSuivant(pMana,1)){
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR/5)*2,WINDOW_HAUTEUR*0.5-HAUTEUR_MANNEQUIN),LARGEUR_MANNEQUIN,HAUTEUR_MANNEQUIN),creeVecteur(0,0),creeVecteur(0,0)),"e1");
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR/5)*4,WINDOW_HAUTEUR*0.5-HAUTEUR_MANNEQUIN),LARGEUR_MANNEQUIN,HAUTEUR_MANNEQUIN),creeVecteur(0,0),creeVecteur(0,0)),"e2");
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR/5)*1,WINDOW_HAUTEUR*0.5-HAUTEUR_MANNEQUIN),LARGEUR_MANNEQUIN,HAUTEUR_MANNEQUIN),creeVecteur(0,0),creeVecteur(0,0)),"e3");
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR/5)*3,WINDOW_HAUTEUR*0.5-HAUTEUR_MANNEQUIN),LARGEUR_MANNEQUIN,HAUTEUR_MANNEQUIN),creeVecteur(0,0),creeVecteur(0,0)),"e4");
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(LARGEUR_TELEPHONE*0.5,WINDOW_HAUTEUR-HAUTEUR_TELEPHONE*0.5),LARGEUR_TELEPHONE,HAUTEUR_TELEPHONE),creeVecteur(0,0),creeVecteur(0,0)),"e5");
+
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR/5)*1,WINDOW_HAUTEUR*0.5+HAUTEUR_MANNEQUIN),LARGEUR_MANNEQUIN*0.5,HAUTEUR_MANNEQUIN),creeVecteur(0,0),creeVecteur(0,0)),"f1");
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR/5)*2,WINDOW_HAUTEUR*0.5+HAUTEUR_MANNEQUIN),LARGEUR_MANNEQUIN*0.5,HAUTEUR_MANNEQUIN),creeVecteur(0,0),creeVecteur(0,0)),"f2");
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR/5)*3,WINDOW_HAUTEUR*0.5+HAUTEUR_MANNEQUIN),LARGEUR_MANNEQUIN*0.5,HAUTEUR_MANNEQUIN),creeVecteur(0,0),creeVecteur(0,0)),"f3");
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR/5)*4,WINDOW_HAUTEUR*0.5+HAUTEUR_MANNEQUIN),LARGEUR_MANNEQUIN*0.5,HAUTEUR_MANNEQUIN),creeVecteur(0,0),creeVecteur(0,0)),"f4");
+
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR/5)*1,WINDOW_HAUTEUR*0.5+0.5*HAUTEUR_MANNEQUIN-TAILLE_POLICE_DIALOGUE),LARGEUR_MANNEQUIN,HAUTEUR_DIALOGUE),creeVecteur(0,0),creeVecteur(0,0)),"t1");
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR/5)*2,WINDOW_HAUTEUR*0.5+0.5*HAUTEUR_MANNEQUIN-TAILLE_POLICE_DIALOGUE),LARGEUR_MANNEQUIN,HAUTEUR_DIALOGUE),creeVecteur(0,0),creeVecteur(0,0)),"t2");
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR/5)*3,WINDOW_HAUTEUR*0.5+0.5*HAUTEUR_MANNEQUIN-TAILLE_POLICE_DIALOGUE),LARGEUR_MANNEQUIN,HAUTEUR_DIALOGUE),creeVecteur(0,0),creeVecteur(0,0)),"t3");
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint((WINDOW_LARGEUR/5)*4,WINDOW_HAUTEUR*0.5+0.5*HAUTEUR_MANNEQUIN-TAILLE_POLICE_DIALOGUE),LARGEUR_MANNEQUIN,HAUTEUR_DIALOGUE),creeVecteur(0,0),creeVecteur(0,0)),"t4");
+
+
+        insertionPropTexteListe(pMana->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_DIALOGUE,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_NOIR,"",TTF_Charset_Latin1,TTF_Mode_Solid),"t1");
+        insertionPropTexteListe(pMana->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_DIALOGUE,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_NOIR,"",TTF_Charset_Latin1,TTF_Mode_Solid),"t2");
+        insertionPropTexteListe(pMana->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_DIALOGUE,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_NOIR,"",TTF_Charset_Latin1,TTF_Mode_Solid),"t3");
+        insertionPropTexteListe(pMana->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_DIALOGUE,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_NOIR,"",TTF_Charset_Latin1,TTF_Mode_Solid),"t4");
+
+        insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("Image 1",recupObjetParNom(pMana->pListeObjet,"t1"),recupPropTexteParNom(pMana->pListePropTexte,"t1")),"t1");
+        insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("Image 2",recupObjetParNom(pMana->pListeObjet,"t2"),recupPropTexteParNom(pMana->pListePropTexte,"t2")),"t2");
+        insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("Image 3",recupObjetParNom(pMana->pListeObjet,"t3"),recupPropTexteParNom(pMana->pListePropTexte,"t3")),"t3");
+        insertionTexteListe(pMana->pListeTexte,NULL,creeTexte("Image 4",recupObjetParNom(pMana->pListeObjet,"t4"),recupPropTexteParNom(pMana->pListePropTexte,"t4")),"t4");
+
+        insertionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"bg"),creeImage(recupObjetParNom(pMana->pListeObjet,"f1"),BLANC_MANNEQUIN),"f1");
+        insertionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"bg"),creeImage(recupObjetParNom(pMana->pListeObjet,"f2"),BLANC_MANNEQUIN),"f2");
+        insertionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"bg"),creeImage(recupObjetParNom(pMana->pListeObjet,"f3"),BLANC_MANNEQUIN),"f3");
+        insertionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"bg"),creeImage(recupObjetParNom(pMana->pListeObjet,"f4"),BLANC_MANNEQUIN),"f4");
+
+
+        insertionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"bg"),creeImage(recupObjetParNom(pMana->pListeObjet,"e1"),PLS_1),"1");
+        insertionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"bg"),creeImage(recupObjetParNom(pMana->pListeObjet,"e2"),PLS_2),"2");
+        insertionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"bg"),creeImage(recupObjetParNom(pMana->pListeObjet,"e3"),PLS_3),"3");
+        insertionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"bg"),creeImage(recupObjetParNom(pMana->pListeObjet,"e4"),PLS_4),"4");
+        insertionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"bg"),creeImage(recupObjetParNom(pMana->pListeObjet,"e5"),PORTABLE),"5");
+
     }
 
-    (dialogueSuivant(pMana,2));
-    if((dialogueSuivant(pMana,3))){
-        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),LARGEUR_MANEQUIN,HAUTEUR_MANEQUIN),creeVecteur(0,0),creeVecteur(0,0)),"manequin");
-        insertionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"bg"),creeImage(recupObjetParNom(pMana->pListeObjet,"manequin"),PLS_1),"manequin");
+    if(pMana->pEtatJeu->nAvancementLevel==2){
+        //ENTREE 1
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"1"),"1");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"2"),"2");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"3"),"3");
+        ajoutGestionDragAndDrop(pMana,recupImageParNom(pMana->pListeImage,"4"),"4");
 
-        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR-LARGEUR_TELEPHONE*0.5,WINDOW_HAUTEUR-HAUTEUR_TELEPHONE),LARGEUR_TELEPHONE,HAUTEUR_TELEPHONE),creeVecteur(0,0),creeVecteur(0,0)),"telephone");
-        insertionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"bg"),creeImage(recupObjetParNom(pMana->pListeObjet,"telephone"),PORTABLE),"telephone");
+
+        //si collision entre l'image et l'image d'arrivée.
+        pRectangle1=getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"f1"));
+        if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e1")),pRectangle1)
+            ||collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e2")),pRectangle1)
+            ||collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e3")),pRectangle1)
+            ||collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e4")),pRectangle1)
+            ){
+            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t1"),SDL_CL_JAUNE); //le texte devient jaune
+        }else{
+            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t1"),SDL_CL_BLANC); //le texte devient blanc
+        }
+
+        pRectangle1=getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"f2"));
+        if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e1")),pRectangle1)
+            ||collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e2")),pRectangle1)
+            ||collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e3")),pRectangle1)
+            ||collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e4")),pRectangle1)
+            ){
+            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t2"),SDL_CL_JAUNE); //le texte devient jaune
+        }else{
+            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t2"),SDL_CL_BLANC); //le texte devient blanc
+        }
+
+
+        pRectangle1=getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"f3"));
+        if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e1")),pRectangle1)
+            ||collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e2")),pRectangle1)
+            ||collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e3")),pRectangle1)
+            ||collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e4")),pRectangle1)
+            ){
+            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t3"),SDL_CL_JAUNE); //le texte devient jaune
+        }else{
+            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t3"),SDL_CL_BLANC); //le texte devient blanc
+        }
+
+        pRectangle1=getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"f4"));
+        if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e1")),pRectangle1)
+            ||collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e2")),pRectangle1)
+            ||collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e3")),pRectangle1)
+            ||collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e4")),pRectangle1)
+            ){
+            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t4"),SDL_CL_JAUNE); //le texte devient jaune
+        }else{
+            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t4"),SDL_CL_BLANC); //le texte devient blanc
+        }
 
     }
 
-
-    if(pMana->pEtatJeu->nAvancementLevel==7){
-        setTexteTexte(recupTexteParNom(pMana->pListeTexte,"dialogue"),"");
-        if(getPointeurCliqueGauche(pMana->pPointeur)&&collisionPointRectangle(getPointeurPosition(pMana->pPointeur),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"telephone")))){
-            SDL_Delay(DELAI_CLICK_BOUTON);
-            pMana->pEtatJeu->nAvancementLevel=8;
+    //si le joueur appuie sur suivant, et s'il a rassemblé tous les ingrédients :
+    if(actionBouton(pMana,"suivant",2)){
+        SDL_Color stCouleurCompare = SDL_CL_JAUNE;
+        SDL_Color *pCouleur1 = getPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t1"));
+        SDL_Color *pCouleur2 = getPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t2"));
+        SDL_Color *pCouleur3 = getPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t3"));
+        SDL_Color *pCouleur4 = getPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t4"));
+        //vérifie si tous les textes sot jaunes
+        if(((pCouleur1->a==stCouleurCompare.a)&&(pCouleur1->r==stCouleurCompare.r)&&(pCouleur1->g==stCouleurCompare.g)&&(pCouleur1->b==stCouleurCompare.b))
+            &&((pCouleur2->a==stCouleurCompare.a)&&(pCouleur2->r==stCouleurCompare.r)&&(pCouleur2->g==stCouleurCompare.g)&&(pCouleur2->b==stCouleurCompare.b))
+            &&((pCouleur3->a==stCouleurCompare.a)&&(pCouleur3->r==stCouleurCompare.r)&&(pCouleur3->g==stCouleurCompare.g)&&(pCouleur3->b==stCouleurCompare.b))
+            &&((pCouleur4->a==stCouleurCompare.a)&&(pCouleur4->r==stCouleurCompare.r)&&(pCouleur4->g==stCouleurCompare.g)&&(pCouleur4->b==stCouleurCompare.b))
+           ){
+           pMana->pEtatJeu->nAvancementLevel++;
         }
     }
 
-    if(pMana->pEtatJeu->nAvancementLevel==6){
-        setTexteTexte(recupTexteParNom(pMana->pListeTexte,"dialogue"),"");
-        if(getPointeurCliqueGauche(pMana->pPointeur)&&collisionPointRectangle(getPointeurPosition(pMana->pPointeur),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"manequin")))){
-            SDL_Delay(DELAI_CLICK_BOUTON);
-            setImageEmpl(recupImageParNom(pMana->pListeImage,"manequin"),PLS_4);
-            pMana->pEtatJeu->nAvancementLevel=7;
+    //modifie la couleur des boutons en fonctions des ingrédients selectionnés.
+    if(pMana->pEtatJeu->nAvancementLevel==3){
+        int nBMauvais=0;
+        //si collision entre l'image et l'image d'arrivée.
+
+        pRectangle1=getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"f1"));
+        if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e1")),pRectangle1)){
+            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t1"),SDL_CL_VERT); //le texte devient jaune
+        }else{
+            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t1"),SDL_CL_ROUGE);
+            nBMauvais++;
         }
-        if(getPointeurCliqueGauche(pMana->pPointeur)&&collisionPointRectangle(getPointeurPosition(pMana->pPointeur),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"telephone")))){
-            SDL_Delay(DELAI_CLICK_BOUTON);
-            texteSuivant(pMana->pFichierDialogue,recupTexteParNom(pMana->pListeTexte,"dialogue"));
-            SDL_Delay(DELAI_REPRISE_PARTIE);
-            pMana->pEtatJeu->nAvancementLevel=6;
+
+        pRectangle1=getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"f2"));
+        if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e2")),pRectangle1)){
+            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t2"),SDL_CL_VERT); //le texte devient jaune
+        }else{
+            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t2"),SDL_CL_ROUGE);
+            nBMauvais++;
+        }
+
+        pRectangle1=getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"f3"));
+        if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e3")),pRectangle1)){
+            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t3"),SDL_CL_VERT); //le texte devient jaune
+        }else{
+            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t3"),SDL_CL_ROUGE);
+            nBMauvais++;
+        }
+
+        pRectangle1=getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"f4"));
+        if(collisionRectangleRectangle(getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e4")),pRectangle1)){
+            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t4"),SDL_CL_VERT); //le texte devient jaune
+        }else{
+            setPropTexteCouleur(recupPropTexteParNom(pMana->pListePropTexte,"t4"),SDL_CL_ROUGE);
+            nBMauvais++;
+        }
+
+
+        if(nBMauvais==0){
+            pMana->pEtatJeu->nAvancementLevel++;
+        }else{
+            pMana->pEtatJeu->nAvancementLevel=21;
         }
     }
 
+    if(actionBouton(pMana,"suivant",21)){
+        pMana->pEtatJeu->nAvancementLevel=2;
+    }
 
+    dialogueSuivant(pMana,4);
 
     if(pMana->pEtatJeu->nAvancementLevel==5){
-        setTexteTexte(recupTexteParNom(pMana->pListeTexte,"dialogue"),"");
-        if(getPointeurCliqueGauche(pMana->pPointeur)&&collisionPointRectangle(getPointeurPosition(pMana->pPointeur),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"manequin")))){
-            SDL_Delay(DELAI_CLICK_BOUTON);
-            setImageEmpl(recupImageParNom(pMana->pListeImage,"manequin"),PLS_3);
-            pMana->pEtatJeu->nAvancementLevel=6;
-        }
-        if(getPointeurCliqueGauche(pMana->pPointeur)&&collisionPointRectangle(getPointeurPosition(pMana->pPointeur),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"telephone")))){
-            SDL_Delay(DELAI_CLICK_BOUTON);
-            texteSuivant(pMana->pFichierDialogue,recupTexteParNom(pMana->pListeTexte,"dialogue"));
-            SDL_Delay(DELAI_REPRISE_PARTIE);
-            pMana->pEtatJeu->nAvancementLevel=5;
+        if(collisionPointRectangle(getPointeurPosition(pMana->pPointeur),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"e5")))){
+            pMana->pEtatJeu->nAvancementLevel++;
         }
     }
 
 
-
-    if(pMana->pEtatJeu->nAvancementLevel==4){
-        if(getPointeurCliqueGauche(pMana->pPointeur)&&collisionPointRectangle(getPointeurPosition(pMana->pPointeur),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"manequin")))){
-            SDL_Delay(DELAI_CLICK_BOUTON);
-            setImageEmpl(recupImageParNom(pMana->pListeImage,"manequin"),PLS_2);
-            pMana->pEtatJeu->nAvancementLevel=5;
-        }
-        if(getPointeurCliqueGauche(pMana->pPointeur)&&collisionPointRectangle(getPointeurPosition(pMana->pPointeur),getObjetRectangle(recupObjetParNom(pMana->pListeObjet,"telephone")))){
-            SDL_Delay(DELAI_CLICK_BOUTON);
-            texteSuivant(pMana->pFichierDialogue,recupTexteParNom(pMana->pListeTexte,"dialogue"));
-            SDL_Delay(DELAI_REPRISE_PARTIE);
-            pMana->pEtatJeu->nAvancementLevel=4;
-        }
-    }
-
-
-   if(pMana->pEtatJeu->nAvancementLevel==8){
+   if(pMana->pEtatJeu->nAvancementLevel==6){
         SDL_Delay(DELAI_REPRISE_PARTIE);
         insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"titreMenuCharger");
         insertionPropTexteListe(pMana->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_TITRE*3,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_ROUGE,"",TTF_Charset_Latin1,TTF_Mode_Solid),"titreMenuCharger");
@@ -2494,7 +2618,9 @@ void gestionLevelMiniJeuSecourisme(tManaComposant *pMana){
         pMana->pEtatJeu->nAvancementLevel++;
     }
 
-    if(actionBouton(pMana,"suivant",9)){
+
+
+    if(actionBouton(pMana,"suivant",7)){
         vidageComposantsProgramme(pMana);
         ajoutInterfaceJeu(pMana);
         pMana->pEtatJeu->nNumLevel++;  //le joueur passe au niveau suivant
@@ -2663,7 +2789,6 @@ void gestionLevelBonneNuit(tManaComposant *pMana){
     dialogueSuivant(pMana,1);
 
     if(actionBouton(pMana,"suivant",2)){
-        setImageEmpl(recupImageParNom(pMana->pListeImage,"bg"),SALLEAMANGER);
         setTexteTexte(recupTexteParNom(pMana->pListeTexte,"dialogue"),"");
         ajoutBoutonChoix(pMana,"Aller se préparer.","Continuer de jouer sur le portable.");
         pMana->pEtatJeu->nAvancementLevel++;
@@ -2752,6 +2877,74 @@ void gestionLevelBonneNuit(tManaComposant *pMana){
     }
 
 }
+
+
+//###########################################
+//FONCTION ajoutTransition
+//*****************************************************************************************************//
+//
+// DESCRIPTION Procedure qui ajoute des transitions
+//
+// ENTREE /Le manager de composants, le numéro de l'avancement de départe, le numéro de l'avancement de fin, le texte.
+//
+// SORTIE /L'affichage des transitions.
+//
+// NOTE -
+//*****************************************************************************************************//
+void ajoutTransition(tManaComposant *pMana, int nAvacnementDepart, int nAvancementFin,char sTexte[]){
+
+
+    if(pMana->pEtatJeu->nAvancementLevel==nAvacnementDepart-10){
+        SDL_Delay(DELAI_TRANSITION);
+        pMana->pEtatJeu->nAvancementLevel--;
+    }
+
+
+    if(pMana->pEtatJeu->nAvancementLevel==nAvacnementDepart){
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,WINDOW_HAUTEUR),creeVecteur(0,0),creeVecteur(0,0)),"transition");
+        insertionImageListe(pMana->pListeImage,NULL,creeImage(recupObjetParNom(pMana->pListeObjet,"transition"),NOIR),"transition");
+        supprInterfaceJeu(pMana);
+        pMana->pEtatJeu->nAvancementLevel=-10;
+    }
+
+
+    if(pMana->pEtatJeu->nAvancementLevel==nAvacnementDepart-12){
+        SDL_Delay(DELAI_TRANSITION*2);
+        pMana->pEtatJeu->nAvancementLevel--;
+    }
+
+    if(pMana->pEtatJeu->nAvancementLevel==nAvacnementDepart-11){
+        insertionObjetListe(pMana->pListeObjet,NULL,creeObjet(creeRectangle(creePoint(WINDOW_LARGEUR*0.5,WINDOW_HAUTEUR*0.5),WINDOW_LARGEUR,HAUTEUR_BOUTON),creeVecteur(0,0),creeVecteur(0,0)),"titreMenuCharger");
+        insertionPropTexteListe(pMana->pListePropTexte,NULL,creePropTexte(TAILLE_POLICE_TITRE*2,TTF_FONT_VERDANA,SDL_CL_BLANC,SDL_CL_ROUGE,"",TTF_Charset_Latin1,TTF_Mode_Solid),"titreMenuCharger");
+        insertionTexteListe(pMana->pListeTexte,NULL,creeTexte(sTexte,recupObjetParNom(pMana->pListeObjet,"titreMenuCharger"),recupPropTexteParNom(pMana->pListePropTexte,"titreMenuCharger")),"titreMenuCharger");
+        pMana->pEtatJeu->nAvancementLevel--;
+    }
+
+
+    if(pMana->pEtatJeu->nAvancementLevel==nAvacnementDepart-14){
+        SDL_Delay(DELAI_TRANSITION);
+        pMana->pEtatJeu->nAvancementLevel--;
+    }
+
+    if(pMana->pEtatJeu->nAvancementLevel==nAvacnementDepart-13){
+        suppressionPropTexteListe(pMana->pListePropTexte,recupElementPropTexteParNom(pMana->pListePropTexte,"titreMenuCharger"));
+        suppressionTexteListe(pMana->pListeTexte,recupElementTexteParNom(pMana->pListeTexte,"titreMenuCharger"));
+        suppressionObjetListe(pMana->pListeObjet,recupElementObjetParNom(pMana->pListeObjet,"titreMenuCharger"));
+        pMana->pEtatJeu->nAvancementLevel--;
+    }
+
+
+    if(pMana->pEtatJeu->nAvancementLevel==nAvacnementDepart-15){
+        suppressionObjetListe(pMana->pListeObjet,recupElementObjetParNom(pMana->pListeObjet,"transition"));
+        suppressionImageListe(pMana->pListeImage,recupElementImageParNom(pMana->pListeImage,"transition"));
+        ajoutInterfaceJeu(pMana);
+        pMana->pEtatJeu->nAvancementLevel=nAvancementFin;
+    }
+
+
+}
+
+
 
 
 //###########################################

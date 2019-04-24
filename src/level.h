@@ -38,6 +38,8 @@ extern void gestionLevelSport(tManaComposant *pMana);
 extern void gestionLevelDiner(tManaComposant *pMana);
 extern void gestionLevelBonneNuit(tManaComposant *pMana);
 
+extern void ajoutTransition(tManaComposant *pMana, int nAvacnementDepart, int nAvancementFin,char sTexte[]);
+
 //DECLARATION DES METHODES
 extern int sauvegardePartie(const char cCheminFichier[],const tEtatJeu stEtatJeu);
 extern int chargementPartie(const char cCheminFichier[],tEtatJeu *pstEtatJeu);

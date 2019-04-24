@@ -32,6 +32,7 @@ typedef struct tManaComposant{
     tPointeur *pPointeur;
     tEtatJeu *pEtatJeu;
     FILE *pFichierDialogue;
+    tImage *pImageDragAndDrop;
 }tManaComposant;
 
 
@@ -57,6 +58,8 @@ extern tListePropTexte *getManaComposantListePropTexte(tManaComposant *pManaComp
 extern tPointeur *getManaComposantPointeur(tManaComposant *pManaComposant);
 
 extern void manaAjoutMinute(tManaComposant *pMana, const int nMinute);
+extern void manaGestionDragAndDrop(tManaComposant *pMana);
+extern void ajoutGestionDragAndDrop(tManaComposant *pMana, tImage *pImage,char sNom[]);
 
 
 #endif // MANAGER_H_INCLUDED

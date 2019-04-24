@@ -30,14 +30,14 @@ int main( int argc, char* args[]/*, char * env[]*/ )
     Uint32 nTempsFinBoucle=0;
     tEtatPartie stEtatPartie=0;
     tManaComposant *pManaComposant = NULL;
-    tEtatJeu stEtatJeu = {level1,0};
+    tEtatJeu stEtatJeu = {miniJeuReve,0};
 
 
 
     ///INITIALISATION DE LA SDL, DE LA FENETRE, DU RENDERER, DU TTF///
     initSDL();
     initFenetre(&pFenetre,NOM_DU_JEU);
-    SDL_SetWindowFullscreen(pFenetre,SDL_WINDOW_FULLSCREEN_DESKTOP);    //mise ne plein écran
+    //SDL_SetWindowFullscreen(pFenetre,SDL_WINDOW_FULLSCREEN_DESKTOP);    //mise ne plein écran
     initMoteurRendu(&pFenetre,&pRenderer);
     initSDLImage();
     initTTF();
@@ -48,7 +48,7 @@ int main( int argc, char* args[]/*, char * env[]*/ )
     pManaComposant->pEtatJeu=&stEtatJeu;    //sauvegarde de la ref de l'état du jeu dans le manager de composants.
 
     ///DECLARATION ET INITIALISATION DE LA MUSIQUE --- LECTURE///
-    Mix_Music *pMusique = Mix_LoadMUS("./assets/son/Never.wav");
+    Mix_Music *pMusique = Mix_LoadMUS(MUSIQUE);
     Mix_PlayMusic(pMusique, 1);
 
 
@@ -79,14 +79,14 @@ int main( int argc, char* args[]/*, char * env[]*/ )
         nTempsDebutBoucle = SDL_GetTicks();
 
         gestionEvenements(&stEtatPartie,getManaComposantPointeur(pManaComposant));
-        gestionActionListeBouton(pManaComposant,&stEtatPartie);
+        gestionActionListeBouton(pManaComposant,&stEtatPartie,pFenetre);
         gestionListeBoutonPointeur(pManaComposant->pListeBouton,pManaComposant->pPointeur);
 
         switch(stEtatPartie){
         case initialisation:
             //Définit l'état du jeu comme celui d'un nouvelle partie.
             stEtatJeu.nAvancementLevel=0;
-            stEtatJeu.nNumLevel=1;
+            stEtatJeu.nNumLevel=miniJeuReve;
             stEtatJeu.stHorloge.nHeure=0;
             stEtatJeu.stHorloge.nMinute=0;
             //Ecrase la sauvegarde précédente de l'empl 1
@@ -100,64 +100,101 @@ int main( int argc, char* args[]/*, char * env[]*/ )
             switch(stEtatJeu.nNumLevel){
                 case level1 : //gestionLevel1(pManaComposant);
                     break;
-                case miniJeuReve: gestionLevelMiniJeuReve(pManaComposant);
+                case miniJeuReve:
+                        ajoutTransition(pManaComposant,0,0,"Minijeu : Rêve");
+                        gestionLevelMiniJeuReve(pManaComposant);
                     break;
 
-                case leReveil: gestionLevelLeReveil(pManaComposant);
+                case leReveil:
+                        ajoutTransition(pManaComposant,0,0,"Scène : Le Réveil");
+                        gestionLevelLeReveil(pManaComposant);
                     break;
 
-                case lePetitDejeuner : gestionLevelLePetitDejeuner(pManaComposant);
+                case lePetitDejeuner :
+                        ajoutTransition(pManaComposant,0,0,"Scène : Le Petit Déjeuner");
+                        gestionLevelLePetitDejeuner(pManaComposant);
                     break;
 
-                case laToilette : gestionLevelLaToilette(pManaComposant);
+                case laToilette :
+                        ajoutTransition(pManaComposant,0,0,"Scène : La toilette");
+                        gestionLevelLaToilette(pManaComposant);
                     break;
 
-                case moyenLocomotion : gestionLevelMoyenLocomotion(pManaComposant);
+                case moyenLocomotion :
+                        ajoutTransition(pManaComposant,0,0,"Scène : Moyen de locomotion");
+                        gestionLevelMoyenLocomotion(pManaComposant);
                     break;
 
-                case preparation : gestionLevelPreparation(pManaComposant);
+                case preparation :
+                        ajoutTransition(pManaComposant,0,0,"Scène : Préparation");
+                        gestionLevelPreparation(pManaComposant);
                     break;
 
-                case leTicket : gestionLevelLeTicket(pManaComposant);
+                case leTicket :
+                        ajoutTransition(pManaComposant,0,0,"Scène : Le Bus");
+                        gestionLevelLeTicket(pManaComposant);
                     break;
 
-                case miniJeuPanneaux : gestionLevelMiniJeuPanneaux(pManaComposant);
+                case miniJeuPanneaux :
+                        ajoutTransition(pManaComposant,0,0,"Mini-Jeu : Orientation");
+                        gestionLevelMiniJeuPanneaux(pManaComposant);
                     break;
 
-                case arriveeEcole : gestionLevelArriveeEcole(pManaComposant);
+                case arriveeEcole :
+                        gestionLevelArriveeEcole(pManaComposant);
                     break;
 
-                case repasMidi : gestionLevelRepasMidi(pManaComposant);
+                case repasMidi :
+                        ajoutTransition(pManaComposant,0,0,"Scène : Repas de midi");
+                        gestionLevelRepasMidi(pManaComposant);
                     break;
 
-                case miniJeuRepas : gestionLevelMiniJeuRepas(pManaComposant);
+                case miniJeuRepas :
+                        ajoutTransition(pManaComposant,0,0,"Mini-Jeu : Choix du menu");
+                        gestionLevelMiniJeuRepas(pManaComposant);
                     break;
 
                 case toilettes : gestionLevelToilettes(pManaComposant);
                     break;
 
-                case miniJeuGrammaire : gestionLevelMiniJeuGrammaire(pManaComposant);
+                case miniJeuGrammaire :
+                        ajoutTransition(pManaComposant,0,0,"Mini-Jeu : Grammaire");
+                        gestionLevelMiniJeuGrammaire(pManaComposant);
                     break;
 
-                case sortieEcole : gestionLevelSortieEcole(pManaComposant);
+                case sortieEcole :
+                        ajoutTransition(pManaComposant,0,0,"Scène : Sortie de l'école");
+                        gestionLevelSortieEcole(pManaComposant);
                     break;
 
-                case devoirs : gestionLevelDevoirs(pManaComposant);
+                case devoirs :
+                        ajoutTransition(pManaComposant,0,0,"Scène : Devoirs");
+                        gestionLevelDevoirs(pManaComposant);
                     break;
 
-                case miniJeuJeuxVideo : gestionLevelMiniJeuJeuxVideo(pManaComposant);
+                case miniJeuJeuxVideo :
+                        ajoutTransition(pManaComposant,0,0,"Mini-Jeu : Jeux-Vidéo");
+                        gestionLevelMiniJeuJeuxVideo(pManaComposant);
                     break;
 
-                case sport : gestionLevelSport(pManaComposant);
+                case sport :
+                        ajoutTransition(pManaComposant,0,0,"Scène : Partir au sport");
+                        gestionLevelSport(pManaComposant);
                     break;
 
-                case miniJeuSecourisme : gestionLevelMiniJeuSecourisme(pManaComposant);
+                case miniJeuSecourisme :
+                        ajoutTransition(pManaComposant,0,0,"Mini-Jeu : Secourisme");
+                        gestionLevelMiniJeuSecourisme(pManaComposant);
                     break;
 
-                case diner : gestionLevelDiner(pManaComposant);
+                case diner :
+                        ajoutTransition(pManaComposant,0,0,"Scène : Le Diner");
+                        gestionLevelDiner(pManaComposant);
                     break;
 
-                case bonneNuit : gestionLevelBonneNuit(pManaComposant);
+                case bonneNuit :
+                        ajoutTransition(pManaComposant,0,0,"Scène : Bonne nuit");
+                        gestionLevelBonneNuit(pManaComposant);
                     break;
             }
             break;
@@ -171,7 +208,7 @@ int main( int argc, char* args[]/*, char * env[]*/ )
             break;
         }
 
-
+        manaGestionDragAndDrop(pManaComposant);
 
         ///AFFICHAGE
         //écran en noir
@@ -216,7 +253,6 @@ int main( int argc, char* args[]/*, char * env[]*/ )
     arretMoteurRendu(&pRenderer);
     arretFenetre(&pFenetre);
     SDL_Quit();
-
     return 0;
 }
 

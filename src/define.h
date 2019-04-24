@@ -2,10 +2,12 @@
 #define DEFINE_H_INCLUDED
 #pragma once
 
-#define NOM_DU_JEU "PointAndClick"
+#define NOM_DU_JEU "Nouveau Départ"
+#define MUSIQUE "./son/snowflake_-_Come_Inside_1.mp3"
 
-#define WINDOW_LARGEUR 1920//1280
-#define WINDOW_HAUTEUR 1080//720
+
+#define WINDOW_LARGEUR 1920
+#define WINDOW_HAUTEUR 1080
 
 #define ABRICOT_PNG "./assets/abricot.png"
 #define ABRICOT_JPG "./assets/abricot.jpg"
@@ -38,11 +40,12 @@
 #define SORTIE_ECOLE "./assets/sortieEcole.png"
 #define GYMNASE "./assets/gymnase.jpg"
 
-#define MAMAN "./assets/maman.jpg"
-#define PAPA "./assets/papa.jpg"
-#define ELEVE "./assets/eleve.jpg"
-#define SURVEILLANT "./assets/surveillant.jpg"
+#define MAMAN "./assets/maman.png"
+#define PAPA "./assets/papa.png"
+#define ELEVE "./assets/eleve.png"
+#define SURVEILLANT "./assets/surveillant.png"
 #define MONSTRE "./assets/monstre.png"
+#define PREPARATION "./assets/preparation.jpg"
 
 #define LARGEUR_PERSONNAGE 400
 #define HAUTEUR_PERSONNAGE 600
@@ -97,8 +100,8 @@
 #define LARGEUR_EPEE 320
 
 //mini jeu secourisme
-#define HAUTEUR_MANEQUIN 420
-#define LARGEUR_MANEQUIN 1400
+#define HAUTEUR_MANNEQUIN 120
+#define LARGEUR_MANNEQUIN 400
 #define HAUTEUR_TELEPHONE 340
 #define LARGEUR_TELEPHONE 200
 #define PLS_1 "./assets/pls1.png"
@@ -106,6 +109,7 @@
 #define PLS_3 "./assets/pls3.png"
 #define PLS_4 "./assets/pls4.png"
 #define PORTABLE "./assets/portable.png"
+#define BLANC_MANNEQUIN "./assets/blancMannequin.png"
 
 
 
@@ -119,6 +123,7 @@
 
 #define DELAI_CLICK_BOUTON 250
 #define DELAI_REPRISE_PARTIE 1000
+#define DELAI_TRANSITION 1000
 
 
 
